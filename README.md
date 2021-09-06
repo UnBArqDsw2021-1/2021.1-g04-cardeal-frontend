@@ -30,8 +30,12 @@ A versão do Angular/CLI é a 12.2.4
 para verificar basta digitar:
  
 ```ng v```
+
+
  
 dentro da pasta frontCardeal basta executar o comando: 
+
+```npm install```
  
 ```ng serve```
  
