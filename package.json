@@ -1,0 +1,20 @@
+{
+  "name": "2021.1-g04-cardeal-frontend",
+  "version": "1.0.0",
+  "description": "Repositório frontend do Grupo 04 Cardeal.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UnBArqDsw2021-1/2021.1-g04-cardeal-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UnBArqDsw2021-1/2021.1-g04-cardeal-frontend/issues"
+  },
+  "homepage": "https://github.com/UnBArqDsw2021-1/2021.1-g04-cardeal-frontend#readme"
+}
