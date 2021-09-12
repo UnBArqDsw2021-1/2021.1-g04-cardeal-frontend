@@ -1,16 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
 body {
-    position: absolute;
-    width: 100%;
-    min-height: 100%;
+    height: 100%; 
     padding: 0;
     margin: 0;
-}
-
-body:after {
-    line-height: 15.5%; /* height of footer */
-    white-space: pre;
-    content: "\A";
 }
 
 .navbar {
@@ -86,10 +78,9 @@ body:after {
 .footer{
     background-color: #3F3D56;
     position: absolute;
-    width: 100%;
-    margin-top: 15.5%;
-    height: 15.5%;
+    left: 0;
     bottom: 0;
+    width: 100%;
 }
 
 .links_footer{
@@ -135,3 +126,14 @@ body:after {
     text-decoration: none;
 }
 
+.container {
+    padding-top: 5%;
+    position: relative;
+    height: 15.5%;
+    bottom: 0;
+}
+
+.conteudo{
+    position: relative;
+    min-height: 69%;
+}
