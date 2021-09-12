@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
+.titulo {
+    position: relative;
+    padding-top: 2%;
+    padding-left: 7%;
+    text-align: justify;
+    align-content: flex-start;
+    width: fit-content;
+}
+
+h1 {
+    font-family: Sora;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    color: #3F3D56;
+}
+
+span {
+    font-family: Sora;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    color: #3F3D56;
+}
+
+p {
+    font-family: Sora;
+    font-size: 13px;
+    color: #3F3D56;
+}
+
+.busca{
+    display: inline-block;
+    align-content: flex-start;
+    padding-top: 1%;
+    padding-left: 7%;
+    padding-bottom: 0%;
+}
+
+.titulo_busca{
+    padding-top: 2%;
+    display: inline;
+    float: left;
+    width: fit-content;
+    margin: 0 0 0 0;
+}
+
+.descricao_busca{
+    float: left;
+    padding-left: 0.3%;
+    padding-top: 1%;
+    text-align: justify;
+    width: 35%;
+}
+
+.img_busca{
+    position: relative;
+    display: inline;
+    float: right;
+    padding-right: 5%;
+    padding-top: -5%;
+    align-self: flex-end;
+    width: 45%;
+    padding-top: 0%;
+}
+
+.botao_busca{
+    font-family: Sora;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 0.5%;
+    color: #FFFFFF;
+    
+    width: 55%;
+    height: 48px;
+    
+    background: #F14843;
+    border: none;
+    border-radius: 10px;
+    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+    cursor:pointer;
+}
+
+.botao_busca:hover{
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.venda{
+    display: inline-block;
+    align-content: flex-start;
+    padding-top: 4%;
+    padding-left: 7%;
+    padding-bottom: 0%;
+}
+
+.titulo_venda{
+    white-space: normal;
+    padding-top: 3%;
+    padding-right: 5%;
+    display: inline;
+    float: right;
+    width: 45%;
+    margin: 0 0 0 0;
+}
+
+.descricao_venda{
+    float: left;
+    padding-left: 5.5%;
+    padding-top: 1%;
+    text-align: justify;
+    width: 35%;
+}
+
+.img_venda{
+    position: relative;
+    display: inline;
+    float: left;
+    align-self: flex-end;
+    width: 45%;
+}
+
+.botao_venda{
+    font-family: Sora;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 0.5%;
+    color: #FFFFFF;
+    
+    width: 55%;
+    height: 48px;
+    
+    background: #F14843;
+    border: none;
+    border-radius: 10px;
+    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+    cursor:pointer;
+}
+
+.botao_venda:hover{
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.corretor{
+    display: inline-block;
+    align-content: flex-start;
+    padding-top: 4%;
+    padding-left: 7%;
+    padding-bottom: 0%;
+}
+
+.titulo_corretor{
+    padding-top: 2%;
+    display: inline;
+    float: left;
+    width: fit-content;
+    margin: 0 0 0 0;
+}
+
+.descricao_corretor{
+    float: left;
+    padding-left: 0.3%;
+    padding-top: 1%;
+    text-align: justify;
+    width: 35%;
+}
+
+.img_corretor{
+    position: relative;
+    display: inline;
+    float: right;
+    padding-right: 5%;
+    padding-top: -5%;
+    align-self: flex-end;
+    width: 45%;
+    padding-top: 0%;
+}
+
+.botao_corretor{
+    font-family: Sora;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 0.5%;
+    color: #FFFFFF;
+    
+    width: 55%;
+    height: 48px;
+    
+    background: #F14843;
+    border: none;
+    border-radius: 10px;
+    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+    cursor:pointer;
+}
+
+.botao_corretor:hover{
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
