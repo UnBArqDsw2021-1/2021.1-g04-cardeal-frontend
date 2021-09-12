@@ -1,18 +1,47 @@
-<div class = "navbar">
-  <div class="logo">
-    <img class ="logo_logo" src="assets/img/icon_logo.svg">
-    <span class="logo_titulo"> Cardeal </span>
+<div>
+  <div id = "nav" class = "navbar">
+    <div class="logo">
+      <img class ="logo_logo" src="assets/img/icon_logo.svg">
+      <span class="logo_titulo"> Cardeal </span>
+    </div>
+
+    <div class="links">
+      <a id="link_home" routerLink="/" class ="links_texto">Home</a>
+      <a id="link_busca_imoveis" class ="links_texto">Buscar Imóveis</a>
+      <a id="link_cadastro_imoveis" class ="links_texto">Cadastrar Imóvel</a>
+      <a id="link_faq" class ="links_texto">FAQ</a>
+    </div>
+
+    <button type="button" class="botao_corretor">
+      Sou corretor(a) de imóveis
+    </button>
   </div>
 
-  <div class="links">
-    <a id="link_home" routerLink="/" class ="links_texto">Home</a>
-    <a id="link_busca_imoveis" class ="links_texto">Buscar Imóveis</a>
-    <a id="link_cadastro_imoveis" class ="links_texto">Cadastrar Imóvel</a>
-    <a id="link_faq" class ="links_texto">FAQ</a>
+  <div id = "footer" class = "footer">
+    <div class = "links_footer">
+      <div class="atalhos">
+        <p class="titulo_links">Atalhos</p>
+        <div class="texto_links"> 
+          <a routerLink="/">Buscar Imóvel</a>
+          <br>
+          <a routerLink="/">Cadastrar Imóvel</a>
+          <br>
+          <a routerLink="/">Cadastrar Corretor</a>
+          <br>
+          <a routerLink="/">FAQ</a>
+        </div>
+      </div>
+      <div class="projeto">
+        <p class="titulo_links">Sobre o Projeto</p>
+        <div class="texto_links"> 
+          <a target="_blank" href="https://github.com/UnBArqDsw2021-1/2021.1_G04_Cardeal">GitHub</a>
+          <br>
+          <a target="_blank" href="https://unbarqdsw2021-1.github.io/2021.1_G04_Cardeal/">Documentação</a>
+        </div>
+      </div>
+    </div>
+    
   </div>
-
-  <button type="button" class="botao_corretor">
-    Sou corretor(a) de imóveis
-  </button>
 </div>
+
 <router-outlet></router-outlet>
