@@ -10,6 +10,6 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    document.querySelector("#link_home")!.classList.add("ativo");
   }
-
 }

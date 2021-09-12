@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+.navbar {
+    position: relative;
+    text-align: center;
+    padding-top: 1%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    display: inline-block;
+    width: 97%;
+}
+
+.logo{
+    float: left;
+}
+
+.logo_logo{
+    vertical-align: middle;
+}
+
+.logo_titulo {
+    vertical-align: middle;
+    font-family: Sora;
+    font-size: 40px;
+
+    color: #F14843;
+}
+
+.links {
+    padding-top: 1%;
+    width: 60%;
+    display:inline-block;
+}
+
+.links_texto {
+    font-family: Sora;
+    font-size: 16px;
+    text-decoration: none;
+
+    color: #79797B;
+}
+
+.botao_corretor{
+    font-family: Sora;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 0.5%;
+    color: #FFFFFF;
+    
+    float: right;
+    display: inline;
+    vertical-align: middle;
+    width: 112px;
+    background-color: #F14843;
+    border: none;
+    border-radius: 10px;
+    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+    cursor:pointer;
+}
+
+.botao_corretor:hover{
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.ativo{
+    color: #F14843;
+}
+
+a + a {
+    margin-left: 2%;
+}
