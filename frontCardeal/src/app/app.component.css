@@ -72,10 +72,10 @@
 .footer{
     display: block;
     background-color: #3F3D56;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 15.5%;
-    bottom: 0%;
+    bottom: 0;
 }
 
 .links_footer{
