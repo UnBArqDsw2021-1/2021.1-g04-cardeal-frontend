@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrudCorretorComponent implements OnInit {
 
-  constructor() { }
+
+  name!: string;
+  cpf!: string;
+  telephone!: string;
+  email!: string;
+  password!: string;
+  confirmpassword!: string;
+
+  // constructor() { }
 
   ngOnInit(): void {
   }
+  handlerSubmit(){
 
+    const realtor = {name:this.name,
+      cpf:this.cpf,
+      telephone:this.telephone,
+      email:this.email,
+      password:this.password,
+      }
+    console.log(realtor)
+  }
 }
