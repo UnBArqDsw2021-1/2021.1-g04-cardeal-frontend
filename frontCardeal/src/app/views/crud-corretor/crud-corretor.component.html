@@ -8,23 +8,17 @@
     </div>
 
     <form class = "form" (ngSubmit)="handlerSubmit()">
-        <label for="fname">Nome Completo:</label><br>
-        <input type="text" id="name" [(ngModel)]="name" name="name"><br>
-
-        <label for="lname">CPF:</label><br>
-        <input type="text" id="cpf" [(ngModel)]="cpf" name="cpf"><br>
-
-        <label for="fname">Telefone:</label><br>
-        <input type="text" id="phone" [(ngModel)]="telephone" name="telephone"><br>
+        <input type="text" id="name" [(ngModel)]="name" name="name" placeholder="Nome Completo"><br>
+       
+        <input type="text" id="cpf" [(ngModel)]="cpf" name="cpf" placeholder="CPF"><br>
         
-        <label for="lname">email:</label><br>
-        <input type="text" id="email" [(ngModel)]="email" name="email"><br>
-
-        <label for="fname">Senha:</label><br>
-        <input type="password" id="password" [(ngModel)]="password" name="password"><br>
-
-        <label for="lname">Confirmar Senha:</label><br>
-        <input type="password" id="confirm-password" [(ngModel)]="confirmpassword" name="confirmpassword"><br>
+        <input type="text" id="phone" [(ngModel)]="telephone" name="telephone" placeholder="Telefone"><br>
+       
+        <input type="text" id="email" [(ngModel)]="email" name="email" placeholder="Email"><br>
+       
+        <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Senha"><br>
+      
+        <input type="password" id="confirm-password" [(ngModel)]="confirmpassword" name="confirmpassword" placeholder="Confirmar Senha"><br>
         
         <br><button type="submit">Cadastrar Corretor</button><br>
     </form>
