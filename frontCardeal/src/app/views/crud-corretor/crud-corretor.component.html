@@ -1,47 +1,50 @@
-<div class="container-cadastro">
-    <h1>Cadastro Corretor</h1>
+<div class="container_titulo">
+        <h1 class="titulo_cadastro">Cadastro de Corretor</h1>
 </div>
-
-<section class="container-cadastro">
-    <div>
+   
+<section>
+    <div class="container_img">
         <img class = "img_corretor" src="assets/img/cadastro-corretor.svg">
     </div>
 
-    <form class = "form" (ngSubmit)="handlerSubmit()">
-        <input type="text" id="name" [(ngModel)]="name" name="name" placeholder="Nome Completo"><br>
-       
-        <input type="text" id="cpf" [(ngModel)]="cpf" name="cpf" placeholder="CPF"><br>
+    <div class="container_cadastro">
+        <div class="container_form">
+            <form class = "form" (ngSubmit)="handlerSubmit()">
+                <input type="text" id="name" [(ngModel)]="name" name="name" placeholder="Nome Completo"><br>
+                <input type="text" id="cpf" [(ngModel)]="cpf" name="cpf" placeholder="CPF"><br>
+                <input type="text" id="phone" [(ngModel)]="telephone" name="telephone" placeholder="Telefone"><br>
+                <input type="text" id="email" [(ngModel)]="email" name="email" placeholder="Email"><br>
+                <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Senha"><br>
+                <input type="password" id="confirm-password" [(ngModel)]="confirmpassword" name="confirmpassword" placeholder="Confirmar Senha"><br>
+                <button type="submit" class="botao_cadastro">Cadastrar Corretor</button>
+            </form>
+        </div>
+
         
-        <input type="text" id="phone" [(ngModel)]="telephone" name="telephone" placeholder="Telefone"><br>
-       
-        <input type="text" id="email" [(ngModel)]="email" name="email" placeholder="Email"><br>
-       
-        <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Senha"><br>
-      
-        <input type="password" id="confirm-password" [(ngModel)]="confirmpassword" name="confirmpassword" placeholder="Confirmar Senha"><br>
+    </div>
         
-        <br><button type="submit">Cadastrar Corretor</button><br>
+
+    <!-- <section class="container">
+    <formclass="formulario"(ngSubmit)="transferir()">
+    <h2class="formulario_titulo"> </h2>
+    <divclass="form-field">
+    <labelclass="form-field__label"for="valor" >Valor</label>
+    <inputclass="form-field__input"id="valor"type="number"[(ngModel)]="valor"name="valor">
+    </div>
+    
+    <divclass="form-field">
+    <labelclass="form-field__label"for="destino">Destino</label>
+    <inputclass="form-field__input"id="destino"[(ngModel)]="destino"name="destino"type="text">
+    </div>
+    
+    <divclass="botao-wrapper">
+    <buttontype="submit"class="botao">Transferir</button>
+    </div>
     </form>
+    </section> -->
 </section>
 
-<!-- <section class="container">
- <formclass="formulario"(ngSubmit)="transferir()">
- <h2class="formulario_titulo"> </h2>
- <divclass="form-field">
- <labelclass="form-field__label"for="valor" >Valor</label>
- <inputclass="form-field__input"id="valor"type="number"[(ngModel)]="valor"name="valor">
- </div>
- 
- <divclass="form-field">
- <labelclass="form-field__label"for="destino">Destino</label>
- <inputclass="form-field__input"id="destino"[(ngModel)]="destino"name="destino"type="text">
- </div>
- 
- <divclass="botao-wrapper">
- <buttontype="submit"class="botao">Transferir</button>
- </div>
- </form>
-</section> -->
+
     
 
 
