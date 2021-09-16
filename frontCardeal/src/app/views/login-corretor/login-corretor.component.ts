@@ -9,7 +9,19 @@ export class LoginCorretorComponent implements OnInit {
 
   constructor() { }
 
+  email!: string;
+  password!: string;
+
   ngOnInit(): void {
+  }
+
+  handlerSubmit(){
+
+    const realtor = {
+      email:this.email,
+      password:this.password,
+      }
+    console.log(realtor)
   }
 
 }

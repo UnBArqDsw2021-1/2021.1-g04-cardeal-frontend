@@ -1,1 +1,52 @@
-<p>login-corretor works!</p>
+<div class="container_titulo">
+    <h1 class="titulo_cadastro">Login de Corretor</h1>
+</div>
+
+<section>
+<div class="container_img">
+    <img class = "img_corretor" src="assets/img/cadastro-corretor.svg">
+</div>
+
+<div class="container_cadastro">
+    <div class="container_form">
+        <form class = "form" (ngSubmit)="handlerSubmit()">
+            <input type="text" id="email" [(ngModel)]="email" name="email" placeholder="Email"><br>
+            <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Senha"><br>
+            <button type="submit" class="botao_cadastro">Login</button>
+            <!-- <button type="submit" class="botao_cadastro">Esqueci Minha Senha</button> -->
+        </form>
+    </div>    
+</div>
+    
+
+<!-- <section class="container">
+<formclass="formulario"(ngSubmit)="transferir()">
+<h2class="formulario_titulo"> </h2>
+<divclass="form-field">
+<labelclass="form-field__label"for="valor" >Valor</label>
+<inputclass="form-field__input"id="valor"type="number"[(ngModel)]="valor"name="valor">
+</div>
+
+<divclass="form-field">
+<labelclass="form-field__label"for="destino">Destino</label>
+<inputclass="form-field__input"id="destino"[(ngModel)]="destino"name="destino"type="text">
+</div>
+
+<divclass="botao-wrapper">
+<buttontype="submit"class="botao">Transferir</button>
+</div>
+</form>
+</section> -->
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
