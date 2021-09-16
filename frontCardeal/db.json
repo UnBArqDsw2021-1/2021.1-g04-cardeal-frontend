@@ -1,0 +1,30 @@
+{
+  "corretor": [
+    {
+      "corretor": [
+        {
+          "name": "Marcos",
+          "cpf": "987654321",
+          "telephone": "33939571",
+          "email": "vinicius_kof36@hotmail.com",
+          "password": "senha",
+          "confirmpassword": "senha"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "corretor": [
+        {
+          "name": "Marcos",
+          "cpf": "123456789",
+          "telephone": "33939571",
+          "email": "vinicius_kof36@hotmail.com",
+          "password": "senha",
+          "confirmpassword": "senha"
+        }
+      ],
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+http://localhost:3000/corretor
+
+###
+
+GET http://localhost:3000/corretor/1
+
+###
+
+POST http://localhost:3000/corretor HTTP/1.1
+content-type: application/json
+
+{
+    "corretor": [
+      {
+        "name": "Marcos",
+        "cpf": "123456789",
+        "telephone": "33939571",
+        "email": "vinicius_kof36@hotmail.com",
+        "password": "senha",
+        "confirmpassword": "senha"
+     }
+    ]
+}
+
+###
+
+PUT http://localhost:3000/corretor/1 HTTP/1.1
+content-type: application/json
+
+{
+    "corretor": [
+      {
+        "name": "Julio",
+        "cpf": "987654321",
+        "telephone": "33939571",
+        "email": "vinicius_kof36@hotmail.com",
+        "password": "senha",
+        "confirmpassword": "senha"
+     }
+    ]
+}
+
+###
+
+DELETE http://localhost:3000/corretor/2
+
