@@ -13,6 +13,7 @@ import { CrudCorretorComponent } from './views/crud-corretor/crud-corretor.compo
 import { FormsModule } from '@angular/forms';
 import { LoginCorretorComponent } from './views/login-corretor/login-corretor.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HomeComponent,
     CrudCorretorComponent,
-    LoginCorretorComponent
+    LoginCorretorComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

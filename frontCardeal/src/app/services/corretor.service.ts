@@ -18,4 +18,13 @@ export class CorretorService{
   cadastraCorretor(corretor: Corretor) : Observable<Corretor>{
     return this.httpClient.post<Corretor>(this.url, corretor);
   }
+
+  /* loginCorretor(corretor:Corretor) : Observable<Corretor>{
+    return this.httpClient.get()
+  } */
+
+  listarCorretore(){
+    const resposta = this.httpClient.get(this.url);
+    console.log(resposta);
+  }
 }
