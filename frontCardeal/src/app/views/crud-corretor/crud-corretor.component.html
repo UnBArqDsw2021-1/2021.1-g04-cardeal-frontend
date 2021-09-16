@@ -8,6 +8,11 @@
     </div>
 
     <div class="container_cadastro">
+        <div class="links_forms">
+            <span class="link_cadastro">Cadastro</span>
+            <span class="link_login" routerLink="/login-corretor">Login</span>
+        </div>
+        
         <div class="container_form">
             <form class = "form" (ngSubmit)="handlerSubmit()">
                 <input type="text" id="name" [(ngModel)]="name" name="name" placeholder="Nome Completo"><br>
@@ -19,29 +24,7 @@
                 <button type="submit" class="botao_cadastro">Cadastrar Corretor</button>
             </form>
         </div>
-
-        
     </div>
-        
-
-    <!-- <section class="container">
-    <formclass="formulario"(ngSubmit)="transferir()">
-    <h2class="formulario_titulo"> </h2>
-    <divclass="form-field">
-    <labelclass="form-field__label"for="valor" >Valor</label>
-    <inputclass="form-field__input"id="valor"type="number"[(ngModel)]="valor"name="valor">
-    </div>
-    
-    <divclass="form-field">
-    <labelclass="form-field__label"for="destino">Destino</label>
-    <inputclass="form-field__input"id="destino"[(ngModel)]="destino"name="destino"type="text">
-    </div>
-    
-    <divclass="botao-wrapper">
-    <buttontype="submit"class="botao">Transferir</button>
-    </div>
-    </form>
-    </section> -->
 </section>
 
 
