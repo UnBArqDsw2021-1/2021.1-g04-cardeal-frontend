@@ -1,4 +1,4 @@
-/* Cadastro de Corretor */
+/* Login de Corretor */
 .container_titulo{
     margin-top: 2%;
     text-align: center;
@@ -34,9 +34,9 @@ section{
 }
 
 /* Register */
-/* Painel Cadastro */
+/* Painel Login */
 
-.container_cadastro{
+.container_login{
     flex: 0.7;
     float: right;
     margin-right: 7%;
@@ -72,7 +72,7 @@ input{
     border-radius: 8px;
 }
 
-.botao_cadastro{
+.botao_login{
     font-family: Sora;
     font-size: 14px;
     color: #FFFFFF;
@@ -89,6 +89,6 @@ input{
     cursor:pointer;
 }
 
-.botao_cadastro:hover{
+.botao_login:hover{
     box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }

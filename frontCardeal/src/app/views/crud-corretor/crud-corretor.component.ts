@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CorretorService } from 'src/app/services/corretor.service';
 
 @Component({
   selector: 'app-crud-corretor',
@@ -19,8 +21,12 @@ export class CrudCorretorComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  handlerSubmit(){
 
+  constructor(private service: CorretorService, private route: Router){
+
+  }
+
+  handlerSubmit(){
     const realtor = {name:this.name,
       cpf:this.cpf,
       telephone:this.telephone,
@@ -28,5 +34,22 @@ export class CrudCorretorComponent implements OnInit {
       password:this.password,
       }
     console.log(realtor)
+
+    this.service.cadastraCorretor(realtor).subscribe(
+      resultado =>{
+        this.limparCampos();
+        this.route.navigateByUrl('login-corretor')
+      },
+      error => console.log(error)
+    )
+  }
+
+  limparCampos(){
+    this.name = "";
+    this.cpf = "";
+    this.telephone = "";
+    this.email = "";
+    this.password = "";
+    this.confirmpassword = "";
   }
 }

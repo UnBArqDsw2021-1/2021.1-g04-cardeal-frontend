@@ -4,16 +4,17 @@
 
 <section>
 <div class="container_img">
-    <img class = "img_corretor" src="assets/img/cadastro-corretor.svg">
+    <img class = "img_corretor" src="assets/img/login.svg">
 </div>
 
-<div class="container_cadastro">
+<div class="container_login">
     <div class="container_form">
         <form class = "form" (ngSubmit)="handlerSubmit()">
             <input type="text" id="email" [(ngModel)]="email" name="email" placeholder="Email"><br>
             <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Senha"><br>
-            <button type="submit" class="botao_cadastro">Login</button>
-            <!-- <button type="submit" class="botao_cadastro">Esqueci Minha Senha</button> -->
+            <button type="submit" class="botao_login">Login</button><br>
+            <button type="submit" class="botao_login">Esqueci Minha Senha</button>
+            <button type="button" class="botao_login" routerLink="../cadastro-corretor">Meu Primeiro Acesso</button>
         </form>
     </div>    
 </div>

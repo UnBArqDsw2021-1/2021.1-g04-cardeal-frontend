@@ -25,6 +25,17 @@
         }
       ],
       "id": 3
+    },
+    {
+      "name": "Primeiro Corretor",
+      "cpf": "052619",
+      "telephone": "908329e",
+      "email": "primeiro@email.com",
+      "password": "1234567",
+      "id": 4
+    },
+    {
+      "id": 5
     }
   ]
 }
