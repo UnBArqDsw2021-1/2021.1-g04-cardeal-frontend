@@ -19,12 +19,19 @@ export class CorretorService{
     return this.httpClient.post<Corretor>(this.url, corretor);
   }
 
-  /* loginCorretor(corretor:Corretor) : Observable<Corretor>{
-    return this.httpClient.get()
-  } */
+  loginCorretor(corretor:Corretor){
+    this.listarCorretores().subscribe((corretores: Corretor[])=>{
+      console.table(corretores);
+      console.log(corretor);
+      this.listaCorretores = corretores;
+      const existeCorretor = corretores.filter(() => corretor.email)
+      console.log("Esse é o corretor filtrado", existeCorretor)
+    }      
+    )
+  } 
 
-  listarCorretore(){
-    const resposta = this.httpClient.get(this.url);
-    console.log(resposta);
+  listarCorretores() : Observable<Corretor[]>{
+    const resposta = this.httpClient.get<Corretor[]>(this.url);
+    return resposta;
   }
 }

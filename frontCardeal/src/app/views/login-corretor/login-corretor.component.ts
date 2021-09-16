@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CorretorService } from 'src/app/services/corretor.service';
 
 @Component({
   selector: 'app-login-corretor',
@@ -7,14 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginCorretorComponent implements OnInit {
 
-  constructor() { }
-
   email!: string;
   password!: string;
 
   ngOnInit(): void {
   }
 
+  constructor(private service: CorretorService){
+
+  }
   handlerSubmit(){
 
     const realtor = {
@@ -22,6 +24,7 @@ export class LoginCorretorComponent implements OnInit {
       password:this.password,
       }
     console.log(realtor)
+    this.service.loginCorretor(realtor);
   }
 
 }

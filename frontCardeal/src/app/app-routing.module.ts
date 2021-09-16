@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
 import { CrudCorretorComponent } from './views/crud-corretor/crud-corretor.component';
 import { LoginCorretorComponent } from './views/login-corretor/login-corretor.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'login-corretor', 
     component: LoginCorretorComponent
+  },
+  {
+    path: 'dashboard', 
+    component: DashboardComponent
   }
 ];
 
