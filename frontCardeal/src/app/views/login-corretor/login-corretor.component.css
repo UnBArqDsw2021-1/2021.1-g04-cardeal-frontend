@@ -29,27 +29,50 @@ section{
 
 .img_corretor{
     display: inline;
-    width: 100%;
+    width: 90%;
     margin-top: 10%;
 }
 
 /* Register */
 /* Painel Login */
-
 .container_login{
     flex: 0.7;
     float: right;
     margin-right: 7%;
-    margin-left: 6%;
-
+    margin-left: 7%;
     align-content: center;
+    height: fit-content;
+    padding-bottom: 3%;
 
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 }
 
+.links_forms{
+    font-family: Sora;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    display: flex;
+}
+
+.link_cadastro{
+    flex: 1;
+    color: #79797B;
+    cursor:pointer;
+}
+
+.link_login{
+    flex: 1;
+    color: #F14843;
+}
 .container_form{
-    margin-top: 20%;
+    margin-top: 10%;
     text-align: center;
 }
 
@@ -91,4 +114,11 @@ input{
 
 .botao_login:hover{
     box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.botao_senha{
+    font-family: Sora;
+    font-size: 14px;
+    color: #79797B;
+
+    cursor:pointer;
 }

@@ -1,43 +1,27 @@
 <div class="container_titulo">
-    <h1 class="titulo_cadastro">Login de Corretor</h1>
+    <h1 class="titulo_cadastro">Login do Corretor</h1>
 </div>
 
 <section>
-<div class="container_img">
-    <img class = "img_corretor" src="assets/img/login.svg">
-</div>
-
-<div class="container_login">
-    <div class="container_form">
-        <form class = "form" (ngSubmit)="handlerSubmit()">
-            <input type="text" id="email" [(ngModel)]="email" name="email" placeholder="Email"><br>
-            <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Senha"><br>
-            <button type="submit" class="botao_login">Login</button><br>
-            <button type="submit" class="botao_login">Esqueci Minha Senha</button>
-            <button type="button" class="botao_login" routerLink="../cadastro-corretor">Meu Primeiro Acesso</button>
-        </form>
-    </div>    
-</div>
     
+    <div class="container_img">
+        <img class = "img_corretor" src="assets/img/login.svg">
+    </div>
 
-<!-- <section class="container">
-<formclass="formulario"(ngSubmit)="transferir()">
-<h2class="formulario_titulo"> </h2>
-<divclass="form-field">
-<labelclass="form-field__label"for="valor" >Valor</label>
-<inputclass="form-field__input"id="valor"type="number"[(ngModel)]="valor"name="valor">
-</div>
-
-<divclass="form-field">
-<labelclass="form-field__label"for="destino">Destino</label>
-<inputclass="form-field__input"id="destino"[(ngModel)]="destino"name="destino"type="text">
-</div>
-
-<divclass="botao-wrapper">
-<buttontype="submit"class="botao">Transferir</button>
-</div>
-</form>
-</section> -->
+    <div class="container_login">
+        <div class="links_forms">
+            <span class="link_cadastro" routerLink="/cadastro-corretor">Cadastro</span>
+            <span class="link_login">Login</span>
+        </div>
+        <div class="container_form">
+            <form class = "form" (ngSubmit)="handlerSubmit()">
+                <input type="text" id="email" [(ngModel)]="email" name="email" placeholder="Email"><br>
+                <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Senha"><br>
+                <button type="submit" class="botao_login">Login</button><br>
+                <span class="botao_senha">Esqueci Minha Senha</span>
+            </form>
+        </div>    
+    </div>
 </section>
 
 
