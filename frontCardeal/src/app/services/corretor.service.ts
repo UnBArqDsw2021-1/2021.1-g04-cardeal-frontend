@@ -17,10 +17,12 @@ export class CorretorService{
   }
 
   enviaCorretor(): Corretor{
+    console.log("Enviando corretor");
     return this.corretor;
   }
 
   recebeCorretor(corretor: Corretor): void{
+    console.log("Reecebdo o corretor");
     this.corretor = corretor;
     console.log("Corretor Recebido", corretor);
     console.log("Corretor do Service", this.corretor);
@@ -30,12 +32,16 @@ export class CorretorService{
     return this.httpClient.post<Corretor>(this.url, corretor);
   }
 
-  loginCorretor(corretor:Corretor): Observable<Corretor>{
-    return this.httpClient.get<Corretor>(`${this.url}?email=${corretor.email}`);
+  loginCorretor(corretor:Corretor): Observable<Corretor[]>{
+    return this.httpClient.get<Corretor[]>(`${this.url}?email=${corretor.email}`);
   } 
 
+  atualizaCorretor(corretor:Corretor):Observable<Corretor>{
+    return this.httpClient.put<Corretor>(this.url+'/'+corretor.id, corretor);
+  }
+
   deleteCorretor(corretor:Corretor): Observable<Corretor>{
-    return this.httpClient.get<Corretor>(`${this.url}/${corretor.id}`)
+    return this.httpClient.delete<Corretor>(`${this.url}/${corretor.id}`)
   }
 
   listarCorretores() : Observable<Corretor[]>{

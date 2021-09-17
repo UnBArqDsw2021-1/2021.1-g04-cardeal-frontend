@@ -4,5 +4,5 @@ export interface Corretor{
   cpf?: string;
   telephone?: string;
   email: string;
-  password: string;
+  password?: string;
 }

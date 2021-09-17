@@ -30,8 +30,8 @@ export class LoginCorretorComponent implements OnInit {
       }
     this.service.loginCorretor(realtor).subscribe(
       resultado => {
-      console.log("Resultado da query", resultado)
-      this.service.recebeCorretor(resultado);
+      console.log("Resultado da query", resultado[0])
+      this.service.recebeCorretor(resultado[0]);
       this.route.navigateByUrl('/dashboard')
     },
     erro => console.log(erro)

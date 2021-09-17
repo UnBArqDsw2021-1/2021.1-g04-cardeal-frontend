@@ -1,1 +1,13 @@
-<p>update-corretor works!</p>
+<div class="container_titulo">
+  <h1 class="titulo_cadastro">Editar Informações</h1>
+</div>
+  
+<div class="container_form">
+    <form class = "form" (ngSubmit)="handleSubmit()">
+        <input type="text" id="name" [(ngModel)]="corretor.name" name="name" placeholder="Nome Completo"><br>
+        <input type="text" id="phone" [(ngModel)]="corretor.telephone" name="telephone" placeholder="Telefone"><br>
+        <input type="text" id="email" [(ngModel)]="corretor.email" name="email" placeholder="Email"><br>
+        <button type="submit" class="botao_cadastro">Atualizar Corretor</button>
+        <button class="botao_cadastro" (click)="excluirConta()">Excluir Conta</button>
+    </form>
+</div>

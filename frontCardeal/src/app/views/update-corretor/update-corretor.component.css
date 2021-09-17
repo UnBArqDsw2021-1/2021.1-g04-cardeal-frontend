@@ -1,0 +1,122 @@
+/* Cadastro de Corretor */
+.container_titulo{
+  margin-top: 2%;
+  text-align: center;
+}
+
+section{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 2%;
+}
+
+.titulo_cadastro{
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+
+  color: #3F3D56;
+}
+
+/* imagem 1 */
+.container_img{
+  flex: 1;
+  margin-left: 7%;
+  margin-right: 6%;
+}
+
+.img_corretor{
+  display: inline;
+  width: 100%;
+  margin-top: 10%;
+}
+
+/* Register */
+/* Painel Cadastro */
+
+.container_cadastro{
+  flex: 0.7;
+  float: right;
+  margin-right: 7%;
+  margin-left: 7%;
+
+  align-content: center;
+
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+.links_forms{
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+  display: flex;
+}
+
+.link_cadastro{
+  flex: 1;
+  color: #F14843;
+}
+
+.link_login{
+  flex: 1;
+  color: #79797B;
+  cursor:pointer;
+}
+
+.container_form{
+  margin: 0 auto;
+  margin-top: 2%;
+  width: 40%;
+  text-align: center;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+input{
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+
+  color: rgba(121, 121, 123, 0.8);
+
+  padding: 2.5%;
+  padding-left: 4%;
+
+  width: 70%;
+  margin-bottom: 4%;
+  border-radius: 2px;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.botao_cadastro{
+  font-family: Sora;
+  font-size: 14px;
+  color: #FFFFFF;
+  
+  width: 40%;
+  height: 48px;
+  margin-top: 3%;
+  margin-bottom: 7%;
+  
+  background: #F14843;
+  border: none;
+  border-radius: 10px;
+  filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+  cursor:pointer;
+}
+
+.botao_cadastro:hover{
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

@@ -2,7 +2,7 @@
   "proprietario": [
     {
       "proprietario": [
-        { 
+        {
           "id": 1,
           "name": "Jesus",
           "cpf": "987654321",
@@ -57,6 +57,13 @@
       "email": "segundo_elaborado@email.com",
       "password": "111111",
       "id": 6
+    },
+    {
+      "name": "NovoCorretor",
+      "cpf": "aaaaa",
+      "telephone": "Brasil",
+      "email": "email@email.com",
+      "id": 8
     }
   ],
   "imoveis": [
