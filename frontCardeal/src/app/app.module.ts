@@ -18,6 +18,7 @@ import { CadastroImovelComponent } from './views/cadastro-imovel/cadastro-imovel
 import { UpdateImovelComponent } from './views/update-imovel/update-imovel.component';
 import { UpdateCorretorComponent } from './views/update-corretor/update-corretor.component';
 import { CadastroProprietarioComponent } from './views/cadastro-proprietario/cadastro-proprietario.component';
+import { UpdateProprietarioComponent } from './views/update-proprietario/update-proprietario.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CadastroProprietarioComponent } from './views/cadastro-proprietario/cad
     CadastroImovelComponent,
     UpdateImovelComponent,
     UpdateCorretorComponent,
-    CadastroProprietarioComponent
+    CadastroProprietarioComponent,
+    UpdateProprietarioComponent
   ],
   imports: [
     BrowserModule,
