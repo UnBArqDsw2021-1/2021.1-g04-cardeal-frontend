@@ -7,6 +7,8 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { CadastroImovelComponent } from './views/cadastro-imovel/cadastro-imovel.component'
 import { UpdateImovelComponent } from './views/update-imovel/update-imovel.component'
 import { UpdateCorretorComponent } from './views/update-corretor/update-corretor.component'
+import { CadastroProprietarioComponent } from './views/cadastro-proprietario/cadastro-proprietario.component'
+
 
 
 const routes: Routes = [
@@ -37,6 +39,10 @@ const routes: Routes = [
   {
     path: 'update-corretor', 
     component: UpdateCorretorComponent
+  },
+  {
+    path: 'cadastro-proprietario', 
+    component: CadastroProprietarioComponent
   }
 ];
 
