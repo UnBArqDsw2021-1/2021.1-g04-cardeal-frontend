@@ -5,6 +5,8 @@ import { CrudCorretorComponent } from './views/crud-corretor/crud-corretor.compo
 import { LoginCorretorComponent } from './views/login-corretor/login-corretor.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { CadastroImovelComponent } from './views/cadastro-imovel/cadastro-imovel.component'
+import { UpdateImovelComponent } from './views/update-imovel/update-imovel.component'
+import { UpdateCorretorComponent } from './views/update-corretor/update-corretor.component'
 
 
 const routes: Routes = [
@@ -27,6 +29,14 @@ const routes: Routes = [
   {
     path: 'cadastro-imovel', 
     component: CadastroImovelComponent
+  },
+  {
+    path: 'update-imovel', 
+    component: UpdateImovelComponent
+  },
+  {
+    path: 'update-corretor', 
+    component: UpdateCorretorComponent
   }
 ];
 
