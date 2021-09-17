@@ -10,25 +10,33 @@ import { Corretor } from '../models/corretor.model';
 export class CorretorService{
   private listaCorretores: Corretor[];
   private url = "http://localhost:3000/corretor"
+  private corretor!: Corretor;
 
   constructor(private httpClient: HttpClient){
     this.listaCorretores = []
+  }
+
+  enviaCorretor(): Corretor{
+    return this.corretor;
+  }
+
+  recebeCorretor(corretor: Corretor): void{
+    this.corretor = corretor;
+    console.log("Corretor Recebido", corretor);
+    console.log("Corretor do Service", this.corretor);
   }
 
   cadastraCorretor(corretor: Corretor) : Observable<Corretor>{
     return this.httpClient.post<Corretor>(this.url, corretor);
   }
 
-  loginCorretor(corretor:Corretor){
-    this.listarCorretores().subscribe((corretores: Corretor[])=>{
-      console.table(corretores);
-      console.log(corretor);
-      this.listaCorretores = corretores;
-      const existeCorretor = corretores.filter(() => corretor.email)
-      console.log("Esse é o corretor filtrado", existeCorretor)
-    }      
-    )
+  loginCorretor(corretor:Corretor): Observable<Corretor>{
+    return this.httpClient.get<Corretor>(`${this.url}?email=${corretor.email}`);
   } 
+
+  deleteCorretor(corretor:Corretor): Observable<Corretor>{
+    return this.httpClient.get<Corretor>(`${this.url}/${corretor.id}`)
+  }
 
   listarCorretores() : Observable<Corretor[]>{
     const resposta = this.httpClient.get<Corretor[]>(this.url);

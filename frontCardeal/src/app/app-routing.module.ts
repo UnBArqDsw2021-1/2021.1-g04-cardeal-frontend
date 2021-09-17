@@ -33,11 +33,11 @@ const routes: Routes = [
     component: CadastroImovelComponent
   },
   {
-    path: 'update-imovel', 
+    path: 'update-imovel/:imovelId', 
     component: UpdateImovelComponent
   },
   {
-    path: 'update-corretor', 
+    path: 'update-corretor/:corretorId', 
     component: UpdateCorretorComponent
   },
   {
@@ -45,7 +45,7 @@ const routes: Routes = [
     component: CadastroProprietarioComponent
   },
   {
-    path: 'update-proprietario', 
+    path: 'update-proprietario/:proprietarioId', 
     component: UpdateProprietarioComponent
   }
 ];
