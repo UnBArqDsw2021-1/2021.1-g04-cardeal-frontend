@@ -12,6 +12,10 @@ export class LoginCorretorComponent implements OnInit {
   password!: string;
 
   ngOnInit(): void {
+    document.querySelector("#link_home")!.classList.remove("ativo");
+    document.querySelector("#link_cadastro_imoveis")!.classList.remove("ativo");
+    document.querySelector("#link_faq")!.classList.remove("ativo");
+    document.querySelector("#link_busca_imoveis")!.classList.remove("ativo");
   }
 
   constructor(private service: CorretorService){
