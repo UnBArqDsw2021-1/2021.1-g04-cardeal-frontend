@@ -4,6 +4,7 @@ import { HomeComponent } from './views/home/home.component';
 import { CrudCorretorComponent } from './views/crud-corretor/crud-corretor.component';
 import { LoginCorretorComponent } from './views/login-corretor/login-corretor.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { CadastroImovelComponent } from './views/cadastro-imovel/cadastro-imovel.component'
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'dashboard', 
     component: DashboardComponent
+  },
+  {
+    path: 'cadastro-imovel', 
+    component: CadastroImovelComponent
   }
 ];
 

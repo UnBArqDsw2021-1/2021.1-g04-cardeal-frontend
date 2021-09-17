@@ -37,5 +37,25 @@
     {
       "id": 5
     }
+  ],
+  "imoveis" : [
+    {
+      "imovel": [
+        {
+          "state": "df",
+          "city": "gama",
+          "district": "qualquer um",
+          "number": 2,
+          "zipNumber": "8723862",
+          "numberBedroom": 2,
+          "numberBath": 2,
+          "numberPark":  2,
+          "value": 100,
+          "views": 2000,
+          "idOwner": 1,
+          "media": "enderco imagem"
+        }
+      ]
+    }
   ]
-}
+} 

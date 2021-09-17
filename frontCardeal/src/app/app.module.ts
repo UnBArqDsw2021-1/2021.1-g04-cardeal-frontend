@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginCorretorComponent } from './views/login-corretor/login-corretor.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
-
+import { CadastroImovelComponent } from './views/cadastro-imovel/cadastro-imovel.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
     HomeComponent,
     CrudCorretorComponent,
     LoginCorretorComponent,
-    DashboardComponent
+    DashboardComponent,
+    CadastroImovelComponent
   ],
   imports: [
     BrowserModule,
