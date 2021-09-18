@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from "@angular/flex-layout";
-import { MatToolbarModule } from '@angular/material/toolbar'
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { CrudCorretorComponent } from './views/crud-corretor/crud-corretor.component';
@@ -15,6 +15,8 @@ import { LoginCorretorComponent } from './views/login-corretor/login-corretor.co
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { CadastroImovelComponent } from './views/cadastro-imovel/cadastro-imovel.component';
+import { MeusImoveisComponent } from './views/meus-imoveis/meus-imoveis.component';
+import { ImovelComponent } from './views/imovel/imovel.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CadastroImovelComponent } from './views/cadastro-imovel/cadastro-imovel
     CrudCorretorComponent,
     LoginCorretorComponent,
     DashboardComponent,
-    CadastroImovelComponent
+    CadastroImovelComponent,
+    MeusImoveisComponent,
+    ImovelComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +41,6 @@ import { CadastroImovelComponent } from './views/cadastro-imovel/cadastro-imovel
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
