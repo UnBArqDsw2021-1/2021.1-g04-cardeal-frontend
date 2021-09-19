@@ -47,6 +47,8 @@ section{
     margin-left: 7%;
 
     align-content: center;
+    align-items: center;
+    text-align: center;
 
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
@@ -92,7 +94,8 @@ section{
 }
 
 .inserir_fotos{
-    width: 55%;
+    margin: 0 auto;
+    width: auto;
 }
 
 input{
