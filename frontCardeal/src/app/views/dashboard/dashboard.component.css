@@ -1,0 +1,63 @@
+/* House List */
+
+.container_house{
+position: absolute;
+width: 1172px;
+height: 765px;
+left: 150px;
+top: 192px;
+}
+
+/* Buscar Imóveis */
+
+.container_titulo{
+position: absolute;
+width: 488px;
+height: 81px;
+left: 400px;
+top: 192px;
+
+font-family: Sora;
+font-style: normal;
+font-weight: normal;
+font-size: 64px;
+line-height: 81px;
+/* identical to box height */
+color: #3F3D56;
+}
+
+/* As seguintes propriedades foram encontradas com as características desejadas */
+
+.info_search{
+position: absolute;
+width: 646px;
+height: 20px;
+left: 413px;
+top: 269px;
+
+font-family: Sora;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 20px;
+
+color: #3F3D56;
+}
+
+/* Houses */
+
+.house_list{
+position: absolute;
+width: 1172px;
+height: 636px;
+left: 150px;
+top: 321px;
+}
+
+.house{
+position: absolute;
+width: 245px;
+height: 286px;
+left: 150px;
+top: 321px;
+}
