@@ -1,47 +1,54 @@
 <div class="container_titulo">
-    <h1 class="titulo_cadastro">Cadastro de Imóvel</h1>
+  <h1 class="titulo_cadastro">Cadastro de Imóvel</h1>
 </div>
 
 <section>
-    <div class="container_img">
-        <img class = "img_corretor" src="assets/img/cadastrar_imovel.svg">
-    </div>
+  <div class="container_img">
+    <img class="img_corretor" src="assets/img/login.svg" />
+  </div>
 
-    <div class="container_cadastro">
-        <div class="links_forms">
-            <span class="link_cadastro">Cadastro</span>
+  <div class="container_cadastro">
+    <div class="container_form">
+      <form id="form" (ngSubmit)="handlerSubmit()">
+        <div class="coluna1">
+          <input type="text" id="idOwner" [(ngModel)]="idRealtor" name="idRealtor" placeholder="Proprietário"/>
+          <br/>
+          <input type="text" id="state" [(ngModel)]="state" name="state" placeholder="Estado"/>
+          <br/>
+          <input type="text" id="city" [(ngModel)]="city" name="city" placeholder="Cidade"/>
+          <br/>
+          <input type="text" id="district" [(ngModel)]="district" name="district" placeholder="Bairro"/>
+          <br/>
+          <input type="text" id="number" [(ngModel)]="number" name="number" placeholder="Número"/>
+          <br/>
+          <input type="text" id="zipNumber" [(ngModel)]="zipNumber" name="zipNumber" placeholder="CEP"/>
+          <br/>
         </div>
-
-        <div class="row">
-            <div class="column">
-                <div class="container_form">
-                    <form class = "form" (ngSubmit)="handlerSubmit()">
-                        <input type="text" id="idOwner" [(ngModel)]="idRealtor" name="idRealtor" placeholder="Proprietário"><br>
-                        <input type="text" id="state" [(ngModel)]="state" name="state" placeholder="Estado"><br>
-                        <input type="text" id="city" [(ngModel)]="city" name="city" placeholder="Cidade"><br>
-                        <input type="text" id="district" [(ngModel)]="district" name="district" placeholder="Bairro"><br>
-                        <input type="text" id="number" [(ngModel)]="number" name="number" placeholder="Número"><br>
-                        <input type="text" id="zipNumber" [(ngModel)]="zipNumber" name="zipNumber" placeholder="CEP"><br>
-                        <input type="text0" id="type" [(ngModel)]="type" name="type" placeholder="Tipo"><br>
-                    </form>
-                </div>
-            </div>
-            <div class="column">
-                <div class="container_form">
-                <form class = "form" (ngSubmit)="handlerSubmit()">
-                        <input type="text" id="size" [(ngModel)]="size" name="size" placeholder="Tamanho m²"><br>
-                        <input type="text" id="numberBedroom" [(ngModel)]="numberBedroom" name="numberBedroom" placeholder="N⁰ Quartos"><br>
-                        <input type="text" id="numberBath" [(ngModel)]="numberBath" name="numberBath" placeholder="N⁰ Banheiros"><br>
-                        <input type="text" id="numberPark" [(ngModel)]="numberPark" name="numberPark" placeholder="Vagas de Estacionamento"><br>
-                        <input type="text" id="value" [(ngModel)]="value" name="value" placeholder="Valor"><br>
-                        <!-- <input type="text" id="media" [(ngModel)]="media" name="media" placeholder="Url Fotos"><br> -->
-                </form>
-                    <input type="file" id="media" name="media" multiple [(ngModel)]="media">
-                </div>
-            </div>
+        <div class="coluna2">
+          <input type="text" list="tipos" id="type" [(ngModel)]="type" name="type" placeholder="Tipo"/>
+          <datalist id="tipos">
+            <option value="Casa"></option>
+            <option value="Terreno"></option>
+            <option value="Apartamento"></option>
+            <option value="Comercial"></option>
+          </datalist>
+          <br/>
+          <input type="text" id="size" [(ngModel)]="size" name="size" placeholder="Tamanho m²"/>
+          <br/>
+          <input type="number" id="numberBedroom" [(ngModel)]="numberBedroom" name="numberBedroom" placeholder="N⁰ Quartos"/>
+          <br/>
+          <input type="number" id="numberBath" [(ngModel)]="numberBath" name="numberBath" placeholder="N⁰ Banheiros"/>
+          <br/>
+          <input type="number" id="numberPark" [(ngModel)]="numberPark" name="numberPark" placeholder="Vagas de Estacionamento"/>
+          <br/>
+          <input type="text" id="value" [(ngModel)]="value" name="value" placeholder="Valor"/>
+          <br/>
         </div>
-        <div class="botao">            
-            <button type="submit" class="botao_cadastro">Cadastrar Imóvel</button>
-        </div>
+      </form>
+      <div class = "inserir_fotos">
+        <input  type="file" id="media" [(ngModel)]="media" name="media" placeholder="Url Fotos"/>
+      </div>
+      <button type="submit" class="botao_cadastro">Cadastrar Imóvel</button>
     </div>
+  </div>
 </section>

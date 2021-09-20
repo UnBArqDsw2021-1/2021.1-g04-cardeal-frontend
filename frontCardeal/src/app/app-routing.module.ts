@@ -9,24 +9,37 @@ import { UpdateImovelComponent } from './views/update-imovel/update-imovel.compo
 import { UpdateCorretorComponent } from './views/update-corretor/update-corretor.component'
 import { CadastroProprietarioComponent } from './views/cadastro-proprietario/cadastro-proprietario.component'
 import { UpdateProprietarioComponent } from './views/update-proprietario/update-proprietario.component';
-
+import { MeusImoveisComponent } from './views/meus-imoveis/meus-imoveis.component';
+import { ImovelComponent } from './views/imovel/imovel.component';
 
 const routes: Routes = [
   {
-    path: '', 
-    component: HomeComponent
+    path: '',
+    component: HomeComponent,
   },
   {
-    path: 'cadastro-corretor', 
-    component: CrudCorretorComponent
+    path: 'cadastro-corretor',
+    component: CrudCorretorComponent,
   },
   {
-    path: 'login-corretor', 
-    component: LoginCorretorComponent
+    path: 'login-corretor',
+    component: LoginCorretorComponent,
   },
   {
-    path: 'dashboard', 
-    component: DashboardComponent
+    path: 'dashboard',
+    component: DashboardComponent,
+  },
+  {
+    path: 'cadastro-imovel',
+    component: CadastroImovelComponent,
+  },
+  {
+    path: 'meus-imoveis',
+    component: MeusImoveisComponent,
+  },
+  {
+    path: 'imovel',
+    component: ImovelComponent,
   },
   {
     path: 'cadastro-imovel', 
@@ -52,6 +65,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,21 +1,35 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Corretor } from '../models/corretor.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
-export class CorretorService{
+export class CorretorService {
   private listaCorretores: Corretor[];
   private url = "http://localhost:3000/corretor"
   private corretor!: Corretor;
 
-  constructor(private httpClient: HttpClient){
-    this.listaCorretores = []
+  constructor(private httpClient: HttpClient) {
+    this.listaCorretores = [];
   }
 
+
+  loginCorretor(corretor: Corretor) {
+    this.listarCorretores().subscribe((corretores: Corretor[]) => {
+      console.table(corretores);
+      console.log(corretor);
+      this.listaCorretores = corretores;
+      const existeCorretor = corretores.filter(() => corretor.email);
+      console.log('Esse é o corretor filtrado', existeCorretor);
+    });
+  }
+
+  listarCorretores(): Observable<Corretor[]> {
+    const resposta = this.httpClient.get<Corretor[]>(this.url);
+    return resposta;
+  }
   enviaCorretor(): Corretor{
     console.log("Enviando corretor");
     return this.corretor;
@@ -32,10 +46,6 @@ export class CorretorService{
     return this.httpClient.post<Corretor>(this.url, corretor);
   }
 
-  loginCorretor(corretor:Corretor): Observable<Corretor[]>{
-    return this.httpClient.get<Corretor[]>(`${this.url}?email=${corretor.email}`);
-  } 
-
   atualizaCorretor(corretor:Corretor):Observable<Corretor>{
     return this.httpClient.put<Corretor>(this.url+'/'+corretor.id, corretor);
   }
@@ -43,9 +53,5 @@ export class CorretorService{
   deleteCorretor(corretor:Corretor): Observable<Corretor>{
     return this.httpClient.delete<Corretor>(`${this.url}/${corretor.id}`)
   }
-
-  listarCorretores() : Observable<Corretor[]>{
-    const resposta = this.httpClient.get<Corretor[]>(this.url);
-    return resposta;
-  }
+    
 }

@@ -1,15 +1,25 @@
 <body>
-  <div id = "nav" class = "navbar">
+  <div id="nav" class="navbar">
     <div class="logo">
-      <img class ="logo_logo" src="assets/img/icon_logo.svg">
+      <img class="logo_logo" src="assets/img/icon_logo.svg" />
       <span class="logo_titulo"> Cardeal </span>
     </div>
 
     <div class="links">
-      <a id="link_home" routerLink="/" class ="links_texto">Home</a>
-      <a id="link_busca_imoveis" class ="links_texto" routerLink="dashboard" >Buscar Imóveis</a>
-      <a id="link_cadastrar_imoveis" class ="links_texto" routerLink="cadastro-imovel" >Cadastrar Imóvel</a>
-      <a id="link_faq" class ="links_texto" routerLink="cadastro-imovel">FAQ</a>
+      <a id="link_home" routerLink="/" class="links_texto">Home</a>
+      <a id="link_busca_imoveis" class="links_texto" routerLink="dashboard"
+        >Buscar Imóveis</a
+      >
+      <a
+        id="link_cadastrar_imoveis"
+        class="links_texto"
+        routerLink="cadastro-imovel"
+        >Cadastrar Imóvel</a
+      >
+      <a id="link_meus_imoveis" class="links_texto" routerLink="meus-imoveis"
+        >Meus Imóveis</a
+      >
+      <a id="link_faq" class="links_texto" routerLink="cadastro-imovel">FAQ</a>
     </div>
 
     <button type="button" class="botao_corretor" routerLink="login-corretor">
@@ -20,33 +30,39 @@
   <div class="conteudo">
     <router-outlet></router-outlet>
   </div>
-  
-  
-  <div class = "container">
-    <div id = "footer" class = "footer">
-      <div class = "links_footer">
+
+  <div class="container">
+    <div id="footer" class="footer">
+      <div class="links_footer">
         <div class="atalhos">
           <p class="titulo_links">Atalhos</p>
-          <div class="texto_links"> 
+          <div class="texto_links">
             <a routerLink="/">Buscar Imóvel</a>
-            <br>
+            <br />
             <a routerLink="/">Cadastrar Imóvel</a>
-            <br>
+            <br />
             <a routerLink="cadastro-corretor">Cadastrar Corretor</a>
-            <br>
+            <br />
             <a routerLink="/">FAQ</a>
           </div>
         </div>
         <div class="projeto">
           <p class="titulo_links">Sobre o Projeto</p>
-          <div class="texto_links"> 
-            <a target="_blank" href="https://github.com/UnBArqDsw2021-1/2021.1_G04_Cardeal">GitHub</a>
-            <br>
-            <a target="_blank" href="https://unbarqdsw2021-1.github.io/2021.1_G04_Cardeal/">Documentação</a>
+          <div class="texto_links">
+            <a
+              target="_blank"
+              href="https://github.com/UnBArqDsw2021-1/2021.1_G04_Cardeal"
+              >GitHub</a
+            >
+            <br />
+            <a
+              target="_blank"
+              href="https://unbarqdsw2021-1.github.io/2021.1_G04_Cardeal/"
+              >Documentação</a
+            >
           </div>
         </div>
       </div>
     </div>
   </div>
 </body>
-

@@ -23,14 +23,14 @@ export class CadastroImovelComponent implements OnInit {
   media!: string;
   type!: string;
 
-
   constructor(private service: ImovelService, private route: Router) {}
 
   ngOnInit(): void {
     document.querySelector('#link_home')!.classList.remove('ativo');
-    document.querySelector('#link_cadastro_imoveis')!.classList.remove('ativo');
+    document.querySelector('#link_cadastrar_imoveis')!.classList.add('ativo');
     document.querySelector('#link_faq')!.classList.remove('ativo');
     document.querySelector('#link_busca_imoveis')!.classList.remove('ativo');
+    document.querySelector('#link_meus_imoveis')!.classList.remove('ativo');
   }
 
   handlerSubmit() {
@@ -49,27 +49,32 @@ export class CadastroImovelComponent implements OnInit {
       size: this.size,
       idRealtor: this.idRealtor,
     };
-    console.log(imovel);
+    // console.log(imovel);
 
     this.service.cadastraImovel(imovel).subscribe(
       (resultado) => {
-        // this.limparCampos();
+        console.log(imovel);
+        this.limparCampos();
         this.route.navigateByUrl('cadastro-imovel');
       },
       (error) => console.log(error)
     );
   }
 
-  // limparCampos(){
-  //   (this.city = ''),
-  //     (this.district = ''),
-  //     (this.number = 0),
-  //     (this.cep = ''),
-  //     (this.numberBedroom = 0),
-  //     (this.numberBath = 0),
-  //     (this.numberPark = 0),
-  //     (this.value = 0),
-  //     (this.idOwner = 0),
-  //     (this.media = '');
-  // }
+  limparCampos() {
+    console.log('cheguei');
+    this.state = '';
+    this.city = '';
+    this.district = '';
+    this.number = 0;
+    this.zipNumber = '';
+    this.numberBedroom = 0;
+    this.numberBath = 0;
+    this.numberPark = 0;
+    this.value = 0;
+    this.idOwner = 0;
+    this.media = '';
+    this.size = 0;
+    this.idRealtor = 0;
+  }
 }
