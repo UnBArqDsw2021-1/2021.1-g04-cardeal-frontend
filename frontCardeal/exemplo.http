@@ -2,6 +2,26 @@ http://localhost:3000/corretor
 
 ###
 
+http://localhost:3000/proprietario
+
+###
+
+POST http://localhost:3000/proprietario HTTP/1.1
+content-type: application/json
+
+{
+    "proprietario": [
+      {
+        "name": "Marcos",
+        "cpf": "123456789",
+        "telephone": "33939571",
+        "email": "vinicius_kof36@hotmail.com"
+     }
+    ]
+}
+
+###
+
 GET http://localhost:3000/corretor/1
 
 ###

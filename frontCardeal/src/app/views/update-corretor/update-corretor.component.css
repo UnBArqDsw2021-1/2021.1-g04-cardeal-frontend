@@ -1,0 +1,85 @@
+/* Cadastro de Corretor */
+.container_titulo{
+  margin-top: 2%;
+  text-align: center;
+}
+
+.titulo_editar{
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+
+  color: #3F3D56;
+}
+
+.container_form{
+  margin: 0 auto;
+  margin-top: 2%;
+  width: 40%;
+  text-align: center;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+.form{
+  padding-top: 5%;
+}
+
+input{
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+
+  color: rgba(121, 121, 123, 0.8);
+
+  padding: 2.5%;
+  padding-left: 4%;
+
+  width: 70%;
+  margin-bottom: 4%;
+  border-radius: 2px;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.botoes{
+  display: flex;
+  width: 100%;
+  padding-top: 3%;
+  padding-bottom: 7%;
+}
+
+button{
+  flex: 1;
+  font-family: Sora;
+  font-size: 14px;
+  height: 48px;
+
+  border: none;
+  border-radius: 10px;
+  filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+  cursor:pointer;
+}
+
+button:hover{
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.botao_editar{
+  color: #FFFFFF;
+  background: #F14843;
+  margin-left: 11%;
+  margin-right: 5.5%;
+}
+
+.botao_excluir{
+  color: #F14843;
+  background: rgba(121, 121, 123, 0.8);
+  margin-right: 11%;
+  margin-left: 5.5%;
+}
+
+

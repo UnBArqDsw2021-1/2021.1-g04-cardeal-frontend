@@ -17,8 +17,8 @@
             <form class = "form" (ngSubmit)="handlerSubmit()">
                 <input type="text" id="name" [(ngModel)]="name" name="name" placeholder="Nome Completo"><br>
                 <input type="text" id="cpf" [(ngModel)]="cpf" name="cpf" placeholder="CPF"><br>
-                <input type="text" id="phone" [(ngModel)]="telephone" name="telephone" placeholder="Telefone"><br>
-                <input type="text" id="email" [(ngModel)]="email" name="email" placeholder="Email"><br>
+                <input type="text" id="phone" [(ngModel)]="telephone" name="telephone" placeholder="Telefone" data-mask="(00)00000-0000"><br>
+                <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Email"><br>
                 <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Senha"><br>
                 <input type="password" id="confirm-password" [(ngModel)]="confirmpassword" name="confirmpassword" placeholder="Confirmar Senha"><br>
                 <button type="submit" class="botao_cadastro">Cadastrar Corretor</button>

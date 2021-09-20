@@ -17,6 +17,10 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { CadastroImovelComponent } from './views/cadastro-imovel/cadastro-imovel.component';
 import { MeusImoveisComponent } from './views/meus-imoveis/meus-imoveis.component';
 import { ImovelComponent } from './views/imovel/imovel.component';
+import { UpdateImovelComponent } from './views/update-imovel/update-imovel.component';
+import { UpdateCorretorComponent } from './views/update-corretor/update-corretor.component';
+import { CadastroProprietarioComponent } from './views/cadastro-proprietario/cadastro-proprietario.component';
+import { UpdateProprietarioComponent } from './views/update-proprietario/update-proprietario.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,10 @@ import { ImovelComponent } from './views/imovel/imovel.component';
     CadastroImovelComponent,
     MeusImoveisComponent,
     ImovelComponent,
+    UpdateImovelComponent,
+    UpdateCorretorComponent,
+    CadastroProprietarioComponent,
+    UpdateProprietarioComponent
   ],
   imports: [
     BrowserModule,

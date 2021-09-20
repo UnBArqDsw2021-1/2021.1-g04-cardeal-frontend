@@ -1,0 +1,67 @@
+<div class="container_titulo">
+    <h1 class="titulo_cadastro">Cadastro de Proprietário</h1>
+</div>
+
+<section>
+<div class="container_img">
+    <img class = "img_corretor" src="assets/img/cidade.svg">
+</div>
+
+<div class="container_cadastro">
+    <div class="links_forms">
+        <span class="link_cadastro">Cadastro Proprietário</span>
+    </div>
+    
+    <div class="container_form">
+        <form class = "form" (ngSubmit)="handlerSubmit()">
+            <input type="text" id="name" [(ngModel)]="name" name="name" placeholder="Nome Completo"><br>
+            <input type="text" id="cpf" [(ngModel)]="cpf" name="cpf" placeholder="CPF"><br>
+            <input type="text" id="phone" [(ngModel)]="telephone" name="telephone" placeholder="Telefone"><br>
+            <input type="text" id="email" [(ngModel)]="email" name="email" placeholder="Email"><br>
+            <button type="submit" class="botao_cadastro" [routerLink]="['../cadastro-proprietario']">Cadastrar Proprietário</button>
+        </form>
+    </div>
+</div>
+</section>
+
+<!-- 
+<div>
+    <h1>My Products</h1>
+    <button type="button" [routerLink]="../cadastro-proprietario">Create new product</button>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>                            
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.quantity}}</td>
+                <td>
+                    <button type="button" [routerLink]="['../update-proprietario/', proprietario.id]">Update</button>
+                    <button type="button" (click)="proprietarioService.delete(proprietario.id)">Remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+ -->
+
+
+
+
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CorretorService } from 'src/app/services/corretor.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class LoginCorretorComponent implements OnInit {
     document.querySelector("#link_busca_imoveis")!.classList.remove("ativo");
   }
 
-  constructor(private service: CorretorService){
+  constructor(private service: CorretorService, private route: Router){
 
   }
   handlerSubmit(){
@@ -27,8 +28,14 @@ export class LoginCorretorComponent implements OnInit {
       email:this.email,
       password:this.password,
       }
-    console.log(realtor)
-    this.service.loginCorretor(realtor);
+    this.service.loginCorretor(realtor).subscribe(
+      resultado => {
+      console.log("Resultado da query", resultado[0])
+      this.service.recebeCorretor(resultado[0]);
+      this.route.navigateByUrl('/dashboard')
+    },
+    erro => console.log(erro)
+    );
   }
 
 }
