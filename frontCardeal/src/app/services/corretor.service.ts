@@ -16,14 +16,16 @@ export class CorretorService {
   }
 
 
-  loginCorretor(corretor: Corretor) {
+  loginCorretor(corretor: Corretor): Corretor {
     this.listarCorretores().subscribe((corretores: Corretor[]) => {
       console.table(corretores);
       console.log(corretor);
       this.listaCorretores = corretores;
       const existeCorretor = corretores.filter(() => corretor.email);
       console.log('Esse é o corretor filtrado', existeCorretor);
+      corretor = existeCorretor[0];
     });
+    return corretor;
   }
 
   listarCorretores(): Observable<Corretor[]> {
@@ -53,5 +55,5 @@ export class CorretorService {
   deleteCorretor(corretor:Corretor): Observable<Corretor>{
     return this.httpClient.delete<Corretor>(`${this.url}/${corretor.id}`)
   }
-    
+
 }
