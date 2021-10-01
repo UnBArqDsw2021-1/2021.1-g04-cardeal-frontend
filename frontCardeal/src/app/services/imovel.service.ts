@@ -28,7 +28,7 @@ export default class ImovelService {
   }
 
   atualizarImovel(imovel: Imovel, id: number): Observable<Imovel> {
-    return this.httpClient.put<Imovel>(this.url + id, imovel);
+    return this.httpClient.put<Imovel>(`${this.url}/${id}`, imovel);
   }
 
   deletarImovel(id: number): Observable<Imovel> {
