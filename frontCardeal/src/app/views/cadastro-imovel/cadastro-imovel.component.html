@@ -43,12 +43,13 @@
           <br/>
           <input type="text" id="value" [(ngModel)]="value" name="value" placeholder="Valor"/>
           <br/>
+          <div class = "inserir_fotos">
+            <input  type="file" id="media" [(ngModel)]="media" name="media" placeholder="Url Fotos"/>
+          </div>
         </div>
+        <button type="submit" class="botao_cadastro">Cadastrar Imóvel</button>
       </form>
-      <div class = "inserir_fotos">
-        <input  type="file" id="media" [(ngModel)]="media" name="media" placeholder="Url Fotos"/>
-      </div>
-      <button type="submit" class="botao_cadastro">Cadastrar Imóvel</button>
     </div>
   </div>
 </section>
+

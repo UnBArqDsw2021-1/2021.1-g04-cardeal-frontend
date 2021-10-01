@@ -1,55 +1,18 @@
 {
   "proprietario": [
     {
-      "proprietario": [
-        {
-          "id": 1,
-          "name": "Jesus",
-          "cpf": "987654321",
-          "telephone": "33939571",
-          "email": "vinicius_kof36@hotmail.com"
-        }
-      ]
+      "id": 1,
+      "name": "Jesus",
+      "cpf": "987654321",
+      "telephone": "33939571",
+      "email": "vinicius_kof36@hotmail.com"
+    },
+    {
+      "name": "TESTE ROTA2222",
+      "id": 2
     }
   ],
   "corretor": [
-    {
-      "corretor": [
-        {
-          "name": "Marcos",
-          "cpf": "987654321",
-          "telephone": "33939571",
-          "email": "vinicius_kof36@hotmail.com",
-          "password": "senha",
-          "confirmpassword": "senha"
-        }
-      ],
-      "id": 1
-    },
-    {
-      "corretor": [
-        {
-          "name": "Marcos",
-          "cpf": "123456789",
-          "telephone": "33939571",
-          "email": "vinicius_kof36@hotmail.com",
-          "password": "senha",
-          "confirmpassword": "senha"
-        }
-      ],
-      "id": 3
-    },
-    {
-      "name": "Primeiro Corretor",
-      "cpf": "052619",
-      "telephone": "908329e",
-      "email": "primeiro@email.com",
-      "password": "1234567",
-      "id": 4
-    },
-    {
-      "id": 5
-    },
     {
       "name": "Segundo Corretor",
       "cpf": "98764523",
@@ -64,26 +27,80 @@
       "telephone": "Brasil",
       "email": "email@email.com",
       "id": 8
+    },
+    {
+      "cpf": "12312312",
+      "telephone": "61991794329",
+      "email": "estevaoreis1587@gmail.com",
+      "password": "1234",
+      "id": 9
+    },
+    {
+      "name": "TESTE ROTA",
+      "id": 10
+    },
+    {
+      "name": "TESTE ROTA2",
+      "id": 11
+    },
+    {
+      "name": "TESTE ROTA2",
+      "id": 12
+    },
+    {
+      "variavelNaoExiste": "TESTE ROTA2222",
+      "id": 13
     }
   ],
   "imoveis": [
     {
-      "imovel": [
-        {
-          "state": "df",
-          "city": "gama",
-          "district": "qualquer um",
-          "number": 2,
-          "zipNumber": "8723862",
-          "numberBedroom": 2,
-          "numberBath": 2,
-          "numberPark": 2,
-          "value": 100,
-          "views": 2000,
-          "idOwner": 1,
-          "media": "enderco imagem"
-        }
-      ]
+      "id": 1,
+      "type": "Casa"
+    },
+    {
+      "state": "Distrito Federal",
+      "city": "Brasília",
+      "district": "asd",
+      "number": "21",
+      "zipNumber": "730931900",
+      "numberBedroom": 1,
+      "numberBath": 1,
+      "numberPark": 1,
+      "value": "12",
+      "size": "21",
+      "idRealtor": "sadf",
+      "type": "Casa",
+      "id": 2
+    },
+    {
+      "state": "Goiás",
+      "city": "Novo Gama",
+      "district": "3ASDF",
+      "number": "122",
+      "zipNumber": "72860472",
+      "numberBedroom": 1,
+      "numberBath": 1,
+      "numberPark": 1,
+      "value": "1",
+      "size": "21",
+      "idRealtor": "Q3WE",
+      "type": "Casa",
+      "id": 3
+    },
+    {
+      "state": "Distrito Federal",
+      "city": "Brasília",
+      "district": "asd",
+      "number": "21",
+      "zipNumber": "730931900",
+      "numberBedroom": 1,
+      "numberBath": 1,
+      "numberPark": 1,
+      "value": "12",
+      "size": "21",
+      "idRealtor": "sadf",
+      "type": "Casa",
+      "id": 4
     }
   ]
 }

@@ -11,6 +11,7 @@ import { CadastroProprietarioComponent } from './views/cadastro-proprietario/cad
 import { UpdateProprietarioComponent } from './views/update-proprietario/update-proprietario.component';
 import { MeusImoveisComponent } from './views/meus-imoveis/meus-imoveis.component';
 import { ImovelComponent } from './views/imovel/imovel.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -28,37 +29,37 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    //canActivate: [AuthGuard]
   },
   {
     path: 'cadastro-imovel',
     component: CadastroImovelComponent,
+    //canActivate: [AuthGuard]
   },
   {
     path: 'meus-imoveis',
     component: MeusImoveisComponent,
+    //canActivate: [AuthGuard]
   },
   {
     path: 'imovel',
     component: ImovelComponent,
+
   },
   {
-    path: 'cadastro-imovel', 
-    component: CadastroImovelComponent
-  },
-  {
-    path: 'update-imovel/:imovelId', 
+    path: 'update-imovel/:imovelId',
     component: UpdateImovelComponent
   },
   {
-    path: 'update-corretor/:corretorId', 
+    path: 'update-corretor/:corretorId',
     component: UpdateCorretorComponent
   },
   {
-    path: 'cadastro-proprietario', 
+    path: 'cadastro-proprietario',
     component: CadastroProprietarioComponent
   },
   {
-    path: 'update-proprietario/:proprietarioId', 
+    path: 'update-proprietario/:proprietarioId',
     component: UpdateProprietarioComponent
   }
 ];
