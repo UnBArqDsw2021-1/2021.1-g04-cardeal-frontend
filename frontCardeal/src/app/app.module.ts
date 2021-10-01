@@ -21,6 +21,7 @@ import { UpdateImovelComponent } from './views/update-imovel/update-imovel.compo
 import { UpdateCorretorComponent } from './views/update-corretor/update-corretor.component';
 import { CadastroProprietarioComponent } from './views/cadastro-proprietario/cadastro-proprietario.component';
 import { UpdateProprietarioComponent } from './views/update-proprietario/update-proprietario.component';
+import { httpInterceptorProviders } from './http-interceptors';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { UpdateProprietarioComponent } from './views/update-proprietario/update-
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -29,38 +29,43 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'cadastro-imovel',
     component: CadastroImovelComponent,
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'meus-imoveis',
     component: MeusImoveisComponent,
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'imovel',
     component: ImovelComponent,
+    canActivate: [AuthGuard]
 
   },
   {
     path: 'update-imovel/:imovelId',
-    component: UpdateImovelComponent
+    component: UpdateImovelComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'update-corretor/:corretorId',
-    component: UpdateCorretorComponent
+    component: UpdateCorretorComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'cadastro-proprietario',
-    component: CadastroProprietarioComponent
+    component: CadastroProprietarioComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'update-proprietario/:proprietarioId',
-    component: UpdateProprietarioComponent
+    component: UpdateProprietarioComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

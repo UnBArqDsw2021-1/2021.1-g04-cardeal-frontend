@@ -28,10 +28,16 @@ export class LoginCorretorComponent implements OnInit {
       email:this.email,
       password:this.password,
       }
-    const resultado = this.service.loginCorretor(realtor)
-      console.log("Resultado da query", resultado)
-      this.service.recebeCorretor(resultado);
-      this.route.navigateByUrl('/dashboard')
+      //console.log("Resultado da query", resultado)
+      //this.service.recebeCorretor(resultado);
+      try{
+        const resultado = this.service.loginCorretor(realtor);
+        console.log(`Login efetuado ${true}`);
+        this.route.navigateByUrl('/dashboard')
+
+      }catch(erro){
+        console.log(erro);
+      }
   }
 
 }
