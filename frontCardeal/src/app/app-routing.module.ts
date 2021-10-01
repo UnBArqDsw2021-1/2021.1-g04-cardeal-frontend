@@ -4,10 +4,10 @@ import { HomeComponent } from './views/home/home.component';
 import { CrudCorretorComponent } from './views/crud-corretor/crud-corretor.component';
 import { LoginCorretorComponent } from './views/login-corretor/login-corretor.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
-import { CadastroImovelComponent } from './views/cadastro-imovel/cadastro-imovel.component'
-import { UpdateImovelComponent } from './views/update-imovel/update-imovel.component'
-import { UpdateCorretorComponent } from './views/update-corretor/update-corretor.component'
-import { CadastroProprietarioComponent } from './views/cadastro-proprietario/cadastro-proprietario.component'
+import { CadastroImovelComponent } from './views/cadastro-imovel/cadastro-imovel.component';
+import { UpdateImovelComponent } from './views/update-imovel/update-imovel.component';
+import { UpdateCorretorComponent } from './views/update-corretor/update-corretor.component';
+import { CadastroProprietarioComponent } from './views/cadastro-proprietario/cadastro-proprietario.component';
 import { UpdateProprietarioComponent } from './views/update-proprietario/update-proprietario.component';
 import { MeusImoveisComponent } from './views/meus-imoveis/meus-imoveis.component';
 import { ImovelComponent } from './views/imovel/imovel.component';
@@ -42,26 +42,25 @@ const routes: Routes = [
     //canActivate: [AuthGuard]
   },
   {
-    path: 'imovel',
+    path: 'imovel/:id',
     component: ImovelComponent,
-
   },
   {
-    path: 'update-imovel/:imovelId',
-    component: UpdateImovelComponent
+    path: 'update-imovel/:id',
+    component: UpdateImovelComponent,
   },
   {
     path: 'update-corretor/:corretorId',
-    component: UpdateCorretorComponent
+    component: UpdateCorretorComponent,
   },
   {
     path: 'cadastro-proprietario',
-    component: CadastroProprietarioComponent
+    component: CadastroProprietarioComponent,
   },
   {
     path: 'update-proprietario/:proprietarioId',
-    component: UpdateProprietarioComponent
-  }
+    component: UpdateProprietarioComponent,
+  },
 ];
 
 @NgModule({

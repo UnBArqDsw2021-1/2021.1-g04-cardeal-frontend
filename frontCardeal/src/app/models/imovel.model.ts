@@ -15,5 +15,6 @@ export interface Imovel {
   media?: string;
   type?: string;
   id?: number;
+  status?: string;
 }
 export interface Imoveis extends Array<Imovel> {}

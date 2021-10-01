@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import  ImovelService  from 'src/app/services/imovel.service';
+import ImovelService from 'src/app/services/imovel.service';
 
 @Component({
   selector: 'app-cadastro-imovel',
@@ -22,6 +22,7 @@ export class CadastroImovelComponent implements OnInit {
   idRealtor!: number;
   media!: string;
   type!: string;
+  status!: string;
 
   constructor(private service: ImovelService, private route: Router) {}
 
@@ -34,7 +35,7 @@ export class CadastroImovelComponent implements OnInit {
   }
 
   handlerSubmit() {
-    console.log("Entrou");
+    console.log('Entrou');
     const imovel = {
       state: this.state,
       city: this.city,
@@ -49,7 +50,8 @@ export class CadastroImovelComponent implements OnInit {
       media: this.media,
       size: this.size,
       idRealtor: this.idRealtor,
-      type: this.type
+      type: this.type,
+      status: this.status,
     };
     console.log(imovel);
 
@@ -61,5 +63,4 @@ export class CadastroImovelComponent implements OnInit {
       (error) => console.log(error)
     );
   }
-
 }

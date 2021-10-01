@@ -32,7 +32,7 @@
         <td>{{ row.media }}</td>
         <td>
           <button (click)="view(row)">View</button>
-          <button routerLink="../cadastro-imovel">Edit</button>
+          <button (click)="atualizarImovel(row)">Edit</button>
           <button (click)="deleteImovel(row)" class="btn btn-danger">
             Delete
           </button>

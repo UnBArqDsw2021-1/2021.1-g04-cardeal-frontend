@@ -54,8 +54,20 @@
   ],
   "imoveis": [
     {
-      "id": 1,
-      "type": "Casa"
+      "state": "Distrito Federal",
+      "city": "Brasília",
+      "district": "asd",
+      "number": "21",
+      "zipNumber": "730931900",
+      "numberBedroom": 1,
+      "numberBath": 1,
+      "numberPark": 1,
+      "value": "12",
+      "size": "21",
+      "idRealtor": "sadf",
+      "type": "Casa",
+      "status": "venda",
+      "id": 1
     },
     {
       "state": "Distrito Federal",
@@ -70,6 +82,7 @@
       "size": "21",
       "idRealtor": "sadf",
       "type": "Casa",
+      "status": "venda",
       "id": 2
     },
     {
@@ -85,22 +98,40 @@
       "size": "21",
       "idRealtor": "Q3WE",
       "type": "Casa",
+      "status": "aluguel",
       "id": 3
     },
     {
       "state": "Distrito Federal",
       "city": "Brasília",
-      "district": "asd",
-      "number": "21",
+      "district": "Asa",
+      "number": "12",
       "zipNumber": "730931900",
-      "numberBedroom": 1,
-      "numberBath": 1,
-      "numberPark": 1,
-      "value": "12",
+      "numberBedroom": 2,
+      "numberBath": 3,
+      "numberPark": 3,
+      "value": "1200",
       "size": "21",
-      "idRealtor": "sadf",
-      "type": "Casa",
-      "id": 4
+      "idRealtor": "Joao Pedro",
+      "type": "Terreno",
+      "status": "Aluguel",
+      "id": 5
+    },
+    {
+      "state": "Goias",
+      "city": "Goiania",
+      "district": "Marista",
+      "number": "21",
+      "zipNumber": "21321432",
+      "numberBedroom": 23,
+      "numberBath": 2,
+      "numberPark": 2,
+      "value": "1232123",
+      "size": "12312",
+      "idRealtor": "Chanito",
+      "type": "Comercial",
+      "status": "Venda",
+      "id": 6
     }
   ]
 }

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Imoveis, Imovel } from 'src/app/models/imovel.model';
-import  ImovelService  from 'src/app/services/imovel.service';
-
+import ImovelService from 'src/app/services/imovel.service';
 
 @Component({
   selector: 'app-meus-imoveis',
@@ -45,12 +44,20 @@ export class MeusImoveisComponent implements OnInit {
   }
 
   view(imovel: any) {
-    this.service.atualizarImovel(imovel.id, imovel).subscribe(
+    console.log(imovel.id);
+    this.service.atualizarImovel(imovel, imovel.id).subscribe(
       (resultado) => {
-        console.log(imovel);
-        // alert('Imovel Deletado');
-        this.lerimoveis();
-        // this.route.navigateByUrl('login-corretor');
+        this.route.navigateByUrl('/imovel/' + imovel.id);
+      },
+      (error) => console.log(error)
+    );
+  }
+
+  atualizarImovel(imovel: any) {
+    console.log(imovel.id);
+    this.service.atualizarImovel(imovel, imovel.id).subscribe(
+      (resultado) => {
+        this.route.navigateByUrl('/update-imovel/' + imovel.id);
       },
       (error) => console.log(error)
     );
