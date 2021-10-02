@@ -45,9 +45,10 @@ p {
   margin: 50px 10px 15px 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  width: 20%;
-  position: relative;
-  display: inline-block;
+  height: 500px;
+  width: 400px;
+  flex-flow: row wrap;
+  display: inline-flex;
   cursor: pointer;
   border-radius: 15px;
 }
@@ -60,27 +61,27 @@ p {
   padding: 2px 16px;
 }
 
-.button {
+.icons {
   position: relative;
   display: inline-block;
   float: right;
-  margin-right: 5%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  border-radius: 20px; 
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  margin-left: 80%;
 }
 
 .btn {
   background-color: #f14843;
   border: none;
-  color: white; /* White text */
-  padding: 8px 8px; /* Some padding */
+  color: white;
+  padding: 8px 8px;
   font-size: 15px;
   border-radius: 8px;
   cursor: pointer;
 }
 
-/* Darker background on mouse-over */
 .btn:hover {
   background-color: #3f3d56;
 }
@@ -89,18 +90,19 @@ p {
   font-style: normal;
   font-weight: normal;
   font-family: Sora;
-  display: inline-block;
   color: #f14843;
   font-size: 20px;
+  float: left;
 }
 .tipo2 {
   font-style: normal;
   font-weight: normal;
   font-family: Sora;
+  float: right;
   display: inline-block;
   color: #f14843;
   font-size: 20px;
-  right: 10%;
+  right: 10px;
   float: right;
 }
 
