@@ -1,4 +1,4 @@
-<div class="container_form">
+<!-- <div class="container_form">
   <table class="table mt-3">
     <thead>
       <tr>
@@ -33,13 +33,40 @@
         <td>
           <button (click)="view(row)">View</button>
           <button (click)="atualizarImovel(row)">Edit</button>
-          <button (click)="deleteImovel(row)" class="btn btn-danger">
-            Delete
-          </button>
+          <button (click)="deleteImovel(row)" class="btn2">Delete</button>
         </td>
       </tr>
     </tbody>
   </table>
+</div> -->
+<h1 class="titulo">Meus Imóveis</h1>
+<h2 class="sub-titulo">
+  Estes são os imóveis sob sua gerência como corretor(a).
+</h2>
+
+<div class="card" *ngFor="let row of imoveis" (click)="view(row)">
+  <div class="button">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <button class="btn" (click)="deleteImovel(row)">
+      <i class="fa fa-close"></i>
+    </button>
+    {{ " " }}
+    <button class="btn" (click)="atualizarImovel(row)">
+      <i class="fa fa-pencil"></i>
+    </button>
+  </div>
+  <img src="assets/img/casa.svg" alt="Avatar" style="width: 100%" />
+  <div class="container" style="margin-top: 20px">
+    <h4 class="titulo-card">{{ row.type }} para {{ row.status }}</h4>
+    <p>{{ row.type }} localizada em {{ row.district }}, {{ row.city }}.</p>
+    <h4 class="tipo">{{ row.type }}</h4>
+    <h4 class="tipo2" style="margin-top: 20px">
+      {{ row.value | currency: "R$":"symbol":".2" }}
+    </h4>
+  </div>
 </div>
 
 <!-- routerLink="../imovel" -->

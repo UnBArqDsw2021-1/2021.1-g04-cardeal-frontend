@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
+
+.titulo {
+  margin-top: 30px;
+  position: relative;
+  text-align: center;
+  font-size: 50px;
+}
+
+h1 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+  color: #3f3d56;
+}
+
+.sub-titulo {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #3f3d56;
+  text-align: center;
+  position: relative;
+}
+
+span {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  color: #3f3d56;
+}
+
+p {
+  font-style: normal;
+  font-weight: normal;
+  font-family: Sora;
+  font-size: 14px;
+  color: #3f3d56;
+}
+
+.card {
+  margin: 50px 10px 15px 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 20%;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin-right: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius: 20px; 
+}
+
+.btn {
+  background-color: #f14843;
+  border: none;
+  color: white; /* White text */
+  padding: 8px 8px; /* Some padding */
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: #3f3d56;
+}
+
+.tipo {
+  font-style: normal;
+  font-weight: normal;
+  font-family: Sora;
+  display: inline-block;
+  color: #f14843;
+  font-size: 20px;
+}
+.tipo2 {
+  font-style: normal;
+  font-weight: normal;
+  font-family: Sora;
+  display: inline-block;
+  color: #f14843;
+  font-size: 20px;
+  right: 10%;
+  float: right;
+}
+
+.titulo-card {
+  font-style: normal;
+  font-weight: normal;
+  font-family: Sora;
+  color: #3f3d56;
+  font-size: 20px;
+}
