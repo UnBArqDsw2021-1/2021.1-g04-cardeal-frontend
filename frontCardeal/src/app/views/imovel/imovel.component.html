@@ -24,6 +24,12 @@
       <span> Tipo de anúncio: {{ imovel.status }} </span><br />
       <span> Valor: {{ imovel.value | currency: "R$":"symbol":".2" }} </span>
     </div>
-    <button type="submit" class="botao_login">Agendar Visita</button>
+    <div class="botoes">
+      <button type="submit" class="botao_voltar" (click)="voltar()">
+        Voltar
+      </button>
+      {{ " " }}
+      <button type="submit" class="botao_login">Agendar Visita</button>
+    </div>
   </div>
 </section>

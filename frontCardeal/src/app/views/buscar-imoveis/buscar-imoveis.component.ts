@@ -28,36 +28,10 @@ export class BuscarImoveisComponent implements OnInit {
 
   ngOnInit(): void {
     this.show = true;
-    this.lerimoveis();
   }
 
   buscar() {
     this.show = false;
     // console.log(this.dados);
-  }
-
-  lerimoveis() {
-    this.service.listarImovel().subscribe(
-      (resultado) => {
-        console.log(resultado);
-        // this.filter = resultado.filter((e) => {
-        //   console.log(e.type);
-        //   return e.type == 'Casa';
-        // });
-        this.imoveis = resultado;
-        // console.log(this.imoveis);
-      },
-      (error) => console.log(error)
-    );
-  }
-
-  view(imovel: any) {
-    console.log(imovel.id);
-    this.service.atualizarImovel(imovel, imovel.id).subscribe(
-      (resultado) => {
-        this.route.navigateByUrl('/imovel/' + imovel.id);
-      },
-      (error) => console.log(error)
-    );
   }
 }

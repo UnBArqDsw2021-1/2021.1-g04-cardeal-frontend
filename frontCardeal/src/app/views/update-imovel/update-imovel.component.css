@@ -139,7 +139,7 @@ input {
 .botao_cadastro:hover {
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
-.botao_cadastro2 {
+.botao_voltar {
   font-family: Sora;
   font-size: 14px;
   color: #ffffff;
@@ -156,6 +156,6 @@ input {
   cursor: pointer;
 }
 
-.botao_cadastro2:hover {
+.botao_voltar:hover {
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }

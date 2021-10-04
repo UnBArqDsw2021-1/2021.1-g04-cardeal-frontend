@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -14,7 +15,12 @@ export class ImovelComponent implements OnInit {
   id!: number;
   private routeSub!: Subscription;
   imovel!: Imovel;
-  constructor(private route: ActivatedRoute, private service: ImovelService) {}
+
+  constructor(
+    private route: ActivatedRoute,
+    private service: ImovelService,
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
@@ -34,5 +40,9 @@ export class ImovelComponent implements OnInit {
 
   ngOnDestroy() {
     this.routeSub.unsubscribe();
+  }
+
+  voltar() {
+    this.location.back();
   }
 }
