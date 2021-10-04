@@ -11,6 +11,7 @@ export class BuscarImoveisComponent implements OnInit {
   @Input()
   imoveis!: any;
   show!: any;
+  icones = true;
   dados = {
     cidade: '',
     bairro: '',

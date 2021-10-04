@@ -117,26 +117,5 @@
     As seguintes propriedades foram encontradas com as características
     desejadas.
   </h2>
-
-  <div class="card" *ngFor="let row of imoveis">
-    <img
-      src="assets/img/casa.svg"
-      alt="Avatar"
-      style="width: 100%"
-      (click)="view(row)"
-    />
-    <div
-      class="container"
-      (click)="view(row)"
-      style="margin-top: 20px"
-      (click)="view(row)"
-    >
-      <h4 class="titulo-card">{{ row.type }} para {{ row.status }}</h4>
-      <p>{{ row.type }} localizada em {{ row.district }}, {{ row.city }}.</p>
-      <h4 class="tipo">{{ row.type }}</h4>
-      <h4 class="tipo2" style="margin-top: 20px">
-        {{ row.value | currency: "R$":"symbol":".2" }}
-      </h4>
-    </div>
-  </div>
+  <app-postagens *ngIf="!show"></app-postagens>
 </div>
