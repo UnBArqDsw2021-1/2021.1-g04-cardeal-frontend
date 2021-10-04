@@ -8,7 +8,7 @@ import { Proprietario } from '../models/proprietario.model';
 })
 export class ProprietarioService {
   private listaProprietario: Proprietario[];
-  private url = "http://localhost:3000/corretor"
+  private url = "http://localhost:3000/proprietario"
   private proprietario!: Proprietario;
 
   constructor(private httpClient: HttpClient) {
@@ -19,19 +19,21 @@ export class ProprietarioService {
     const resposta = this.httpClient.get<Proprietario[]>(this.url);
     return resposta;
   }
-  enviaProprietario(): Proprietario{
-    console.log("Enviando Proprietario");
-    return this.proprietario;
-  }
+  // enviaProprietario(): Proprietario{
+  //   console.log("Enviando Proprietario");
+  //   return this.proprietario;
+  // }
 
-  recebeProprietario(proprietario: Proprietario): void{
-    console.log("Recebendo o Proprietário");
-    this.proprietario = proprietario;
-    console.log("Proprietario Recebido", proprietario);
-    console.log("Proprietario do Service", this.proprietario);
-  }
+  // recebeProprietario(proprietario: Proprietario): void{
+  //   console.log("Recebendo o Proprietário");
+  //   this.proprietario = proprietario;
+  //   console.log("Proprietario Recebido", proprietario);
+  //   console.log("Proprietario do Service", this.proprietario);
+  // }
 
   cadastraProprietario(proprietario: Proprietario) : Observable<Proprietario>{
+    const propriet = this.httpClient.post<Proprietario>(this.url, proprietario);
+    console.log(propriet)
     return this.httpClient.post<Proprietario>(this.url, proprietario);
   }
 

@@ -21,8 +21,7 @@ export class UpdateProprietarioComponent implements OnInit {
   }
 
    ngOnInit(): void {
-    this.proprietario = this.service.enviaProprietario();
-    console.log("Esse é o Proprietário", this.proprietario);
+    
    }
 
    handleSubmit(){
