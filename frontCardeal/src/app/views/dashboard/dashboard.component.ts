@@ -28,4 +28,8 @@ export class DashboardComponent implements OnInit {
   editarCorretor(){
     this.route.navigateByUrl(`/update-corretor/${this.corretorAtual.id}`)
   }
+
+  editarProprietario(){
+    this.route.navigateByUrl(`/update-proprietario/`)
+  }
 }

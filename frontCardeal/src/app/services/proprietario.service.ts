@@ -1,66 +1,47 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
-import {  throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Proprietario } from '../models/proprietario.models';
+import { Proprietario } from '../models/proprietario.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProprietarioService {
+  private listaProprietario: Proprietario[];
+  private url = "http://localhost:3000/corretor"
+  private proprietario!: Proprietario;
 
-  private apiServer = "http://localhost:3000";
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  }
-  constructor(private httpClient: HttpClient) { }
-
-  create(proprietario: any): Observable<Proprietario> {
-    return this.httpClient.post<Proprietario>(this.apiServer + '/proprietario/', JSON.stringify(proprietario), this.httpOptions)
-    .pipe(
-      catchError(this.errorHandler)
-    )
-  }  
-  getById(id: number): Observable<Proprietario> {
-    return this.httpClient.get<Proprietario>(this.apiServer + '/proprietario/' + id)
-    .pipe(
-      catchError(this.errorHandler)
-    )
+  constructor(private httpClient: HttpClient) {
+    this.listaProprietario = [];
   }
 
-  getAll(): Observable<Proprietario[]> {
-    return this.httpClient.get<Proprietario[]>(this.apiServer + '/proprietario/')
-    .pipe(
-      catchError(this.errorHandler)
-    )
+  listarProprietario(): Observable<Proprietario[]> {
+    const resposta = this.httpClient.get<Proprietario[]>(this.url);
+    return resposta;
+  }
+  enviaProprietario(): Proprietario{
+    console.log("Enviando Proprietario");
+    return this.proprietario;
   }
 
-  update(id:number, proprietario:any): Observable<Proprietario> {
-    return this.httpClient.put<Proprietario>(this.apiServer + '/proprietario/' + id, JSON.stringify(proprietario), this.httpOptions)
-    .pipe(
-      catchError(this.errorHandler)
-    )
+  recebeProprietario(proprietario: Proprietario): void{
+    console.log("Recebendo o Proprietário");
+    this.proprietario = proprietario;
+    console.log("Proprietario Recebido", proprietario);
+    console.log("Proprietario do Service", this.proprietario);
   }
 
-  delete(id:number){
-    return this.httpClient.delete<Proprietario>(this.apiServer + '/proprietario/' + id, this.httpOptions)
-    .pipe(
-      catchError(this.errorHandler)
-    )
+  cadastraProprietario(proprietario: Proprietario) : Observable<Proprietario>{
+    return this.httpClient.post<Proprietario>(this.url, proprietario);
   }
-  errorHandler(error:any) {
-     let errorMessage = '';
-     if(error.error instanceof ErrorEvent) {
-       // Get client-side error
-       errorMessage = error.error.message;
-     } else {
-       // Get server-side error
-       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-     }
-     console.log(errorMessage);
-     return throwError(errorMessage);
+
+  atualizaProprietario(proprietario:Proprietario):Observable<Proprietario>{
+    return this.httpClient.put<Proprietario>(this.url+'/'+proprietario.id, proprietario);
   }
+
+  deleteProprietario(proprietario:Proprietario): Observable<Proprietario>{
+    return this.httpClient.delete<Proprietario>(`${this.url}/${proprietario.id}`)
+  }
+
 }
+

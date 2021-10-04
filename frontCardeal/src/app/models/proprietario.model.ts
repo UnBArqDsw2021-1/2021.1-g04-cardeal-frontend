@@ -4,4 +4,4 @@ export interface Proprietario {
   cpf: string;
   telephone: string;
   email: string;
-}
+}export interface Imoveis extends Array<Proprietario> {}
