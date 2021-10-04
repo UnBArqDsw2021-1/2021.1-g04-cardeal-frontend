@@ -54,41 +54,9 @@
   ],
   "imoveis": [
     {
-      "state": "Distrito Federal",
-      "city": "Brasília",
-      "district": "asd",
-      "number": "21",
-      "zipNumber": "730931900",
-      "numberBedroom": 1,
-      "numberBath": 1,
-      "numberPark": 1,
-      "value": "12",
-      "size": "21",
-      "idRealtor": "sadf",
-      "type": "Casa",
-      "status": "venda",
-      "id": 1
-    },
-    {
-      "state": "Distrito Federal",
-      "city": "Brasília",
-      "district": "asd",
-      "number": "21",
-      "zipNumber": "730931900",
-      "numberBedroom": 1,
-      "numberBath": 1,
-      "numberPark": 1,
-      "value": "12",
-      "size": "21",
-      "idRealtor": "sadf",
-      "type": "Casa",
-      "status": "venda",
-      "id": 2
-    },
-    {
       "state": "Goiás",
       "city": "Novo Gama",
-      "district": "3ASDF",
+      "district": "Quadra 12HC",
       "number": "122",
       "zipNumber": "72860472",
       "numberBedroom": 1,
@@ -98,7 +66,7 @@
       "size": "21",
       "idRealtor": "Q3WE",
       "type": "Casa",
-      "status": "aluguel",
+      "status": "Aluguel",
       "id": 3
     },
     {
@@ -132,6 +100,39 @@
       "type": "Comercial",
       "status": "Venda",
       "id": 6
+    },
+    {
+      "state": "DF",
+      "city": "Brasília",
+      "district": "Asa Sul",
+      "number": "212",
+      "zipNumber": "730931900",
+      "numberBedroom": 1,
+      "numberBath": 2,
+      "numberPark": 2,
+      "value": "12",
+      "size": "21",
+      "idRealtor": "Tomas",
+      "type": "Casa",
+      "status": "Venda",
+      "id": 7
+    },
+    {
+      "state": "Goias",
+      "city": "Goaiania",
+      "district": "Marista",
+      "number": "21",
+      "zipNumber": "2123123123",
+      "numberBedroom": 2,
+      "numberBath": 1,
+      "numberPark": 2,
+      "value": "213123",
+      "media": "C:\\fakepath\\Captura de tela de 2021-10-01 11-40-45.png",
+      "size": "212",
+      "idRealtor": "Luiz",
+      "type": "Terreno",
+      "status": "Aluguel",
+      "id": 8
     }
   ]
 }

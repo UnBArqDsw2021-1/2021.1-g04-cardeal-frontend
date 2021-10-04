@@ -11,6 +11,8 @@ import ImovelService from 'src/app/services/imovel.service';
 export class MeusImoveisComponent implements OnInit {
   imoveis!: any;
   imoveis_filter!: Imoveis;
+  filter!: any;
+  imovel!: Imovel;
 
   constructor(private service: ImovelService, private route: Router) {}
 
@@ -22,8 +24,13 @@ export class MeusImoveisComponent implements OnInit {
     this.service.listarImovel().subscribe(
       (resultado) => {
         console.log(resultado);
+        // this.filter = resultado.filter((e) => {
+        //   console.log(e.type);
+        //   return e.type == 'Casa';
+        // });
+        console.log(this.filter);
         this.imoveis = resultado;
-        console.log(this.imoveis);
+        // console.log(this.imoveis);
         this.route.navigateByUrl('meus-imoveis');
       },
       (error) => console.log(error)

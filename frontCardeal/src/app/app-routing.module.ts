@@ -12,6 +12,7 @@ import { UpdateProprietarioComponent } from './views/update-proprietario/update-
 import { MeusImoveisComponent } from './views/meus-imoveis/meus-imoveis.component';
 import { ImovelComponent } from './views/imovel/imovel.component';
 import { AuthGuard } from './guard/auth.guard';
+import { BuscarImoveisComponent } from './views/buscar-imoveis/buscar-imoveis.component';
 
 const routes: Routes = [
   {
@@ -60,6 +61,10 @@ const routes: Routes = [
   {
     path: 'update-proprietario/:proprietarioId',
     component: UpdateProprietarioComponent,
+  },
+  {
+    path: 'buscar-imovel',
+    component: BuscarImoveisComponent,
   },
 ];
 
