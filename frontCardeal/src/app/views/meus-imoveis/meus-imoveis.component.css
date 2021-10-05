@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
+
+.titulo {
+  margin-top: 30px;
+  position: relative;
+  text-align: center;
+  font-size: 50px;
+}
+
+h1 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+  color: #3f3d56;
+}
+
+.sub-titulo {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #3f3d56;
+  text-align: center;
+  position: relative;
+}

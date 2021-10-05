@@ -1,45 +1,5 @@
-<div class="container_form">
-  <table class="table mt-3">
-    <thead>
-      <tr>
-        <th>state</th>
-        <th>city</th>
-        <th>district</th>
-        <th>number</th>
-        <th>zipNumber</th>
-        <th>numberBedroom</th>
-        <th>numberBath</th>
-        <th>numberPark</th>
-        <th>value</th>
-        <th>views</th>
-        <th>idOwner</th>
-        <th>media</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let row of imoveis">
-        <td>{{ row.state }}</td>
-        <td>{{ row.city }}</td>
-        <td>{{ row.district }}</td>
-        <td>{{ row.number }}</td>
-        <td>{{ row.zipNumber }}</td>
-        <td>{{ row.numberBedroom }}</td>
-        <td>{{ row.numberBath }}</td>
-        <td>{{ row.numberPark }}</td>
-        <td>{{ row.value }}</td>
-        <td>{{ row.views }}</td>
-        <td>{{ row.idOwner }}</td>
-        <td>{{ row.media }}</td>
-        <td>
-          <button (click)="view(row)">View</button>
-          <button routerLink="../cadastro-imovel">Edit</button>
-          <button (click)="deleteImovel(row)" class="btn btn-danger">
-            Delete
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<!-- routerLink="../imovel" -->
+<h1 class="titulo">Meus Imóveis</h1>
+<h2 class="sub-titulo">
+  Estes são os imóveis sob sua gerência como corretor(a).
+</h2>
+<app-postagens [icon]="true"></app-postagens>

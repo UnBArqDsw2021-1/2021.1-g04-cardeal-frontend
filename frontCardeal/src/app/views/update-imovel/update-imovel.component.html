@@ -1,1 +1,152 @@
-<p>update-imovel works!</p>
+<div class="container_titulo">
+  <h1 class="titulo_cadastro">Atualizar Imóvel</h1>
+</div>
+
+<section>
+  <div class="container_img">
+    <img class="img_corretor" src="assets/img/login.svg" />
+  </div>
+
+  <div class="container_cadastro">
+    <div class="container_form">
+      <form id="form">
+        <div class="coluna1">
+          <input
+            type="text"
+            id="idOwner"
+            [(ngModel)]="imovel.idRealtor"
+            name="idRealtor"
+            placeholder="Proprietário"
+          />
+          <br />
+          <input
+            type="text"
+            id="state"
+            [(ngModel)]="imovel.state"
+            name="state"
+            placeholder="Estado"
+          />
+          <br />
+          <input
+            type="text"
+            id="city"
+            [(ngModel)]="imovel.city"
+            name="city"
+            placeholder="Cidade"
+          />
+          <br />
+          <input
+            type="text"
+            id="district"
+            [(ngModel)]="imovel.district"
+            name="district"
+            placeholder="Bairro"
+          />
+          <br />
+          <input
+            type="text"
+            id="number"
+            [(ngModel)]="imovel.number"
+            name="number"
+            placeholder="Número"
+          />
+          <br />
+          <input
+            type="text"
+            id="zipNumber"
+            [(ngModel)]="imovel.zipNumber"
+            name="zipNumber"
+            placeholder="CEP"
+          />
+          <br />
+          <input
+            type="text"
+            list="contrato"
+            id="status"
+            [(ngModel)]="imovel.status"
+            name="status"
+            placeholder="Tipo de negocio"
+          />
+          <datalist id="contrato">
+            <option value="Venda"></option>
+            <option value="Aluguel"></option>
+          </datalist>
+          <br />
+        </div>
+        <div class="coluna2">
+          <input
+            type="text"
+            list="tipos"
+            id="type"
+            [(ngModel)]="imovel.type"
+            name="type"
+            placeholder="Tipo"
+          />
+          <datalist id="tipos">
+            <option value="Casa"></option>
+            <option value="Terreno"></option>
+            <option value="Apartamento"></option>
+            <option value="Comercial"></option>
+          </datalist>
+          <br />
+          <input
+            type="text"
+            id="size"
+            [(ngModel)]="imovel.size"
+            name="size"
+            placeholder="Tamanho m²"
+          />
+          <br />
+          <input
+            type="number"
+            id="numberBedroom"
+            [(ngModel)]="imovel.numberBedroom"
+            name="numberBedroom"
+            placeholder="N⁰ Quartos"
+          />
+          <br />
+          <input
+            type="number"
+            id="numberBath"
+            [(ngModel)]="imovel.numberBath"
+            name="numberBath"
+            placeholder="N⁰ Banheiros"
+          />
+          <br />
+          <input
+            type="number"
+            id="numberPark"
+            [(ngModel)]="imovel.numberPark"
+            name="numberPark"
+            placeholder="Vagas de Estacionamento"
+          />
+          <br />
+          <input
+            type="text"
+            id="value"
+            [(ngModel)]="imovel.value"
+            name="value"
+            placeholder="Valor"
+          />
+          <br />
+          <div class="inserir_fotos">
+            <input
+              type="file"
+              id="media"
+              [(ngModel)]="imovel.media"
+              name="media"
+              placeholder="Url Fotos"
+            />
+          </div>
+        </div>
+      </form>
+      <button type="submit" class="botao_voltar" (click)="voltar()">
+        Voltar
+      </button>
+      {{ " " }}
+      <button type="submit" class="botao_cadastro" (click)="atualizar()">
+        Atualizar
+      </button>
+    </div>
+  </div>
+</section>

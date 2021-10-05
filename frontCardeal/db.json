@@ -1,55 +1,38 @@
 {
   "proprietario": [
     {
-      "proprietario": [
-        {
-          "id": 1,
-          "name": "Jesus",
-          "cpf": "987654321",
-          "telephone": "33939571",
-          "email": "vinicius_kof36@hotmail.com"
-        }
-      ]
-    }
-  ],
-  "corretor": [
-    {
-      "corretor": [
-        {
-          "name": "Marcos",
-          "cpf": "987654321",
-          "telephone": "33939571",
-          "email": "vinicius_kof36@hotmail.com",
-          "password": "senha",
-          "confirmpassword": "senha"
-        }
-      ],
-      "id": 1
+      "id": 1,
+      "name": "Jesus",
+      "cpf": "987654321",
+      "telephone": "33939571",
+      "email": "vinicius_kof36@hotmail.com"
     },
     {
-      "corretor": [
-        {
-          "name": "Marcos",
-          "cpf": "123456789",
-          "telephone": "33939571",
-          "email": "vinicius_kof36@hotmail.com",
-          "password": "senha",
-          "confirmpassword": "senha"
-        }
-      ],
+      "name": "TESTE ROTA2222",
+      "id": 2
+    },
+    {
+      "cpf": "03707690156",
+      "telephone": "61981846986",
+      "email": "vinicius_kof36@hotmail.com",
       "id": 3
     },
     {
-      "name": "Primeiro Corretor",
-      "cpf": "052619",
-      "telephone": "908329e",
-      "email": "primeiro@email.com",
-      "password": "1234567",
+      "name": "Casa",
+      "cpf": "03707690156",
+      "telephone": "61981846986",
+      "email": "vinicius_kof36@hotmail.com",
       "id": 4
     },
     {
+      "name": "testando",
+      "cpf": "03707690156",
+      "telephone": "61981846986",
+      "email": "vinicius_kof36@hotmail.com",
       "id": 5
-    },
+    }
+  ],
+  "corretor": [
     {
       "name": "Segundo Corretor",
       "cpf": "98764523",
@@ -64,26 +47,119 @@
       "telephone": "Brasil",
       "email": "email@email.com",
       "id": 8
+    },
+    {
+      "cpf": "12312312",
+      "telephone": "61991794329",
+      "email": "estevaoreis1587@gmail.com",
+      "password": "1234",
+      "id": 9
+    },
+    {
+      "name": "TESTE ROTA",
+      "id": 10
+    },
+    {
+      "name": "TESTE ROTA2",
+      "id": 11
+    },
+    {
+      "name": "TESTE ROTA2",
+      "id": 12
+    },
+    {
+      "variavelNaoExiste": "TESTE ROTA2222",
+      "id": 13
+    },
+    {
+      "name": "assss",
+      "cpf": "03707690156",
+      "telephone": "61981846986",
+      "email": "vinicius_kof36@hotmail.com",
+      "id": 14
     }
   ],
   "imoveis": [
     {
-      "imovel": [
-        {
-          "state": "df",
-          "city": "gama",
-          "district": "qualquer um",
-          "number": 2,
-          "zipNumber": "8723862",
-          "numberBedroom": 2,
-          "numberBath": 2,
-          "numberPark": 2,
-          "value": 100,
-          "views": 2000,
-          "idOwner": 1,
-          "media": "enderco imagem"
-        }
-      ]
+      "state": "Goiás",
+      "city": "Novo Gama",
+      "district": "Quadra 12HC",
+      "number": "122",
+      "zipNumber": "72860472",
+      "numberBedroom": 1,
+      "numberBath": 1,
+      "numberPark": 1,
+      "value": "1",
+      "size": "21",
+      "idRealtor": "Q3WE",
+      "type": "Casa",
+      "status": "Aluguel",
+      "id": 3
+    },
+    {
+      "state": "Distrito Federal",
+      "city": "Brasília",
+      "district": "Asa",
+      "number": "12",
+      "zipNumber": "730931900",
+      "numberBedroom": 2,
+      "numberBath": 3,
+      "numberPark": 3,
+      "value": "1200",
+      "size": "21",
+      "idRealtor": "Joao Pedro",
+      "type": "Terreno",
+      "status": "Aluguel",
+      "id": 5
+    },
+    {
+      "state": "Goias",
+      "city": "Goiania",
+      "district": "Marista",
+      "number": "21",
+      "zipNumber": "21321432",
+      "numberBedroom": 23,
+      "numberBath": 2,
+      "numberPark": 2,
+      "value": "1232123",
+      "size": "12312",
+      "idRealtor": "Chanito",
+      "type": "Comercial",
+      "status": "Venda",
+      "id": 6
+    },
+    {
+      "state": "DF",
+      "city": "Brasília",
+      "district": "Asa Sul",
+      "number": "212",
+      "zipNumber": "730931900",
+      "numberBedroom": 1,
+      "numberBath": 2,
+      "numberPark": 2,
+      "value": "12",
+      "size": "21",
+      "idRealtor": "Tomas",
+      "type": "Casa",
+      "status": "Venda",
+      "id": 7
+    },
+    {
+      "state": "Goias",
+      "city": "Goaiania",
+      "district": "Marista",
+      "number": "21",
+      "zipNumber": "2123123123",
+      "numberBedroom": 2,
+      "numberBath": 1,
+      "numberPark": 2,
+      "value": "213123",
+      "media": "C:\\fakepath\\Captura de tela de 2021-10-01 11-40-45.png",
+      "size": "212",
+      "idRealtor": "Luiz",
+      "type": "Terreno",
+      "status": "Aluguel",
+      "id": 8
     }
   ]
 }
