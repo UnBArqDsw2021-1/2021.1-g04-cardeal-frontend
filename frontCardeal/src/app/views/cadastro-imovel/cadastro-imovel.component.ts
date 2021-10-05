@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import ImovelService from 'src/app/services/imovel.service';
+import {Imovel} from '../../models/imovel.model'
 
 @Component({
   selector: 'app-cadastro-imovel',
@@ -8,23 +9,27 @@ import ImovelService from 'src/app/services/imovel.service';
   styleUrls: ['./cadastro-imovel.component.css'],
 })
 export class CadastroImovelComponent implements OnInit {
-  state!: string;
+  name!: string;
   city!: string;
+  state!: string;
   district!: string;
+  street!: string;
   number!: number;
   zipNumber!: string;
-  size!: number;
+  type!: string;
+  size!: string;
   numberBedroom!: number;
   numberBath!: number;
   numberPark!: number;
+  status!: string;
   value!: number;
   idOwner!: number;
   idRealtor!: number;
   media!: string;
-  type!: string;
-  status!: string;
 
-  constructor(private service: ImovelService, private route: Router) {}
+  constructor(private service: ImovelService, private route: Router) {
+
+  }
 
   ngOnInit(): void {
     document.querySelector('#link_home')!.classList.remove('ativo');
@@ -36,28 +41,29 @@ export class CadastroImovelComponent implements OnInit {
 
   handlerSubmit() {
     console.log('Entrou');
-    const imovel = {
-      state: this.state,
-      city: this.city,
-      district: this.district,
-      number: this.number,
-      zipNumber: this.zipNumber,
-      numberBedroom: this.numberBedroom,
-      numberBath: this.numberBath,
-      numberPark: this.numberPark,
-      value: this.value,
-      idOwner: this.idOwner,
-      media: this.media,
-      size: this.size,
-      idRealtor: this.idRealtor,
-      type: this.type,
-      status: this.status,
+     const property = {
+      "name": "Qualquer nome",
+      "city": this.city,
+      "state": this.state,
+      "district": this.district,
+      "street": "Qualquer Rua",
+      "number": this.number,
+      "zipNumber": this.zipNumber,
+      "type": this.type,
+      "size": this.size,
+      "numberBedroom": this.numberBedroom,
+      "numberBath": this.numberBath,
+      "numberPark": this.numberPark,
+      "status": this.status,
+      "value": this.value,
+      "viewed": 0,
+      "idOwner": 1,
+      "idRealtor": 1
     };
-    console.log(imovel);
+    console.log(property);
 
-    this.service.cadastraImovel(imovel).subscribe(
+    this.service.cadastraImovel(property).subscribe(
       (resultado) => {
-        console.log(imovel);
         this.route.navigateByUrl('dashboard');
       },
       (error) => console.log(error)
