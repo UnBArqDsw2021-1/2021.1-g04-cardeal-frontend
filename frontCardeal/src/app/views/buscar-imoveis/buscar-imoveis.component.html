@@ -1,4 +1,4 @@
-<section *ngIf="show">
+<section>
   <div class="container_img">
     <img class="img_corretor" src="assets/img/buscar.svg" />
   </div>
@@ -112,10 +112,9 @@
 </section>
 
 <div *ngIf="!show">
-  <h1 class="titulo">Buscar Imóveis</h1>
   <h2 class="sub-titulo">
     As seguintes propriedades foram encontradas com as características
     desejadas.
   </h2>
-  <app-postagens *ngIf="!show"></app-postagens>
+  <app-postagens></app-postagens>
 </div>

@@ -8,10 +8,8 @@ import { Imovel } from '../models/imovel.model';
 })
 export default class ImovelService {
   private listaImoveis: Imovel[];
-  // private url = 'http://localhost:3000/imoveis';
-  private url = 'http://localhost:3000/imoveis';
-  /*   private url_post = 'http://localhost:3000/put/';
-  private url_del = 'http://localhost:3000/delete/'; */
+  private url = 'api/properties';
+
 
   constructor(private httpClient: HttpClient) {
     this.listaImoveis = [];
@@ -34,7 +32,7 @@ export default class ImovelService {
   atualizarImovel(imovel: Imovel, id: number): Observable<Imovel> {
     console.log(id);
     console.log('entrei');
-    return this.httpClient.put<Imovel>(`${this.url}/${id}`, imovel);
+    return this.httpClient.patch<Imovel>(`${this.url}/${id}`, imovel);
   }
 
   deletarImovel(id: number): Observable<Imovel> {

@@ -54,7 +54,7 @@ export class PostagensComponent implements OnInit {
 
   view(imovel: any) {
     console.log(imovel.id);
-    this.service.atualizarImovel(imovel, imovel.id).subscribe(
+    this.service.MostraImovel(imovel.id).subscribe(
       (resultado) => {
         this.route.navigateByUrl('/imovel/' + imovel.id);
       },
@@ -64,7 +64,7 @@ export class PostagensComponent implements OnInit {
 
   atualizarImovel(imovel: any) {
     console.log(imovel.id);
-    this.service.atualizarImovel(imovel, imovel.id).subscribe(
+    this.service.MostraImovel(imovel.id).subscribe(
       (resultado) => {
         this.route.navigateByUrl('/update-imovel/' + imovel.id);
       },
