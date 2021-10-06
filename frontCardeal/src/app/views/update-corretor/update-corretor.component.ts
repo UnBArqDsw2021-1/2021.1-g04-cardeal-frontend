@@ -40,7 +40,7 @@ export class UpdateCorretorComponent implements OnInit {
     const novoCorretor = {
       name: this.corretor.name,
       cpf: this.corretor.cpf,
-      phones: this.corretor.phones ,
+      phone: this.corretor.phone ,
       email: this.corretor.email,
       id: this.corretor.id
     }

@@ -40,11 +40,7 @@ export class CrudCorretorComponent implements OnInit {
       cpf:this.cpf,
       email:this.email,
       passwordHash:this.password,
-      phones:[
-        {
-          phone_number: this.telephone
-        }
-        ]
+      phone: this.telephone
       }
     console.log(realtor)
 

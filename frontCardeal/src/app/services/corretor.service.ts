@@ -16,7 +16,7 @@ export class CorretorService {
   }
 
 
-  loginCorretor(corretor: Omit< Corretor, 'phones'>): any {
+  loginCorretor(corretor: Corretor): Corretor {
     this.listarCorretores().subscribe((corretores: Corretor[]) => {
       console.table(corretores);
       console.log(corretor);
