@@ -51,7 +51,7 @@ const routes: Routes = [
     component: UpdateImovelComponent,
   },
   {
-    path: 'update-corretor/:corretorId',
+    path: 'update-corretor/:id',
     component: UpdateCorretorComponent,
   },
   {

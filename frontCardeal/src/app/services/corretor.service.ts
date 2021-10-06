@@ -8,7 +8,7 @@ import { Corretor } from '../models/corretor.model';
 })
 export class CorretorService {
   private listaCorretores: Corretor[];
-  private url = "http://localhost:3000/corretor"
+  private url = "api/realtors"
   private corretor!: Corretor;
 
   constructor(private httpClient: HttpClient) {
@@ -16,7 +16,7 @@ export class CorretorService {
   }
 
 
-  loginCorretor(corretor: Corretor): Corretor {
+  loginCorretor(corretor: Omit< Corretor, 'phones'>): any {
     this.listarCorretores().subscribe((corretores: Corretor[]) => {
       console.table(corretores);
       console.log(corretor);
@@ -45,15 +45,20 @@ export class CorretorService {
   }
 
   cadastraCorretor(corretor: Corretor) : Observable<Corretor>{
+    console.log("Enttrou no service de cadastro")
     return this.httpClient.post<Corretor>(this.url, corretor);
   }
 
   atualizaCorretor(corretor:Corretor):Observable<Corretor>{
-    return this.httpClient.put<Corretor>(this.url+'/'+corretor.id, corretor);
+    return this.httpClient.patch<Corretor>(this.url+'/'+corretor.id, corretor);
   }
 
   deleteCorretor(corretor:Corretor): Observable<Corretor>{
     return this.httpClient.delete<Corretor>(`${this.url}/${corretor.id}`)
+  }
+
+  MostraCorretor(id: number): Observable<Corretor> {
+    return this.httpClient.get<Corretor>(`${this.url}/${id}`);
   }
 
 }
