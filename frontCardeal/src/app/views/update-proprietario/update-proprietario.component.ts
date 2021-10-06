@@ -26,8 +26,6 @@ export class UpdateProprietarioComponent implements OnInit {
 
    ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
-      // console.log(params);
-      // console.log(params['id']);
       this.id = params['id'];
       this.receberProprietario();
     });
@@ -39,7 +37,6 @@ export class UpdateProprietarioComponent implements OnInit {
       // console.log(this.imovel);
     });
   }
-
 
   atualizar() {
     // console.log(imovel);
@@ -59,13 +56,11 @@ export class UpdateProprietarioComponent implements OnInit {
     this.routeSub.unsubscribe();
   }
 
-  deleteProprietario(proprietario: any) {
-    this.service.deletarProprietario(proprietario.id).subscribe(
+  deleteProprietario() {
+    this.service.deletarProprietario(this.id).subscribe(
       (resultado) => {
-        console.log(proprietario);
-        alert('Imovel Deletado');
-        //this.lerimoveis();
-        //this.route.navigateByUrl('login-corretor');
+        console.log(this.proprietario);
+        alert('Proprietário excluido');
       },
       (error) => console.log(error)
     );
@@ -91,7 +86,7 @@ export class UpdateProprietarioComponent implements OnInit {
   //     this.route.navigateByUrl("/dashboard");
   //   })
   //  }
-   
+
   // excluirProprietario() {
   // if(confirm("Você tem certeza que deseja excluir ")) {
   //     this.service.deletarProprietario(this.id: number).subscribe(resposta =>{
