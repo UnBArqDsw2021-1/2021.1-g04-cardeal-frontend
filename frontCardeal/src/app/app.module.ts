@@ -39,7 +39,7 @@ import { PostagensComponent } from './views/postagens/postagens.component';
     CadastroProprietarioComponent,
     UpdateProprietarioComponent,
     BuscarImoveisComponent,
-    PostagensComponent
+    PostagensComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,14 +11,25 @@
     <div class="container_form">
       <form id="form">
         <div class="coluna1">
+          <label class="label" for="idRealtor">Proprietário</label>
           <input
             type="text"
             id="idOwner"
-            [(ngModel)]="idRealtor"
+            [(ngModel)]="idOwner"
             name="idRealtor"
             placeholder="Proprietário"
           />
           <br />
+          <label class="label" for="name">Nome do imóvel</label>
+          <input
+            type="text"
+            id="name"
+            [(ngModel)]="name"
+            name="idRealtor"
+            placeholder="Nome do imóvel"
+          />
+          <br />
+          <label class="label" for="state">Estado</label>
           <input
             type="text"
             id="state"
@@ -27,6 +38,7 @@
             placeholder="Estado"
           />
           <br />
+          <label class="label" for="city">Cidade</label>
           <input
             type="text"
             id="city"
@@ -35,6 +47,7 @@
             placeholder="Cidade"
           />
           <br />
+          <label class="label" for="district">Bairro</label>
           <input
             type="text"
             id="district"
@@ -43,6 +56,16 @@
             placeholder="Bairro"
           />
           <br />
+          <label class="label" for="street">Rua</label>
+          <input
+            type="text"
+            id="street"
+            [(ngModel)]="street"
+            name="district"
+            placeholder="Rua"
+          />
+          <br />
+          <label class="label" for="number">Número</label>
           <input
             type="text"
             id="number"
@@ -51,6 +74,7 @@
             placeholder="Número"
           />
           <br />
+          <label class="label" for="zipNumber">CEP</label>
           <input
             type="text"
             id="zipNumber"
@@ -59,21 +83,23 @@
             placeholder="CEP"
           />
           <br />
+        </div>
+        <div class="coluna2">
+          <label class="label" for="status">Tipo de negócio</label>
           <input
             type="text"
             list="contrato"
             id="status"
             [(ngModel)]="status"
             name="status"
-            placeholder="Tipo de negocio"
+            placeholder="Tipo de negócio"
           />
           <datalist id="contrato">
             <option value="Venda"></option>
             <option value="Aluguel"></option>
           </datalist>
           <br />
-        </div>
-        <div class="coluna2">
+          <label class="label" for="type">Tipo de Imóvel</label>
           <input
             type="text"
             list="tipos"
@@ -89,7 +115,9 @@
             <option value="Comercial"></option>
           </datalist>
           <br />
+          <label class="label" for="size">Tamanho m²</label>
           <input
+            min="0"
             type="text"
             id="size"
             [(ngModel)]="size"
@@ -97,7 +125,9 @@
             placeholder="Tamanho m²"
           />
           <br />
+          <label class="label" for="numberBedroom">N⁰ Quartos</label>
           <input
+            min="0"
             type="number"
             id="numberBedroom"
             [(ngModel)]="numberBedroom"
@@ -105,7 +135,9 @@
             placeholder="N⁰ Quartos"
           />
           <br />
+          <label class="label" for="numberBath">N⁰ Banheiros</label>
           <input
+            min="0"
             type="number"
             id="numberBath"
             [(ngModel)]="numberBath"
@@ -113,7 +145,9 @@
             placeholder="N⁰ Banheiros"
           />
           <br />
+          <label class="label" for="numberPark">Vagas de Estacionamento</label>
           <input
+            min="0"
             type="number"
             id="numberPark"
             [(ngModel)]="numberPark"
@@ -121,14 +155,17 @@
             placeholder="Vagas de Estacionamento"
           />
           <br />
+          <label class="label" for="idRealtor">Estado</label>
           <input
-            type="text"
+            min="0"
+            type="number"
             id="value"
             [(ngModel)]="value"
             name="value"
             placeholder="Valor"
           />
           <br />
+          <label class="label" for="media">Selecione suas fotos</label>
           <div class="inserir_fotos">
             <input
               type="file"

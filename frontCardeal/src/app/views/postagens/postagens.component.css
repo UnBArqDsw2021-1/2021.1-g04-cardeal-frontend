@@ -151,7 +151,6 @@ input {
 }
 
 h4 {
-  margin-top: 10px;
   margin-left: 10px;
   margin-right: 25px;
   font-family: Sora;
@@ -218,7 +217,7 @@ p {
 }
 
 .card {
-  margin: 50px 10px 15px 20px;
+  margin: 30px 10px 30px 60px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   height: 500px;
@@ -243,7 +242,6 @@ p {
   float: right;
   margin-right: 10px;
   margin-top: 20px;
-  margin-bottom: 10px;
   border-radius: 20px;
   margin-left: 80%;
 }
