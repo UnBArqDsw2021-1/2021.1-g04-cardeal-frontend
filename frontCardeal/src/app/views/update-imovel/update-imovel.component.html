@@ -11,7 +11,8 @@
     <div class="container_form">
       <form id="form">
         <div class="coluna1">
-          <input
+          <label class="label" for="idRealtor">Proprietário</label
+          ><input
             type="text"
             id="idOwner"
             [(ngModel)]="imovel.idRealtor"
@@ -19,7 +20,17 @@
             placeholder="Proprietário"
           />
           <br />
+          <label class="label" for="name">Nome do imóvel</label>
           <input
+            type="text"
+            id="name"
+            [(ngModel)]="imovel.name"
+            name="idRealtor"
+            placeholder="Proprietário"
+          />
+          <br />
+          <label class="label" for="state">Estado</label
+          ><input
             type="text"
             id="state"
             [(ngModel)]="imovel.state"
@@ -27,7 +38,8 @@
             placeholder="Estado"
           />
           <br />
-          <input
+          <label class="label" for="city">Cidade</label
+          ><input
             type="text"
             id="city"
             [(ngModel)]="imovel.city"
@@ -35,7 +47,8 @@
             placeholder="Cidade"
           />
           <br />
-          <input
+          <label class="label" for="district">Bairro</label
+          ><input
             type="text"
             id="district"
             [(ngModel)]="imovel.district"
@@ -43,7 +56,17 @@
             placeholder="Bairro"
           />
           <br />
+          <label class="label" for="street">Rua</label>
           <input
+            type="text"
+            id="street"
+            [(ngModel)]="imovel.street"
+            name="district"
+            placeholder="Bairro"
+          />
+          <br />
+          <label class="label" for="number">Número</label
+          ><input
             type="text"
             id="number"
             [(ngModel)]="imovel.number"
@@ -51,7 +74,8 @@
             placeholder="Número"
           />
           <br />
-          <input
+          <label class="label" for="zipNumber">CEP</label
+          ><input
             type="text"
             id="zipNumber"
             [(ngModel)]="imovel.zipNumber"
@@ -59,7 +83,10 @@
             placeholder="CEP"
           />
           <br />
-          <input
+        </div>
+        <div class="coluna2">
+          <label class="label" for="status">Tipo de negócio</label
+          ><input
             type="text"
             list="contrato"
             id="status"
@@ -72,9 +99,8 @@
             <option value="Aluguel"></option>
           </datalist>
           <br />
-        </div>
-        <div class="coluna2">
-          <input
+          <label class="label" for="type">Tipo de Imóvel</label
+          ><input
             type="text"
             list="tipos"
             id="type"
@@ -89,7 +115,8 @@
             <option value="Comercial"></option>
           </datalist>
           <br />
-          <input
+          <label class="label" for="size">Tamanho m²</label
+          ><input
             type="text"
             id="size"
             [(ngModel)]="imovel.size"
@@ -97,7 +124,8 @@
             placeholder="Tamanho m²"
           />
           <br />
-          <input
+          <label class="label" for="numberBedroom">N⁰ Quartos</label
+          ><input
             type="number"
             id="numberBedroom"
             [(ngModel)]="imovel.numberBedroom"
@@ -105,7 +133,8 @@
             placeholder="N⁰ Quartos"
           />
           <br />
-          <input
+          <label class="label" for="numberBath">N⁰ Banheiros</label
+          ><input
             type="number"
             id="numberBath"
             [(ngModel)]="imovel.numberBath"
@@ -113,7 +142,8 @@
             placeholder="N⁰ Banheiros"
           />
           <br />
-          <input
+          <label class="label" for="numberPark">Vagas de Estacionamento</label
+          ><input
             type="number"
             id="numberPark"
             [(ngModel)]="imovel.numberPark"
@@ -121,7 +151,8 @@
             placeholder="Vagas de Estacionamento"
           />
           <br />
-          <input
+          <label class="label" for="idRealtor">Estado</label
+          ><input
             type="text"
             id="value"
             [(ngModel)]="imovel.value"
@@ -130,7 +161,8 @@
           />
           <br />
           <div class="inserir_fotos">
-            <input
+            <label class="label" for="media">Selecione suas fotos</label
+            ><input
               type="file"
               id="media"
               [(ngModel)]="imovel.media"

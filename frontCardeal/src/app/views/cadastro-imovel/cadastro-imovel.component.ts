@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import ImovelService from 'src/app/services/imovel.service';
-import {Imovel} from '../../models/imovel.model'
+import { Imovel } from '../../models/imovel.model';
 
 @Component({
   selector: 'app-cadastro-imovel',
@@ -27,9 +27,7 @@ export class CadastroImovelComponent implements OnInit {
   idRealtor!: number;
   media!: string;
 
-  constructor(private service: ImovelService, private route: Router) {
-
-  }
+  constructor(private service: ImovelService, private route: Router) {}
 
   ngOnInit(): void {
     document.querySelector('#link_home')!.classList.remove('ativo');
@@ -41,24 +39,24 @@ export class CadastroImovelComponent implements OnInit {
 
   handlerSubmit() {
     console.log('Entrou');
-     const property = {
-      "name": "Qualquer nome",
-      "city": this.city,
-      "state": this.state,
-      "district": this.district,
-      "street": "Qualquer Rua",
-      "number": this.number,
-      "zipNumber": this.zipNumber,
-      "type": this.type,
-      "size": this.size,
-      "numberBedroom": this.numberBedroom,
-      "numberBath": this.numberBath,
-      "numberPark": this.numberPark,
-      "status": this.status,
-      "value": this.value,
-      "viewed": 0,
-      "idOwner": 1,
-      "idRealtor": 1
+    const property = {
+      name: this.name,
+      city: this.city,
+      state: this.state,
+      district: this.district,
+      street: this.street,
+      number: this.number,
+      zipNumber: this.zipNumber,
+      type: this.type,
+      size: this.size,
+      numberBedroom: this.numberBedroom,
+      numberBath: this.numberBath,
+      numberPark: this.numberPark,
+      status: this.status,
+      value: this.value,
+      viewed: 0,
+      idOwner: 1,
+      idRealtor: 1,
     };
     console.log(property);
 
