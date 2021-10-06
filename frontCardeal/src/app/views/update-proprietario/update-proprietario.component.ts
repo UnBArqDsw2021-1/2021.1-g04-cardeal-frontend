@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProprietarioService } from 'src/app/services/proprietario.service';
-import { Router } from '@angular/router';
 import { Proprietario } from 'src/app/models/proprietario.model';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-update-proprietario',
@@ -10,48 +12,91 @@ import { Proprietario } from 'src/app/models/proprietario.model';
 })
 export class UpdateProprietarioComponent implements OnInit {
 
+  @Input()
   id!: number;
-  name!: string;
-  cpf!: string;
-  telephone!: string;
-  email!: string;
+  private routeSub!: Subscription;
   proprietario!: Proprietario;
 
-  constructor(private service: ProprietarioService, private route: Router) {
-  }
+    constructor(
+      private route: ActivatedRoute,
+      private service: ProprietarioService,
+      private router: Router,
+      private location: Location
+    ) {}
 
    ngOnInit(): void {
-    
-   }
-
-   handleSubmit(){
-    const novoProprietario = {
-      name: this.proprietario.name,
-      cpf: this.proprietario.cpf,
-      telephone: this.proprietario.telephone,
-      email: this.proprietario.email,
-      id: this.proprietario.id
-    }
-
-    this.service.atualizaProprietario(novoProprietario).subscribe(resposta =>{
-      console.log(resposta);
-      this.route.navigateByUrl("/dashboard");
-    })
-   }
-
-  //  excluirProprietario(){
-  //    this.service.deleteProprietario(this.proprietario).subscribe(resposta =>{
-  //      console.log(resposta);
-  //      this.route.navigateByUrl("/dashboard")
-  //    })
-  //  }
-
-  excluirProprietario() {
-  if(confirm("Você tem certeza que deseja excluir ")) {
-      this.service.deleteProprietario(this.proprietario).subscribe(resposta =>{
-        console.log(resposta);
-        this.route.navigateByUrl("/dashboard")
-      })
-    }
+    this.routeSub = this.route.params.subscribe((params) => {
+      // console.log(params);
+      // console.log(params['id']);
+      this.id = params['id'];
+      this.receberProprietario();
+    });
   }
+
+  receberProprietario() {
+    this.service.MostraProprietario(this.id).subscribe((proprietario) => {
+      this.proprietario = proprietario;
+      // console.log(this.imovel);
+    });
+  }
+
+
+  atualizar() {
+    // console.log(imovel);
+    console.log(this.proprietario);
+    this.service.atualizarProprietario(this.proprietario, this.id).subscribe(
+      (resultado) => {
+        this.router.navigateByUrl('meus-imoveis');
+      },
+      (error) => console.log(error)
+    );
+  }
+  voltar() {
+    this.location.back();
+  }
+
+  ngOnDestroy() {
+    this.routeSub.unsubscribe();
+  }
+
+  deleteProprietario(proprietario: any) {
+    this.service.deletarProprietario(proprietario.id).subscribe(
+      (resultado) => {
+        console.log(proprietario);
+        alert('Imovel Deletado');
+        //this.lerimoveis();
+        //this.route.navigateByUrl('login-corretor');
+      },
+      (error) => console.log(error)
+    );
+  }
+
 }
+
+
+
+
+
+  //  handleSubmit(){
+  //   const novoProprietario = {
+  //     name: this.proprietario.name,
+  //     cpf: this.proprietario.cpf,
+  //     telephone: this.proprietario.telephone,
+  //     email: this.proprietario.email,
+  //     id: this.proprietario.id
+  //   }
+
+  //   this.service.atualizaProprietario(novoProprietario).subscribe(resposta =>{
+  //     console.log(resposta);
+  //     this.route.navigateByUrl("/dashboard");
+  //   })
+  //  }
+   
+  // excluirProprietario() {
+  // if(confirm("Você tem certeza que deseja excluir ")) {
+  //     this.service.deletarProprietario(this.id: number).subscribe(resposta =>{
+  //       console.log(resposta);
+  //       this.route.navigateByUrl("/dashboard")
+  //     })
+  //   }
+  // }

@@ -58,6 +58,20 @@
       "telephone": "213213",
       "email": "dsfads@hotmail.com",
       "id": 9
+    },
+    {
+      "name": "Casa",
+      "cpf": "03707690156",
+      "telephone": "61981846986",
+      "email": "vinicius_kof36@hotmail.com",
+      "id": 10
+    },
+    {
+      "name": "asasasd",
+      "cpf": "03707690156",
+      "telephone": "61981846986",
+      "email": "vinicius_kof36@hotmail.com",
+      "id": 11
     }
   ],
   "proprietario": [

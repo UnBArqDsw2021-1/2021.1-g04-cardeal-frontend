@@ -56,4 +56,6 @@ export class UpdateImovelComponent implements OnInit {
   ngOnDestroy() {
     this.routeSub.unsubscribe();
   }
+  
+
 }

@@ -17,8 +17,9 @@
               <input type="text" id="telephone" [(ngModel)]="proprietario.telephone" name="telephone" placeholder="Telefone"><br>
               <input type="email" id="email" [(ngModel)]="proprietario.email" name="email" placeholder="Email"><br>
               <div class="botoes">
-                <button type="submit" class="botao_editar">Atualizar Proprietário</button>
-                <button class="botao_excluir" (click)="excluirProprietario()"><i class="fa fa-trash"></i></button>
+                <button type="submit" class="botao_voltar" (click)="voltar()">Voltar</button>
+                <button type="submit" class="botao_editar" (click)='atualizar()'>Atualizar Proprietário</button>
+                <button class="botao_excluir" (click)="deleteProprietario()"><i class="fa fa-trash"></i></button>
               </div>
           </form>
       </div>
