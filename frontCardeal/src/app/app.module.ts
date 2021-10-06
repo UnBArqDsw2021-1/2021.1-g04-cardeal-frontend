@@ -23,6 +23,7 @@ import { CadastroProprietarioComponent } from './views/cadastro-proprietario/cad
 import { UpdateProprietarioComponent } from './views/update-proprietario/update-proprietario.component';
 import { BuscarImoveisComponent } from './views/buscar-imoveis/buscar-imoveis.component';
 import { PostagensComponent } from './views/postagens/postagens.component';
+import { CadastroClienteComponent } from './views/cadastro-cliente/cadastro-cliente.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { PostagensComponent } from './views/postagens/postagens.component';
     CadastroProprietarioComponent,
     UpdateProprietarioComponent,
     BuscarImoveisComponent,
-    PostagensComponent
+    PostagensComponent,
+    CadastroClienteComponent
   ],
   imports: [
     BrowserModule,

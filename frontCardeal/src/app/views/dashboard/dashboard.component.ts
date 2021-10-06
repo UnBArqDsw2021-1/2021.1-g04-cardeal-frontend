@@ -29,4 +29,10 @@ export class DashboardComponent implements OnInit {
   editarProprietario(){
     this.route.navigateByUrl(`/update-proprietario/`)
   }
+  cadastrarCliente(){
+    this.route.navigateByUrl(`/cadastro-cliente/`)
+  }
+  // editarCliente(){
+  //   this.route.navigateByUrl(`/update-cliente/`)
+  // }
 }
