@@ -27,6 +27,7 @@ export class UpdateProprietarioComponent implements OnInit {
    ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
       this.id = params['id'];
+      console.log("Esse pe o id", this.id);
       this.receberProprietario();
     });
   }
@@ -34,12 +35,10 @@ export class UpdateProprietarioComponent implements OnInit {
   receberProprietario() {
     this.service.MostraProprietario(this.id).subscribe((proprietario) => {
       this.proprietario = proprietario;
-      // console.log(this.imovel);
     });
   }
 
   atualizar() {
-    // console.log(imovel);
     console.log(this.proprietario);
     this.service.atualizarProprietario(this.proprietario, this.id).subscribe(
       (resultado) => {

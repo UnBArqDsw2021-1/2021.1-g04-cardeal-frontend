@@ -32,7 +32,7 @@ export class ProprietarioService {
   atualizarProprietario(proprietario: Proprietario, id: number): Observable<Proprietario> {
     console.log(id);
     console.log('entrei');
-    return this.httpClient.put<Proprietario>(`${this.url}/${id}`, proprietario);
+    return this.httpClient.patch<Proprietario>(`${this.url}/${id}`, proprietario);
   }
 
   deletarProprietario(id: number): Observable<Proprietario> {

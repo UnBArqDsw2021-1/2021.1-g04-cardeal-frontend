@@ -52,7 +52,7 @@ const routes: Routes = [
     component: UpdateImovelComponent,
   },
   {
-    path: 'update-corretor/:corretorId',
+    path: 'update-corretor/:id',
     component: UpdateCorretorComponent,
   },
   {
@@ -60,7 +60,7 @@ const routes: Routes = [
     component: CadastroProprietarioComponent,
   },
   {
-    path: 'update-proprietario/:proprietarioId',
+    path: 'update-proprietario/:id',
     component: UpdateProprietarioComponent,
   },
   {
