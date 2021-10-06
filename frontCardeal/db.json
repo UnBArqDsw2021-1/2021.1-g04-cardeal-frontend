@@ -30,6 +30,34 @@
       "telephone": "61981846986",
       "email": "vinicius_kof36@hotmail.com",
       "id": 5
+    },
+    {
+      "name": "alo",
+      "cpf": 21402132,
+      "telephone": "213213213",
+      "email": "21312321",
+      "id": 6
+    },
+    {
+      "name": "joao",
+      "cpf": 21321321321,
+      "telephone": "21312312321",
+      "email": "2131231",
+      "id": 7
+    },
+    {
+      "name": "pedro",
+      "cpf": 2321312321,
+      "telephone": "23123",
+      "email": "trskadjfsdkl",
+      "id": 8
+    },
+    {
+      "name": "Joazinho",
+      "cpf": "231312123",
+      "telephone": "213213",
+      "email": "dsfads@hotmail.com",
+      "id": 9
     }
   ],
   "proprietario": [
@@ -193,6 +221,9 @@
       "type": "Terreno",
       "status": "Aluguel",
       "id": 8
+    },
+    {
+      "id": 9
     }
   ]
 }

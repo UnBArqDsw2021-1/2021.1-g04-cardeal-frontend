@@ -1,20 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Cliente } from 'src/app/models/cliente.model';
 import ClienteService from 'src/app/services/cliente.service';
 
 @Component({
   selector: 'app-cadastro-cliente',
   templateUrl: './cadastro-cliente.component.html',
-  styleUrls: ['./cadastro-cliente.component.css']
+  styleUrls: ['./cadastro-cliente.component.css'],
 })
-
 export class CadastroClienteComponent implements OnInit {
+  @Input()
+  clienteObj = {} as Cliente;
   name!: string;
   cpf!: number;
   telephone!: string;
   email!: string;
 
-  constructor(private service: ClienteService, private route: Router) { }
+  constructor(private service: ClienteService, private route: Router) {}
 
   ngOnInit(): void {
     document.querySelector('#link_home')!.classList.remove('ativo');
@@ -26,7 +28,6 @@ export class CadastroClienteComponent implements OnInit {
 
   handlerSubmit() {
     console.log('Entrou no cadastro cliente');
-
     const cliente = {
       name: this.name,
       cpf: this.cpf,
@@ -34,14 +35,14 @@ export class CadastroClienteComponent implements OnInit {
       email: this.email,
     };
     console.log(cliente);
+    console.log('objeto cliente');
+    console.log(this.clienteObj);
 
-    // this.service.cadastraCliente(cliente).subscribe(
-    //   (resultado) => {
-    //     this.route.navigateByUrl('dashboard');
-    //   },
-    //   (error) => console.log(error)
-    // );
+    this.service.cadastraCliente(this.clienteObj).subscribe(
+      (resultado) => {
+        this.route.navigateByUrl('dashboard');
+      },
+      (error) => console.log(error)
+    );
   }
 }
-
-

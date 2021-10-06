@@ -41,7 +41,7 @@ import { CadastroClienteComponent } from './views/cadastro-cliente/cadastro-clie
     UpdateProprietarioComponent,
     BuscarImoveisComponent,
     PostagensComponent,
-    CadastroClienteComponent
+    CadastroClienteComponent,
   ],
   imports: [
     BrowserModule,
