@@ -11,12 +11,12 @@
     <div class="links_forms">
         <span class="link_cadastro">Cadastro Proprietário</span>
     </div>
-    
+
     <div class="container_form">
         <form class = "form" (ngSubmit)="handlerSubmit()">
             <input type="text" id="name" [(ngModel)]="name" name="name" placeholder="Nome Completo"><br>
             <input type="text" id="cpf" [(ngModel)]="cpf" name="cpf" placeholder="CPF"><br>
-            <input type="text" id="phone" [(ngModel)]="telephone" name="telephone" placeholder="Telefone"><br>
+            <input type="text" id="phone" [(ngModel)]="phone" name="telephone" placeholder="Telefone"><br>
             <input type="text" id="email" [(ngModel)]="email" name="email" placeholder="Email"><br>
             <button type="submit" class="botao_cadastro" [routerLink]="['../cadastro-proprietario']">Cadastrar Proprietário</button>
         </form>
@@ -24,7 +24,7 @@
 </div>
 </section>
 
-<!-- 
+<!--
 <div>
     <h1>My Products</h1>
     <button type="button" [routerLink]="../cadastro-proprietario">Create new product</button>
@@ -35,7 +35,7 @@
                 <th>Product Name</th>
                 <th>Description</th>
                 <th>Price</th>
-                <th>Quantity</th>                            
+                <th>Quantity</th>
                 <th>Action</th>
             </tr>
         </thead>

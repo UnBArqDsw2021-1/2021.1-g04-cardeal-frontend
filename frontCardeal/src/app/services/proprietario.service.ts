@@ -8,7 +8,7 @@ import { Proprietario } from '../models/proprietario.model';
 })
 export class ProprietarioService {
   private listaProprietario: Proprietario[];
-  private url = "api/proprietario"
+  private url = "api/owners"
   private proprietario!: Proprietario;
 
   constructor(private httpClient: HttpClient) {

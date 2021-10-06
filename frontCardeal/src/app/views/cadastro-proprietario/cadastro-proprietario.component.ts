@@ -11,7 +11,7 @@ export class CadastroProprietarioComponent implements OnInit {
 
   name!: string;
   cpf!: string;
-  telephone!: string;
+  phone!: string;
   email!: string;
 
   ngOnInit(): void {
@@ -26,9 +26,10 @@ export class CadastroProprietarioComponent implements OnInit {
   }
 
   handlerSubmit(){
-    const owner = {name:this.name,
+    const owner = {
+      name:this.name,
       cpf:this.cpf,
-      telephone:this.telephone,
+      phone:this.phone,
       email:this.email,
       }
     console.log(owner)
