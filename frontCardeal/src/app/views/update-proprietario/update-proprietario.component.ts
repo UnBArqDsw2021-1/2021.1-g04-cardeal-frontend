@@ -42,7 +42,7 @@ export class UpdateProprietarioComponent implements OnInit {
     console.log(this.proprietario);
     this.service.atualizarProprietario(this.proprietario, this.id).subscribe(
       (resultado) => {
-        this.router.navigateByUrl('meus-imoveis');
+        this.router.navigateByUrl('dashboard');
       },
       (error) => console.log(error)
     );
@@ -56,13 +56,16 @@ export class UpdateProprietarioComponent implements OnInit {
   }
 
   deleteProprietario() {
+    if(confirm("Você tem certeza que deseja excluir "+ this.proprietario.name )) {
     this.service.deletarProprietario(this.id).subscribe(
       (resultado) => {
         console.log(this.proprietario);
-        alert('Proprietário excluido');
+        alert('Proprietário excluído');
+        this.router.navigateByUrl('dashboard');
       },
       (error) => console.log(error)
     );
+    }
   }
 
 }

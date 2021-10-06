@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
   cadastrarCliente(){
     this.route.navigateByUrl(`/cadastro-cliente/`)
   }
-  // editarCliente(){
-  //   this.route.navigateByUrl(`/update-cliente/`)
-  // }
+  editarCliente(){
+    this.route.navigateByUrl(`/update-cliente/`)
+  }
 }
