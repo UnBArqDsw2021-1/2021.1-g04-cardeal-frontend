@@ -13,6 +13,10 @@ import { MeusImoveisComponent } from './views/meus-imoveis/meus-imoveis.componen
 import { ImovelComponent } from './views/imovel/imovel.component';
 import { AuthGuard } from './guard/auth.guard';
 import { BuscarImoveisComponent } from './views/buscar-imoveis/buscar-imoveis.component';
+import { CadastroClienteComponent } from './views/cadastro-cliente/cadastro-cliente.component';
+import { UpdateClienteComponent } from './views/update-cliente/update-cliente.component';
+import { CadastroAgendamentoComponent } from './views/cadastro-agendamento/cadastro-agendamento.component';
+import { UpdateAgendamentoComponent } from './views/update-agendamento/update-agendamento.component';
 
 const routes: Routes = [
   {
@@ -59,12 +63,28 @@ const routes: Routes = [
     component: CadastroProprietarioComponent,
   },
   {
-    path: 'update-proprietario/:proprietarioId',
+    path: 'update-proprietario/:id',
     component: UpdateProprietarioComponent,
   },
   {
     path: 'buscar-imovel',
     component: BuscarImoveisComponent,
+  },
+  {
+    path: 'cadastro-cliente',
+    component: CadastroClienteComponent,
+  },
+  {
+    path: 'update-cliente/:id',
+    component: UpdateClienteComponent,
+  },
+  {
+    path: 'cadastro-agendamento',
+    component: CadastroAgendamentoComponent,
+  },
+  {
+    path: 'update-agendamento/:id',
+    component: UpdateAgendamentoComponent,
   },
 ];
 

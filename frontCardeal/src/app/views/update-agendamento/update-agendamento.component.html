@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<section>
+<div class="container_img">
+    <img class = "img_corretor" src="assets/img/cidade.svg">
+</div>
+
+<div class="container_cadastro">
+    <div class="links_forms">
+        <span class="link_cadastro">Editar Agendamento</span>
+    </div>
+
+      <div class="container_form">
+          <form class = "form" (ngSubmit)="atualizar()">
+            <input type="text" [(ngModel)]="agendamento.idClient" id="name" name="name" placeholder="Cliente"/><br/>
+            <input type="text" id="property" [(ngModel)]="agendamento.idProperty" name="property" placeholder="Propriedade" /><br />
+            <input type="text" id="date" [(ngModel)]="agendamento.dateMeeting" name="date" placeholder="Data" /><br />
+              <div class="botoes">
+                <button type="submit" class="botao_voltar" (click)="voltar()">Voltar</button>
+                <button type="submit" class="botao_editar" (click)='atualizar()'>Atualizar Agendamento</button>
+                <button class="botao_excluir" (click)="deleteAgendamento()"><i class="fa fa-trash"></i></button>
+              </div>
+          </form>
+      </div>
+</div>
+</section>

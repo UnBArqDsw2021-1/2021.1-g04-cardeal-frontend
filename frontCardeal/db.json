@@ -1,4 +1,79 @@
 {
+  "cliente": [
+    {
+      "id": 1,
+      "name": "Jesus",
+      "cpf": "987654321",
+      "telephone": "33939571",
+      "email": "vinicius_kof36@hotmail.com"
+    },
+    {
+      "name": "TESTE ROTA2222",
+      "id": 2
+    },
+    {
+      "cpf": "03707690156",
+      "telephone": "61981846986",
+      "email": "vinicius_kof36@hotmail.com",
+      "id": 3
+    },
+    {
+      "name": "Casa",
+      "cpf": "03707690156",
+      "telephone": "61981846986",
+      "email": "vinicius_kof36@hotmail.com",
+      "id": 4
+    },
+    {
+      "name": "testando",
+      "cpf": "03707690156",
+      "telephone": "61981846986",
+      "email": "vinicius_kof36@hotmail.com",
+      "id": 5
+    },
+    {
+      "name": "alo",
+      "cpf": 21402132,
+      "telephone": "213213213",
+      "email": "21312321",
+      "id": 6
+    },
+    {
+      "name": "joao",
+      "cpf": 21321321321,
+      "telephone": "21312312321",
+      "email": "2131231",
+      "id": 7
+    },
+    {
+      "name": "pedro",
+      "cpf": 2321312321,
+      "telephone": "23123",
+      "email": "trskadjfsdkl",
+      "id": 8
+    },
+    {
+      "name": "Joazinho",
+      "cpf": "231312123",
+      "telephone": "213213",
+      "email": "dsfads@hotmail.com",
+      "id": 9
+    },
+    {
+      "name": "Casa",
+      "cpf": "03707690156",
+      "telephone": "61981846986",
+      "email": "vinicius_kof36@hotmail.com",
+      "id": 10
+    },
+    {
+      "name": "asasasd",
+      "cpf": "03707690156",
+      "telephone": "61981846986",
+      "email": "vinicius_kof36@hotmail.com",
+      "id": 11
+    }
+  ],
   "proprietario": [
     {
       "id": 1,
@@ -160,6 +235,9 @@
       "type": "Terreno",
       "status": "Aluguel",
       "id": 8
+    },
+    {
+      "id": 9
     }
   ]
 }

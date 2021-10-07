@@ -8,42 +8,35 @@ import { Proprietario } from '../models/proprietario.model';
 })
 export class ProprietarioService {
   private listaProprietario: Proprietario[];
-  private url = "http://localhost:3000/proprietario"
+  private url = "api/owners"
   private proprietario!: Proprietario;
 
   constructor(private httpClient: HttpClient) {
     this.listaProprietario = [];
   }
 
-  listarProprietario(): Observable<Proprietario[]> {
-    const resposta = this.httpClient.get<Proprietario[]>(this.url);
-    return resposta;
-  }
-  // enviaProprietario(): Proprietario{
-  //   console.log("Enviando Proprietario");
-  //   return this.proprietario;
-  // }
-
-  // recebeProprietario(proprietario: Proprietario): void{
-  //   console.log("Recebendo o Proprietário");
-  //   this.proprietario = proprietario;
-  //   console.log("Proprietario Recebido", proprietario);
-  //   console.log("Proprietario do Service", this.proprietario);
-  // }
-
-  cadastraProprietario(proprietario: Proprietario) : Observable<Proprietario>{
-    const propriet = this.httpClient.post<Proprietario>(this.url, proprietario);
-    console.log(propriet)
+  cadastraProprietario(proprietario: Proprietario): Observable<Proprietario> {
+    console.log('Entrou no servico de cadastro imovel');
+    console.log(proprietario);
     return this.httpClient.post<Proprietario>(this.url, proprietario);
   }
 
-  atualizaProprietario(proprietario:Proprietario):Observable<Proprietario>{
-    return this.httpClient.put<Proprietario>(this.url+'/'+proprietario.id, proprietario);
+  listarProprietario(): Observable<Proprietario[]> {
+    return this.httpClient.get<Proprietario[]>(this.url);
   }
 
-  deleteProprietario(proprietario:Proprietario): Observable<Proprietario>{
-    return this.httpClient.delete<Proprietario>(`${this.url}/${proprietario.id}`)
+  MostraProprietario(id: number): Observable<Proprietario> {
+    return this.httpClient.get<Proprietario>(`${this.url}/${id}`);
   }
 
+  atualizarProprietario(proprietario: Proprietario, id: number): Observable<Proprietario> {
+    console.log(id);
+    console.log('entrei');
+    return this.httpClient.patch<Proprietario>(`${this.url}/${id}`, proprietario);
+  }
+
+  deletarProprietario(id: number): Observable<Proprietario> {
+    return this.httpClient.delete<Proprietario>(`${this.url}/${id}`);
+  }
 }
 
