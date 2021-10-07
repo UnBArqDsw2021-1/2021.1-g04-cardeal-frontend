@@ -25,6 +25,7 @@ import { BuscarImoveisComponent } from './views/buscar-imoveis/buscar-imoveis.co
 import { PostagensComponent } from './views/postagens/postagens.component';
 import { CadastroClienteComponent } from './views/cadastro-cliente/cadastro-cliente.component';
 import { UpdateClienteComponent } from './views/update-cliente/update-cliente.component';
+import { CadastroAgendamentoComponent } from './views/cadastro-agendamento/cadastro-agendamento.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { UpdateClienteComponent } from './views/update-cliente/update-cliente.co
     PostagensComponent,
     CadastroClienteComponent,
     UpdateClienteComponent,
+    CadastroAgendamentoComponent,
   ],
   imports: [
     BrowserModule,
