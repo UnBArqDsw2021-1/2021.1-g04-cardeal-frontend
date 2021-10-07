@@ -1,24 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { Cliente } from '../models/cliente.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export default class ClienteService {
-  private listaClientes: Cliente[];
-  // private url = 'http://localhost:3000/clientes';
-  private url = 'http://localhost:3000/cliente';
-  /*   private url_post = 'http://localhost:3000/put/';
-  private url_del = 'http://localhost:3000/delete/'; */
+export class ClienteService {
+  private listaCliente: Cliente[];
+  private url = "api/clients"
+  private cliente!: Cliente;
 
   constructor(private httpClient: HttpClient) {
-    this.listaClientes = [];
+    this.listaCliente= [];
   }
 
   cadastraCliente(cliente: Cliente): Observable<Cliente> {
-    console.log('Entrou no servico de cadastro de cliente');
+    console.log('Entrou no servico de cadastro imovel');
     console.log(cliente);
     return this.httpClient.post<Cliente>(this.url, cliente);
   }
@@ -34,7 +32,7 @@ export default class ClienteService {
   atualizarCliente(cliente: Cliente, id: number): Observable<Cliente> {
     console.log(id);
     console.log('entrei');
-    return this.httpClient.put<Cliente>(`${this.url}/${id}`, cliente);
+    return this.httpClient.patch<Cliente>(`${this.url}/${id}`, cliente);
   }
 
   deletarCliente(id: number): Observable<Cliente> {

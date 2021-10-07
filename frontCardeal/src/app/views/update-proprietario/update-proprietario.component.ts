@@ -27,7 +27,7 @@ export class UpdateProprietarioComponent implements OnInit {
    ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
       this.id = params['id'];
-      console.log("Esse pe o id", this.id);
+      console.log("Esse é o id", this.id);
       this.receberProprietario();
     });
   }
@@ -67,33 +67,4 @@ export class UpdateProprietarioComponent implements OnInit {
     );
     }
   }
-
 }
-
-
-
-
-
-  //  handleSubmit(){
-  //   const novoProprietario = {
-  //     name: this.proprietario.name,
-  //     cpf: this.proprietario.cpf,
-  //     telephone: this.proprietario.telephone,
-  //     email: this.proprietario.email,
-  //     id: this.proprietario.id
-  //   }
-
-  //   this.service.atualizaProprietario(novoProprietario).subscribe(resposta =>{
-  //     console.log(resposta);
-  //     this.route.navigateByUrl("/dashboard");
-  //   })
-  //  }
-
-  // excluirProprietario() {
-  // if(confirm("Você tem certeza que deseja excluir ")) {
-  //     this.service.deletarProprietario(this.id: number).subscribe(resposta =>{
-  //       console.log(resposta);
-  //       this.route.navigateByUrl("/dashboard")
-  //     })
-  //   }
-  // }

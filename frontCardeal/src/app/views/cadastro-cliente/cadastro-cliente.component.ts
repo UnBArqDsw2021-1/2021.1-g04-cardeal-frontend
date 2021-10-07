@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cliente } from 'src/app/models/cliente.model';
-import ClienteService from 'src/app/services/cliente.service';
+import {ClienteService} from 'src/app/services/cliente.service';
 
 @Component({
   selector: 'app-cadastro-cliente',
@@ -13,8 +13,8 @@ export class CadastroClienteComponent implements OnInit {
   clienteObj = {} as Cliente;
   name!: string;
   cpf!: number;
-  telephone!: string;
   email!: string;
+  phone!: string;
 
   constructor(private service: ClienteService, private route: Router) {}
 
@@ -31,7 +31,7 @@ export class CadastroClienteComponent implements OnInit {
     const cliente = {
       name: this.name,
       cpf: this.cpf,
-      telephone: this.telephone,
+      telephone: this.phone,
       email: this.email,
     };
     console.log(cliente);

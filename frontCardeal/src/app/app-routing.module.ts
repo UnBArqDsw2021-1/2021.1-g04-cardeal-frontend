@@ -14,6 +14,7 @@ import { ImovelComponent } from './views/imovel/imovel.component';
 import { AuthGuard } from './guard/auth.guard';
 import { BuscarImoveisComponent } from './views/buscar-imoveis/buscar-imoveis.component';
 import { CadastroClienteComponent } from './views/cadastro-cliente/cadastro-cliente.component';
+import { UpdateClienteComponent } from './views/update-cliente/update-cliente.component';
 
 const routes: Routes = [
   {
@@ -70,6 +71,10 @@ const routes: Routes = [
   {
     path: 'cadastro-cliente',
     component: CadastroClienteComponent,
+  },
+  {
+    path: 'update-cliente/:id',
+    component: UpdateClienteComponent,
   },
 ];
 
