@@ -16,6 +16,7 @@ import { BuscarImoveisComponent } from './views/buscar-imoveis/buscar-imoveis.co
 import { CadastroClienteComponent } from './views/cadastro-cliente/cadastro-cliente.component';
 import { UpdateClienteComponent } from './views/update-cliente/update-cliente.component';
 import { CadastroAgendamentoComponent } from './views/cadastro-agendamento/cadastro-agendamento.component';
+import { UpdateAgendamentoComponent } from './views/update-agendamento/update-agendamento.component';
 
 const routes: Routes = [
   {
@@ -80,6 +81,10 @@ const routes: Routes = [
   {
     path: 'cadastro-agendamento',
     component: CadastroAgendamentoComponent,
+  },
+  {
+    path: 'update-agendamento',
+    component: UpdateAgendamentoComponent,
   },
 ];
 

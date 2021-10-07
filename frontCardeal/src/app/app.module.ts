@@ -26,6 +26,7 @@ import { PostagensComponent } from './views/postagens/postagens.component';
 import { CadastroClienteComponent } from './views/cadastro-cliente/cadastro-cliente.component';
 import { UpdateClienteComponent } from './views/update-cliente/update-cliente.component';
 import { CadastroAgendamentoComponent } from './views/cadastro-agendamento/cadastro-agendamento.component';
+import { UpdateAgendamentoComponent } from './views/update-agendamento/update-agendamento.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { CadastroAgendamentoComponent } from './views/cadastro-agendamento/cadas
     CadastroClienteComponent,
     UpdateClienteComponent,
     CadastroAgendamentoComponent,
+    UpdateAgendamentoComponent,
   ],
   imports: [
     BrowserModule,
