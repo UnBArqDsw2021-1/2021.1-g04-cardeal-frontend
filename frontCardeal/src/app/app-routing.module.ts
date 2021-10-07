@@ -83,7 +83,7 @@ const routes: Routes = [
     component: CadastroAgendamentoComponent,
   },
   {
-    path: 'update-agendamento',
+    path: 'update-agendamento/:id',
     component: UpdateAgendamentoComponent,
   },
 ];
