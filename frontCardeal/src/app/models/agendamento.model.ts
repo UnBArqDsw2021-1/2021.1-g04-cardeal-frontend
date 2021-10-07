@@ -1,10 +1,8 @@
 export interface Agendamento {
     id?: number;
-    dateMeeting?: string;
     idClient?: number;
     idProperty?: number;
-    email?: string;
-    phone?: string;
+    dateMeeting?: Date;
   }
   export interface Agendamento extends Array<Agendamento> {}
   
