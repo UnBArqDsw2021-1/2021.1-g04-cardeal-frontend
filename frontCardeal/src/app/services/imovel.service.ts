@@ -10,7 +10,6 @@ export default class ImovelService {
   private listaImoveis: Imovel[];
   private url = 'api/properties';
 
-
   constructor(private httpClient: HttpClient) {
     this.listaImoveis = [];
   }
@@ -23,6 +22,10 @@ export default class ImovelService {
 
   listarImovel(): Observable<Imovel[]> {
     return this.httpClient.get<Imovel[]>(this.url);
+  }
+
+  listarImovelFiltro(url: string): Observable<Imovel[]> {
+    return this.httpClient.get<Imovel[]>(this.url + url);
   }
 
   MostraImovel(id: number): Observable<Imovel> {

@@ -44,7 +44,7 @@
               min="0"
               type="number"
               id="Bathroom"
-              name="idRealtor"
+              name="Bathroom"
               [(ngModel)]="dados.qtd_banheiros"
               placeholder="1"
             />
@@ -61,13 +61,14 @@
             <input
               min="0"
               type="number"
-              id="idOwner"
+              id="Area"
               name="area"
               [(ngModel)]="dados.area"
               placeholder="1"
             />
             <h4>m²</h4>
           </div>
+          <span *ngIf="alerta"> {{ msg }} </span>
         </div>
         <div class="coluna2">
           <input
@@ -79,30 +80,48 @@
           />
           <br />
 
-          <div class="teste">
-            <label for="">
+          <div class="checkbox">
+            <label for="alugar">
               <input
                 type="checkbox"
                 id="alugar"
-                name="alugar"
-                value="alugar"
+                name="Alugar"
+                value="Alugar"
                 [(ngModel)]="dados.tipo_aluguel"
               />
-              <h4>Para Alugar</h4>
+              <h4 *ngIf="!alerta">Para Alugar</h4>
+              <h4 class="alerta" *ngIf="alerta">Para Alugar</h4>
             </label>
-            <label for="">
+            <label for="comprar">
               <input
                 type="checkbox"
                 id="comprar"
-                name="comprar"
-                value="comprar"
+                name="Comprar"
+                value="Comprar"
                 [(ngModel)]="dados.tipo_compra"
               />
-              <h4>Para comprar</h4>
+              <h4 *ngIf="!alerta">Para comprar</h4>
+              <h4 class="alerta" *ngIf="alerta">Para comprar</h4>
             </label>
           </div>
           <br />
-          <button type="submit" (click)="buscar()" class="botao_cadastro">
+          <!-- <button
+            type="submit"
+            *ngIf="show"
+            (click)="buscar()"
+            class="botao_cadastro"
+          >
+            Buscar
+          </button>
+          <button
+            type="submit"
+            *ngIf="!show"
+            (click)="buscar()"
+            class="botao_novaBusca"
+          >
+            Nova Busca
+          </button> -->
+          <button type="submit" (click)="gerarAlerta()" class="botao_cadastro">
             Buscar
           </button>
         </div>
@@ -111,10 +130,44 @@
   </div>
 </section>
 
-<div *ngIf="!show">
+<!-- metodo de mostrar os cards usando apenas outro componente (pagina "postagens") -->
+
+<!-- <div *ngIf="!show">
   <h2 class="sub-titulo">
     As seguintes propriedades foram encontradas com as características
     desejadas.
   </h2>
-  <app-postagens></app-postagens>
+  <app-postagens tipo="{{ url }}"></app-postagens>
+</div> -->
+
+<!-- caso queira usar para atualizar os cards apenas clickando "buscar" (esse método usa o serviço na pagina de buscar imoveis)-->
+
+<div>
+  <div class="card" *ngFor="let row of imoveis">
+    <div class="icons">
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+    </div>
+    <img
+      src="assets/img/casa.svg"
+      alt="Avatar"
+      style="width: 100%"
+      (click)="view(row)"
+    />
+    <div
+      class="container"
+      (click)="view(row)"
+      style="margin-top: 20px"
+      (click)="view(row)"
+    >
+      <h4 class="titulo-card">{{ row.type }} para {{ row.status }}</h4>
+      <p>{{ row.type }} localizada em {{ row.district }}, {{ row.city }}.</p>
+      <h4 class="tipo">{{ row.type }}</h4>
+      <h4 class="tipo2" style="margin-top: 20px">
+        {{ row.value | currency: "R$":"symbol":".2" }}
+      </h4>
+    </div>
+  </div>
 </div>

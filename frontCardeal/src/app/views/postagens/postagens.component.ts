@@ -10,6 +10,9 @@ import ImovelService from 'src/app/services/imovel.service';
 })
 export class PostagensComponent implements OnInit {
   @Input() icon = false;
+
+  @Input('tipo') urlFiltro: string = '';
+
   imoveis!: any;
   imoveis_filter!: Imoveis;
   filter!: any;
@@ -23,20 +26,15 @@ export class PostagensComponent implements OnInit {
   }
 
   lerimoveis() {
-    this.service.listarImovel().subscribe(
+    this.service.listarImovelFiltro(this.urlFiltro).subscribe(
       (resultado) => {
-        console.log(resultado);
-        // this.filter = resultado.filter((e) => {
-        //   console.log(e.type);
-        //   return e.type == 'Casa';
-        // });
-        console.log(this.filter);
         this.imoveis = resultado;
-        // console.log(this.imoveis);
-        // this.route.navigateByUrl('meus-imoveis');
+        // console.log(resultado);
+        // console.log(this.urlFiltro);
       },
       (error) => console.log(error)
     );
+    // } else console.log('fazer a buscar com parametros');
   }
 
   deleteImovel(imovel: any) {

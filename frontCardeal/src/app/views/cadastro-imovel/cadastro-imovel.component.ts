@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import ImovelService from 'src/app/services/imovel.service';
+import { ProprietarioService } from 'src/app/services/proprietario.service';
 import { Imovel } from '../../models/imovel.model';
 
 @Component({
@@ -26,8 +27,13 @@ export class CadastroImovelComponent implements OnInit {
   idOwner!: number;
   idRealtor!: number;
   media!: string;
+  proprietarios: any;
 
-  constructor(private service: ImovelService, private route: Router) {}
+  constructor(
+    private service: ImovelService,
+    private route: Router,
+    private serviceProprietario: ProprietarioService
+  ) {}
 
   ngOnInit(): void {
     document.querySelector('#link_home')!.classList.remove('ativo');
@@ -35,6 +41,7 @@ export class CadastroImovelComponent implements OnInit {
     document.querySelector('#link_faq')!.classList.remove('ativo');
     document.querySelector('#link_busca_imoveis')!.classList.remove('ativo');
     document.querySelector('#link_meus_imoveis')!.classList.remove('ativo');
+    this.receberProprietarios();
   }
 
   handlerSubmit() {
@@ -63,6 +70,16 @@ export class CadastroImovelComponent implements OnInit {
     this.service.cadastraImovel(property).subscribe(
       (resultado) => {
         this.route.navigateByUrl('dashboard');
+      },
+      (error) => console.log(error)
+    );
+  }
+
+  receberProprietarios() {
+    this.serviceProprietario.listarProprietario().subscribe(
+      (resultado) => {
+        console.log(resultado);
+        this.proprietarios = resultado;
       },
       (error) => console.log(error)
     );

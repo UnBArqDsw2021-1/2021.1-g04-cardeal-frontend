@@ -25,8 +25,6 @@ export class UpdateImovelComponent implements OnInit {
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
-      // console.log(params);
-      // console.log(params['id']);
       this.id = params['id'];
       this.receberImovel();
     });
@@ -56,6 +54,4 @@ export class UpdateImovelComponent implements OnInit {
   ngOnDestroy() {
     this.routeSub.unsubscribe();
   }
-  
-
 }
