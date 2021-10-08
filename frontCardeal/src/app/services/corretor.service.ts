@@ -98,4 +98,8 @@ export class CorretorService {
     return this.httpClient.get<Corretor>(`${this.url}/${id}`);
   }
 
+  logout(){
+    window.localStorage.setItem('accessToken', '');
+  }
+
 }
