@@ -30,11 +30,11 @@ export class CadastroImovelComponent implements OnInit {
   constructor(private service: ImovelService, private route: Router) {}
 
   ngOnInit(): void {
-    document.querySelector('#link_home')!.classList.remove('ativo');
-    document.querySelector('#link_cadastrar_imoveis')!.classList.add('ativo');
-    document.querySelector('#link_faq')!.classList.remove('ativo');
-    document.querySelector('#link_busca_imoveis')!.classList.remove('ativo');
-    document.querySelector('#link_meus_imoveis')!.classList.remove('ativo');
+    document.querySelector("#link_busca_imoveis")!.classList.remove("ativo");
+    document.querySelector("#link_cadastrar_imoveis")!.classList.add("ativo");
+    document.querySelector("#link_faq")!.classList.remove("ativo");
+    document.querySelector("#link_pagina_home")!.classList.remove("ativo");
+    document.querySelector("#link_meus_imoveis")!.classList.remove("ativo");
   }
 
   handlerSubmit() {
