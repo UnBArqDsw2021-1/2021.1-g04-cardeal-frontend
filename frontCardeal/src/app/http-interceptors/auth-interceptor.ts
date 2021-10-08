@@ -9,12 +9,12 @@ export class AuthInterceptor implements HttpInterceptor{
   constructor(private service: CorretorService){}
 
   intercept(req: HttpRequest<any>, next: HttpHandler){
-    const token = this.service.getAuthorizationToken();
+    const accessToken = this.service.getAuthorizationToken();
     let request: HttpRequest<any> = req;
 
-    if(token && !this.service.tokenExpirado(token)){
+    if(accessToken && !this.service.tokenExpirado(accessToken)){
       request = req.clone({
-        headers: req.headers.set('Authorization', `Bearer ${token}`)
+        headers: req.headers.set('Authorization', `Bearer ${accessToken}`)
       });
     }
 

@@ -55,12 +55,12 @@ export class CorretorService {
   }
 
   getAuthorizationToken(){
-    const token = window.localStorage.getItem('token');
-    return token;
+    const accessToken = window.localStorage.getItem('accessToken');
+    return accessToken;
   }
 
-  getTokenExpirationDate(token: string): Date | any{
-    const decoded: any = jwt_decode(token);
+  getTokenExpirationDate(accessToken: string): Date | any{
+    const decoded: any = jwt_decode(accessToken);
 
     if(decoded.exp === undefined){
       return null; // dar atenção para isso mais tarde
@@ -71,11 +71,11 @@ export class CorretorService {
     return date;
   }
 
-  tokenExpirado(token?: string):boolean{
-    if(!token){
+  tokenExpirado(accessToken?: string):boolean{
+    if(!accessToken){
       return true;
     }
-    const date = this.getTokenExpirationDate(token);
+    const date = this.getTokenExpirationDate(accessToken);
     if(date === undefined){
       return false
     }
@@ -84,10 +84,10 @@ export class CorretorService {
   }
 
   usuarioLogado(){
-    const token = this.getAuthorizationToken();
-    if(!token){
+    const accessToken = this.getAuthorizationToken();
+    if(!accessToken){
       return false;
-    } else if(this.tokenExpirado(token)){
+    } else if(this.tokenExpirado(accessToken)){
       return false;
     }
 
