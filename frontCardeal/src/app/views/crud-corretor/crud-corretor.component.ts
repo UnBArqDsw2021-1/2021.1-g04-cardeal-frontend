@@ -46,7 +46,7 @@ export class CrudCorretorComponent implements OnInit {
 
     this.service.cadastraCorretor(realtor).subscribe(
       resultado =>{
-        this.route.navigateByUrl('login-corretor')
+        this.route.navigateByUrl('dashboard')
       },
       error => console.log(error)
     )

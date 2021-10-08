@@ -22,18 +22,16 @@ export class LoginCorretorComponent implements OnInit {
   constructor(private service: CorretorService, private route: Router){
 
   }
-  handlerSubmit(){
+ async handlerSubmit(){
 
     const realtor = {
       email:this.email,
       password:this.password,
       }
-      //console.log("Resultado da query", resultado)
-      //this.service.recebeCorretor(resultado);
       try{
-        const resultado = this.service.loginCorretor(realtor);
-        console.log(`Login efetuado ${true}`);
-        this.route.navigateByUrl('/dashboard')
+        const resultado = await this.service.loginCorretor(realtor);
+        console.log(`Login efetuado ${resultado}`);
+        this.route.navigateByUrl('dashboard')
 
       }catch(erro){
         console.log(erro);

@@ -10,7 +10,7 @@ import {environment} from "../../environments/environment"
 })
 export class CorretorService {
   private listaCorretores: Corretor[];
-  private url = `${environment}/realtors`
+  private url = `${environment.API}/realtors`
   private corretor!: Corretor;
 
   constructor(private httpClient: HttpClient) {
@@ -19,8 +19,8 @@ export class CorretorService {
 
   async loginCorretor(corretor: Corretor): Promise<boolean> {
     const resposta = await this.httpClient.post<any>(`${this.url}/login`, corretor).toPromise();
-    if(resposta && resposta.token){
-      window.localStorage.setItem('token', resposta.token);
+    if(resposta && resposta.accessToken){
+      window.localStorage.setItem('accessToken', resposta.accessToken);
       return true;
     }
     return false;
