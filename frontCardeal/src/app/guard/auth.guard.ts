@@ -7,6 +7,7 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from
 })
 export class AuthGuard implements CanActivate {
   constructor(private router: Router, private service: CorretorService){}
+
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     if(this.service.usuarioLogado()){
       return true;

@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Corretor } from '../models/corretor.model';
 import jwt_decode from 'jwt-decode';
+import {environment} from "../../environments/environment"
 
 @Injectable({
   providedIn: 'root',
 })
 export class CorretorService {
   private listaCorretores: Corretor[];
-  private url = "api/realtors"
+  private url = `${environment}/realtors`
   private corretor!: Corretor;
 
   constructor(private httpClient: HttpClient) {
@@ -17,22 +18,12 @@ export class CorretorService {
   }
 
   async loginCorretor(corretor: Corretor): Promise<boolean> {
-    const resposta = await this.httpClient.post<any>(this.url, corretor).toPromise();
+    const resposta = await this.httpClient.post<any>(`${this.url}/login`, corretor).toPromise();
     if(resposta && resposta.token){
       window.localStorage.setItem('token', resposta.token);
       return true;
     }
     return false;
-
-   /*  this.listarCorretores().subscribe((corretores: Corretor[]) => {
-      console.table(corretores);
-      console.log(corretor);
-      this.listaCorretores = corretores;
-      const existeCorretor = corretores.filter(() => corretor.email);
-      console.log('Esse é o corretor filtrado', existeCorretor);
-      corretor = existeCorretor[0];
-    });
-    return corretor; */
   }
 
   listarCorretores(): Observable<Corretor[]> {
@@ -52,7 +43,6 @@ export class CorretorService {
   }
 
   cadastraCorretor(corretor: Corretor) : Observable<Corretor>{
-    console.log("Enttrou no service de cadastro")
     return this.httpClient.post<Corretor>(this.url, corretor);
   }
 
