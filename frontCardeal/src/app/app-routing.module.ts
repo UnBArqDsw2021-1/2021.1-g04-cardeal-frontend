@@ -4,14 +4,19 @@ import { HomeComponent } from './views/home/home.component';
 import { CrudCorretorComponent } from './views/crud-corretor/crud-corretor.component';
 import { LoginCorretorComponent } from './views/login-corretor/login-corretor.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
-import { CadastroImovelComponent } from './views/cadastro-imovel/cadastro-imovel.component'
-import { UpdateImovelComponent } from './views/update-imovel/update-imovel.component'
-import { UpdateCorretorComponent } from './views/update-corretor/update-corretor.component'
-import { CadastroProprietarioComponent } from './views/cadastro-proprietario/cadastro-proprietario.component'
+import { CadastroImovelComponent } from './views/cadastro-imovel/cadastro-imovel.component';
+import { UpdateImovelComponent } from './views/update-imovel/update-imovel.component';
+import { UpdateCorretorComponent } from './views/update-corretor/update-corretor.component';
+import { CadastroProprietarioComponent } from './views/cadastro-proprietario/cadastro-proprietario.component';
 import { UpdateProprietarioComponent } from './views/update-proprietario/update-proprietario.component';
 import { MeusImoveisComponent } from './views/meus-imoveis/meus-imoveis.component';
 import { ImovelComponent } from './views/imovel/imovel.component';
 import { AuthGuard } from './guard/auth.guard';
+import { BuscarImoveisComponent } from './views/buscar-imoveis/buscar-imoveis.component';
+import { CadastroClienteComponent } from './views/cadastro-cliente/cadastro-cliente.component';
+import { UpdateClienteComponent } from './views/update-cliente/update-cliente.component';
+import { CadastroAgendamentoComponent } from './views/cadastro-agendamento/cadastro-agendamento.component';
+import { UpdateAgendamentoComponent } from './views/update-agendamento/update-agendamento.component';
 
 const routes: Routes = [
   {
@@ -42,31 +47,45 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'imovel',
+    path: 'imovel/:id',
     component: ImovelComponent,
-    canActivate: [AuthGuard]
-
   },
   {
-    path: 'update-imovel/:imovelId',
+    path: 'update-imovel/:id',
     component: UpdateImovelComponent,
-    canActivate: [AuthGuard]
   },
   {
-    path: 'update-corretor/:corretorId',
+    path: 'update-corretor/:id',
     component: UpdateCorretorComponent,
-    canActivate: [AuthGuard]
   },
   {
     path: 'cadastro-proprietario',
     component: CadastroProprietarioComponent,
-    canActivate: [AuthGuard]
   },
   {
-    path: 'update-proprietario/:proprietarioId',
+    path: 'update-proprietario/:id',
     component: UpdateProprietarioComponent,
-    canActivate: [AuthGuard]
-  }
+  },
+  {
+    path: 'buscar-imovel',
+    component: BuscarImoveisComponent,
+  },
+  {
+    path: 'cadastro-cliente',
+    component: CadastroClienteComponent,
+  },
+  {
+    path: 'update-cliente/:id',
+    component: UpdateClienteComponent,
+  },
+  {
+    path: 'cadastro-agendamento',
+    component: CadastroAgendamentoComponent,
+  },
+  {
+    path: 'update-agendamento/:id',
+    component: UpdateAgendamentoComponent,
+  },
 ];
 
 @NgModule({

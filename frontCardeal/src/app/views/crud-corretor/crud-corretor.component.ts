@@ -31,11 +31,16 @@ export class CrudCorretorComponent implements OnInit {
   }
 
   handlerSubmit(){
-    const realtor = {name:this.name,
+    if(this.password !== this.confirmpassword){
+      alert("digite a mesma senha no campo senha e confirmar senha!");
+      return;
+    }
+    const realtor = {
+      name:this.name,
       cpf:this.cpf,
-      telephone:this.telephone,
       email:this.email,
-      password:this.password,
+      passwordHash:this.password,
+      phone: this.telephone
       }
     console.log(realtor)
 

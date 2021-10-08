@@ -1,19 +1,22 @@
 export interface Imovel {
-  state?: string;
+  id?: number;
+  name?: string;
   city?: string;
+  state?: string;
   district?: string;
+  street?: string;
   number?: number;
   zipNumber?: string;
-  size?: number;
+  type?: string;
+  size?: string;
   numberBedroom?: number;
   numberBath?: number;
   numberPark?: number;
+  status?: string;
   value?: number;
-  views?: number;
+  viewed?: number;
   idOwner?: number;
   idRealtor?: number;
   media?: string;
-  type?: string;
-  id?: number;
 }
 export interface Imoveis extends Array<Imovel> {}

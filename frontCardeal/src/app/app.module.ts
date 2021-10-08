@@ -22,6 +22,12 @@ import { UpdateCorretorComponent } from './views/update-corretor/update-corretor
 import { CadastroProprietarioComponent } from './views/cadastro-proprietario/cadastro-proprietario.component';
 import { UpdateProprietarioComponent } from './views/update-proprietario/update-proprietario.component';
 import { httpInterceptorProviders } from './http-interceptors';
+import { BuscarImoveisComponent } from './views/buscar-imoveis/buscar-imoveis.component';
+import { PostagensComponent } from './views/postagens/postagens.component';
+import { CadastroClienteComponent } from './views/cadastro-cliente/cadastro-cliente.component';
+import { UpdateClienteComponent } from './views/update-cliente/update-cliente.component';
+import { CadastroAgendamentoComponent } from './views/cadastro-agendamento/cadastro-agendamento.component';
+import { UpdateAgendamentoComponent } from './views/update-agendamento/update-agendamento.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +42,13 @@ import { httpInterceptorProviders } from './http-interceptors';
     UpdateImovelComponent,
     UpdateCorretorComponent,
     CadastroProprietarioComponent,
-    UpdateProprietarioComponent
+    UpdateProprietarioComponent,
+    BuscarImoveisComponent,
+    PostagensComponent,
+    CadastroClienteComponent,
+    UpdateClienteComponent,
+    CadastroAgendamentoComponent,
+    UpdateAgendamentoComponent,
   ],
   imports: [
     BrowserModule,

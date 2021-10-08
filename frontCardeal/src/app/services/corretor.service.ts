@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Corretor } from '../models/corretor.model';
-import { environment } from 'src/environments/environment';
 import jwt_decode from 'jwt-decode';
 
 @Injectable({
@@ -10,7 +9,7 @@ import jwt_decode from 'jwt-decode';
 })
 export class CorretorService {
   private listaCorretores: Corretor[];
-  private url = `${environment.api}/corretor`
+  private url = "api/realtors"
   private corretor!: Corretor;
 
   constructor(private httpClient: HttpClient) {
@@ -53,11 +52,12 @@ export class CorretorService {
   }
 
   cadastraCorretor(corretor: Corretor) : Observable<Corretor>{
+    console.log("Enttrou no service de cadastro")
     return this.httpClient.post<Corretor>(this.url, corretor);
   }
 
   atualizaCorretor(corretor:Corretor):Observable<Corretor>{
-    return this.httpClient.put<Corretor>(this.url+'/'+corretor.id, corretor);
+    return this.httpClient.patch<Corretor>(this.url+'/'+corretor.id, corretor);
   }
 
   deleteCorretor(corretor:Corretor): Observable<Corretor>{
@@ -102,6 +102,10 @@ export class CorretorService {
     }
 
     return true;
+  }
+
+  MostraCorretor(id: number): Observable<Corretor> {
+    return this.httpClient.get<Corretor>(`${this.url}/${id}`);
   }
 
 }

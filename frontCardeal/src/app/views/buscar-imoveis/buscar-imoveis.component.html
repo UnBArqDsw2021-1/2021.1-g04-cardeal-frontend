@@ -1,0 +1,120 @@
+<section>
+  <div class="container_img">
+    <img class="img_corretor" src="assets/img/buscar.svg" />
+  </div>
+
+  <div class="container_cadastro">
+    <div class="container_titulo">
+      <h1 class="titulo_cadastro">Buscar Imóvel</h1>
+    </div>
+    <div class="container_form">
+      <form id="form">
+        <div class="coluna1">
+          <input
+            type="text"
+            id="city"
+            name="city"
+            placeholder="Cidade"
+            [(ngModel)]="dados.cidade"
+          />
+          <br />
+          <div class="flex">
+            <h4>entre</h4>
+            <input
+              type="number"
+              min="0"
+              id="idOwner"
+              name="idRealtor"
+              placeholder="Preço minímo"
+              [(ngModel)]="dados.prec_min"
+            />
+            <h4>e</h4>
+            <input
+              type="number"
+              min="0"
+              id="idOwner"
+              name="idRealtor"
+              placeholder="Preço máximo"
+              [(ngModel)]="dados.prec_max"
+            />
+            <br />
+          </div>
+          <div class="flex">
+            <input
+              min="0"
+              type="number"
+              id="Bathroom"
+              name="idRealtor"
+              [(ngModel)]="dados.qtd_banheiros"
+              placeholder="1"
+            />
+            <h4>Banheiros</h4>
+            <input
+              min="0"
+              type="number"
+              id="idOwner"
+              name="rooms"
+              [(ngModel)]="dados.qtd_quartos"
+              placeholder="1"
+            />
+            <h4>Quartos</h4>
+            <input
+              min="0"
+              type="number"
+              id="idOwner"
+              name="area"
+              [(ngModel)]="dados.area"
+              placeholder="1"
+            />
+            <h4>m²</h4>
+          </div>
+        </div>
+        <div class="coluna2">
+          <input
+            type="text"
+            id="Bairro"
+            name="Bairro"
+            placeholder="Bairro"
+            [(ngModel)]="dados.bairro"
+          />
+          <br />
+
+          <div class="teste">
+            <label for="">
+              <input
+                type="checkbox"
+                id="alugar"
+                name="alugar"
+                value="alugar"
+                [(ngModel)]="dados.tipo_aluguel"
+              />
+              <h4>Para Alugar</h4>
+            </label>
+            <label for="">
+              <input
+                type="checkbox"
+                id="comprar"
+                name="comprar"
+                value="comprar"
+                [(ngModel)]="dados.tipo_compra"
+              />
+              <h4>Para comprar</h4>
+            </label>
+          </div>
+          <br />
+          <button type="submit" (click)="buscar()" class="botao_cadastro">
+            Buscar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div *ngIf="!show">
+  <h2 class="sub-titulo">
+    As seguintes propriedades foram encontradas com as características
+    desejadas.
+  </h2>
+  <app-postagens></app-postagens>
+</div>

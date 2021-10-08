@@ -4,25 +4,32 @@
 
 <section>
   <div class="container_img">
-    <img class="img_corretor" src="assets/img/home.svg" />
+    <img class="img_corretor" src="assets/img/casa.svg" />
   </div>
 
   <div class="container_login">
-    <div class="links_forms">
-      <span class="titulo_cadastro">Cadastro</span>
-    </div>
+    <span class="titulo_cadastro">
+      {{ imovel.type }} para {{ imovel.status }} com
+      {{ imovel.numberBath }} quarto(s) em {{ imovel.city }},
+      {{ imovel.size }}m²
+    </span>
     <div class="container_form">
-      <form class="form">
-        <input type="text" id="email" name="email" placeholder="Email" /><br />
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Senha"
-        /><br />
-        <button type="submit" class="botao_login">Login</button><br />
-        <span class="botao_senha">Esqueci Minha Senha</span>
-      </form>
+      <div class="texto">
+        {{ imovel.district }}, {{ imovel.city }}, {{ imovel.state }}<br />
+        Cep: {{ imovel.zipNumber }}<br />
+        Proprietário: {{ imovel.idOwner }}<br />
+      </div>
+    </div>
+    <div class="container_tipo">
+      <span> Tipo de anúncio: {{ imovel.status }} </span><br />
+      <span> Valor: {{ imovel.value | currency: "R$":"symbol":".2" }} </span>
+    </div>
+    <div class="botoes">
+      <button type="submit" class="botao_voltar" (click)="voltar()">
+        Voltar
+      </button>
+      {{ " " }}
+      <button type="submit" class="botao_login">Agendar Visita</button>
     </div>
   </div>
 </section>
