@@ -46,19 +46,9 @@ export class CrudCorretorComponent implements OnInit {
 
     this.service.cadastraCorretor(realtor).subscribe(
       resultado =>{
-        this.limparCampos();
-        this.route.navigateByUrl('login-corretor')
+        this.route.navigateByUrl('dashboard')
       },
       error => console.log(error)
     )
-  }
-
-  limparCampos(){
-    this.name = "";
-    this.cpf = "";
-    this.telephone = "";
-    this.email = "";
-    this.password = "";
-    this.confirmpassword = "";
   }
 }

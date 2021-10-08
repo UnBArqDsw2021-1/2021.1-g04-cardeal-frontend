@@ -26,6 +26,7 @@ const routes: Routes = [
   {
     path: 'cadastro-corretor',
     component: CrudCorretorComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'login-corretor',
@@ -34,17 +35,17 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'cadastro-imovel',
     component: CadastroImovelComponent,
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'meus-imoveis',
     component: MeusImoveisComponent,
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'imovel/:id',
@@ -53,18 +54,22 @@ const routes: Routes = [
   {
     path: 'update-imovel/:id',
     component: UpdateImovelComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'update-corretor/:id',
     component: UpdateCorretorComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'cadastro-proprietario',
     component: CadastroProprietarioComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'update-proprietario/:id',
     component: UpdateProprietarioComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'buscar-imovel',
@@ -73,18 +78,22 @@ const routes: Routes = [
   {
     path: 'cadastro-cliente',
     component: CadastroClienteComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'update-cliente/:id',
     component: UpdateClienteComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'cadastro-agendamento',
     component: CadastroAgendamentoComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'update-agendamento/:id',
     component: UpdateAgendamentoComponent,
+    canActivate: [AuthGuard]
   },
 ];
 

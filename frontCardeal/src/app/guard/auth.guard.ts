@@ -1,3 +1,4 @@
+import { CorretorService } from 'src/app/services/corretor.service';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 
@@ -5,12 +6,13 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private router: Router){}
+  constructor(private router: Router, private service: CorretorService){}
+
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    const token = window.localStorage.getItem('token');
-    if(token){
+    if(this.service.usuarioLogado()){
       return true;
-    }else{
+    }
+    else{
       this.router.navigate(['/login-corretor']);
       return false
     }

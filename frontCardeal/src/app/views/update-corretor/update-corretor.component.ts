@@ -57,6 +57,7 @@ export class UpdateCorretorComponent implements OnInit {
        this.router.navigateByUrl("/login-corretor")
      })
    }
+
    voltar() {
     this.location.back();
   }
