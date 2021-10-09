@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Imovel } from 'src/app/models/imovel.model';
+import { CorretorService } from 'src/app/services/corretor.service';
 import ImovelService from 'src/app/services/imovel.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class ImovelComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private service: ImovelService,
-    private location: Location
+    private location: Location,
+    private serviceCorretor: CorretorService
   ) {}
 
   ngOnInit(): void {
@@ -34,8 +36,29 @@ export class ImovelComponent implements OnInit {
   receberImovel() {
     this.service.MostraImovel(this.id).subscribe((imovel) => {
       this.imovel = imovel;
-      // console.log(this.imovel);
+      console.log(this.imovel);
+      this.atualizarViews();
     });
+  }
+
+  atualizarViews() {
+    // console.log('entrei');
+    var logado = this.serviceCorretor.usuarioLogado();
+    // console.log('antes');
+    console.log(logado);
+    if (!logado) {
+      let views: any = this.imovel.viewed;
+      views++;
+      this.imovel.viewed = views;
+      this.service.atualizarImovel(this.imovel, this.id).subscribe(
+        (resultado) => {
+          // console.log('depois');
+          // console.log(this.imovel);
+        },
+        (error) => console.log(error)
+      );
+    }
+    // console.log(logado);
   }
 
   ngOnDestroy() {

@@ -5,6 +5,7 @@ import ImovelService from 'src/app/services/imovel.service';
 import { ProprietarioService } from 'src/app/services/proprietario.service';
 import { Imovel } from '../../models/imovel.model';
 import jwt_decode from 'jwt-decode';
+import { Proprietario } from 'src/app/models/proprietario.model';
 
 @Component({
   selector: 'app-cadastro-imovel',
@@ -13,6 +14,7 @@ import jwt_decode from 'jwt-decode';
 })
 export class CadastroImovelComponent implements OnInit {
   name!: string;
+  dono!: string;
   city!: string;
   state!: string;
   district!: string;
@@ -29,7 +31,7 @@ export class CadastroImovelComponent implements OnInit {
   idOwner!: number;
   idRealtor!: number;
   media!: string;
-  proprietarios: any;
+  proprietarios!: Array<Proprietario>;
 
   constructor(
     private service: ImovelService,
@@ -39,16 +41,18 @@ export class CadastroImovelComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.receberProprietarios();
     document.querySelector('#link_home')!.classList.remove('ativo');
     document.querySelector('#link_cadastrar_imoveis')!.classList.add('ativo');
     document.querySelector('#link_faq')!.classList.remove('ativo');
     document.querySelector('#link_busca_imoveis')!.classList.remove('ativo');
     document.querySelector('#link_meus_imoveis')!.classList.remove('ativo');
-    this.receberProprietarios();
   }
 
   handlerSubmit() {
-    // verificar e receber id do corretor logado
+    let idProprietario = this.proprietarios.filter((e) => {
+      return e.name == this.dono;
+    });
     const token = this.serviceCorretor.getAuthorizationToken();
     let autenticado: any;
     if (token != null) {
@@ -72,7 +76,7 @@ export class CadastroImovelComponent implements OnInit {
       status: this.status,
       value: this.value,
       viewed: 0,
-      idOwner: 1,
+      idOwner: idProprietario[0].id,
       idRealtor: autenticado.id,
     };
     // console.log(property);
@@ -86,9 +90,10 @@ export class CadastroImovelComponent implements OnInit {
   }
 
   receberProprietarios() {
+    // console.log('entrei ');
     this.serviceProprietario.listarProprietario().subscribe(
       (resultado) => {
-        console.log(resultado);
+        // console.log(resultado);
         this.proprietarios = resultado;
       },
       (error) => console.log(error)

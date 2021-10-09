@@ -33,11 +33,13 @@ export class BuscarImoveisComponent implements OnInit {
 
   ngOnInit(): void {
     this.show = true;
-    document.querySelector("#link_busca_imoveis")!.classList.add("ativo");
-    document.querySelector("#link_cadastrar_imoveis")!.classList.remove("ativo");
-    document.querySelector("#link_faq")!.classList.remove("ativo");
-    document.querySelector("#link_pagina_home")!.classList.remove("ativo");
-    document.querySelector("#link_meus_imoveis")!.classList.remove("ativo");
+    document.querySelector('#link_busca_imoveis')!.classList.add('ativo');
+    document
+      .querySelector('#link_cadastrar_imoveis')!
+      .classList.remove('ativo');
+    document.querySelector('#link_faq')!.classList.remove('ativo');
+    document.querySelector('#link_pagina_home')!.classList.remove('ativo');
+    document.querySelector('#link_meus_imoveis')!.classList.remove('ativo');
   }
 
   gerarAlerta() {
@@ -70,7 +72,7 @@ export class BuscarImoveisComponent implements OnInit {
       this.dados.tipo_aluguel == false &&
       this.dados.tipo_compra == true
     ) {
-      this.status = 'Comprar';
+      this.status = 'Venda';
     } else if (
       this.dados.tipo_aluguel == true &&
       this.dados.tipo_compra == true
