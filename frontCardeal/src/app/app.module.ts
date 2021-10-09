@@ -21,6 +21,7 @@ import { UpdateImovelComponent } from './views/update-imovel/update-imovel.compo
 import { UpdateCorretorComponent } from './views/update-corretor/update-corretor.component';
 import { CadastroProprietarioComponent } from './views/cadastro-proprietario/cadastro-proprietario.component';
 import { UpdateProprietarioComponent } from './views/update-proprietario/update-proprietario.component';
+import { httpInterceptorProviders } from './http-interceptors';
 import { BuscarImoveisComponent } from './views/buscar-imoveis/buscar-imoveis.component';
 import { PostagensComponent } from './views/postagens/postagens.component';
 import { CadastroClienteComponent } from './views/cadastro-cliente/cadastro-cliente.component';
@@ -60,7 +61,7 @@ import { UpdateAgendamentoComponent } from './views/update-agendamento/update-ag
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

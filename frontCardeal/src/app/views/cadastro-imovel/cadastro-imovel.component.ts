@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CorretorService } from 'src/app/services/corretor.service';
 import ImovelService from 'src/app/services/imovel.service';
 import { ProprietarioService } from 'src/app/services/proprietario.service';
 import { Imovel } from '../../models/imovel.model';
+import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-cadastro-imovel',
@@ -32,7 +34,8 @@ export class CadastroImovelComponent implements OnInit {
   constructor(
     private service: ImovelService,
     private route: Router,
-    private serviceProprietario: ProprietarioService
+    private serviceProprietario: ProprietarioService,
+    private serviceCorretor: CorretorService
   ) {}
 
   ngOnInit(): void {
@@ -45,7 +48,14 @@ export class CadastroImovelComponent implements OnInit {
   }
 
   handlerSubmit() {
-    console.log('Entrou');
+    // verificar e receber id do corretor logado
+    const token = this.serviceCorretor.getAuthorizationToken();
+    let autenticado: any;
+    if (token != null) {
+      autenticado = jwt_decode(token);
+    }
+
+    // console.log('Entrou');
     const property = {
       name: this.name,
       city: this.city,
@@ -63,9 +73,9 @@ export class CadastroImovelComponent implements OnInit {
       value: this.value,
       viewed: 0,
       idOwner: 1,
-      idRealtor: 1,
+      idRealtor: autenticado.id,
     };
-    console.log(property);
+    // console.log(property);
 
     this.service.cadastraImovel(property).subscribe(
       (resultado) => {
