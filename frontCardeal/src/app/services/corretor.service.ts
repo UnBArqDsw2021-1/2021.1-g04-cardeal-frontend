@@ -98,6 +98,14 @@ export class CorretorService {
     return this.httpClient.get<Corretor>(`${this.url}/${id}`);
   }
 
+  CorretorAtual(){
+    const accessToken = this.getAuthorizationToken();
+    if(accessToken !== null){
+      const decoded: any = jwt_decode(accessToken);
+      return decoded;
+    }
+  }
+
   logout(){
     window.localStorage.setItem('accessToken', '');
   }

@@ -55,7 +55,24 @@
     <button  *ngIf="!usuarioAutenticado()" type="button" class="botao_corretor" routerLink="login-corretor">
       Sou corretor(a) de imóveis
     </button>
+    <li sub-meu>
+      <a   *ngIf="usuarioAutenticado()"
+          id="link_meus_imoveis"
+          class="links_texto areaCorretor"
+          routerLink="meus-imoveis"
+          >
+        {{this.corretor.name}}
+      </a>
+      <div class="sub-meu">
+        <ul>
+          <li><a (click)="paginaConfiguracoes()">Editar Perfil</a></li>
+          <li><a (click)="sair()">Sair</a></li>
+        </ul>
+      </div>
+
+    </li>
   </div>
+
 
   <div class="conteudo">
     <router-outlet></router-outlet>
