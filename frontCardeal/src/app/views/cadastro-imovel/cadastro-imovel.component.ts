@@ -64,7 +64,7 @@ export class CadastroImovelComponent implements OnInit {
       (resultado) => {
         this.route.navigateByUrl('dashboard');
       },
-      (error) => console.log(error)
+      (error) => console.log("DEU ERRO", error)
     );
   }
 }
