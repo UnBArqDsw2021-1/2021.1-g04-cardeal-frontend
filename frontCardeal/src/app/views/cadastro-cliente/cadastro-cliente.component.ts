@@ -1,3 +1,4 @@
+import { ToastService } from 'src/app/services/toast.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cliente } from 'src/app/models/cliente.model';
@@ -16,7 +17,7 @@ export class CadastroClienteComponent implements OnInit {
   email!: string;
   phone!: string;
 
-  constructor(private service: ClienteService, private route: Router) {}
+  constructor(private service: ClienteService, private route: Router, private toast: ToastService) {}
 
   ngOnInit(): void {
     document.querySelector('#link_home')!.classList.remove('ativo');
@@ -40,9 +41,10 @@ export class CadastroClienteComponent implements OnInit {
 
     this.service.cadastraCliente(this.clienteObj).subscribe(
       (resultado) => {
+        this.toast.showSucessToast("Cliente cadastrado com sucesso !!!")
         this.route.navigateByUrl('dashboard');
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao cadastrar cliente: " + error)
     );
   }
 }

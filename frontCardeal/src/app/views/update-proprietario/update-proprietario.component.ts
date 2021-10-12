@@ -1,9 +1,11 @@
+import { ToastService } from './../../services/toast.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { ProprietarioService } from 'src/app/services/proprietario.service';
 import { Proprietario } from 'src/app/models/proprietario.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Location } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-update-proprietario',
@@ -21,7 +23,8 @@ export class UpdateProprietarioComponent implements OnInit {
       private route: ActivatedRoute,
       private service: ProprietarioService,
       private router: Router,
-      private location: Location
+      private location: Location,
+      private toast: ToastService
     ) {}
 
    ngOnInit(): void {
@@ -42,9 +45,10 @@ export class UpdateProprietarioComponent implements OnInit {
     console.log(this.proprietario);
     this.service.atualizarProprietario(this.proprietario, this.id).subscribe(
       (resultado) => {
+        this.toast.showSucessToast("Proprietario Atualizado com sucesso!")
         this.router.navigateByUrl('dashboard');
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao atualizar o proprietario: "+error)
     );
   }
   voltar() {
@@ -60,10 +64,10 @@ export class UpdateProprietarioComponent implements OnInit {
     this.service.deletarProprietario(this.id).subscribe(
       (resultado) => {
         console.log(this.proprietario);
-        alert('Proprietário excluído');
+        this.toast.showSucessToast("Proprietario Removido com sucesso!")
         this.router.navigateByUrl('dashboard');
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao remover o proprietario: "+error)
     );
     }
   }

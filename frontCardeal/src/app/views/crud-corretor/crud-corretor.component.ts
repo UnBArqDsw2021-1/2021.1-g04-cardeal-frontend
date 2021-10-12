@@ -1,3 +1,4 @@
+import { ToastService } from 'src/app/services/toast.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CorretorService } from 'src/app/services/corretor.service';
@@ -26,7 +27,7 @@ export class CrudCorretorComponent implements OnInit {
     document.querySelector("#link_busca_imoveis")!.classList.remove("ativo");
   }
 
-  constructor(private service: CorretorService, private route: Router){
+  constructor(private service: CorretorService, private route: Router, private toast: ToastService){
 
   }
 
@@ -46,9 +47,10 @@ export class CrudCorretorComponent implements OnInit {
 
     this.service.cadastraCorretor(realtor).subscribe(
       resultado =>{
+        this.toast.showSucessToast("Corretor cadastrado com sucesso!!!")
         this.route.navigateByUrl('dashboard')
       },
-      error => console.log(error)
+      error => this.toast.showErroToast("Erro ao cadastrar Corretor" + error)
     )
   }
 }

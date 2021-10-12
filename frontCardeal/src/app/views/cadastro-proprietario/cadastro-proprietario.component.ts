@@ -1,3 +1,4 @@
+import { ToastService } from 'src/app/services/toast.service';
 import { Component, OnInit } from '@angular/core';
 import { ProprietarioService } from 'src/app/services/proprietario.service';
 import { Router } from '@angular/router';
@@ -21,7 +22,7 @@ export class CadastroProprietarioComponent implements OnInit {
     document.querySelector("#link_busca_imoveis")!.classList.remove("ativo");
   }
 
-  constructor(private service: ProprietarioService, private route: Router){
+  constructor(private service: ProprietarioService, private route: Router, private toast: ToastService){
 
   }
 
@@ -36,17 +37,10 @@ export class CadastroProprietarioComponent implements OnInit {
 
     this.service.cadastraProprietario(owner).subscribe(
       resultado =>{
+        this.toast.showSucessToast("Proprietario Cadastrado com sucesso !!!")
         this.route.navigateByUrl('dashboard')
       },
-      error => console.log(error)
+      error => this.toast.showErroToast("Erro ao cadastrar Proprietario: "+ error)
     )
-
-    // this.service.cadastraCorretor(realtor).subscribe(
-    //   resultado =>{
-    //     this.limparCampos();
-    //     this.route.navigateByUrl('login-corretor')
-    //   },
-    //   error => console.log(error)
-    // )
   }
 }

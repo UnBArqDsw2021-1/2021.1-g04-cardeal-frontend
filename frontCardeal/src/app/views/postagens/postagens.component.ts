@@ -1,3 +1,4 @@
+import { ToastService } from 'src/app/services/toast.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Imoveis, Imovel } from 'src/app/models/imovel.model';
@@ -16,7 +17,7 @@ export class PostagensComponent implements OnInit {
   imovel!: Imovel;
   icones = false;
 
-  constructor(private service: ImovelService, private route: Router) {}
+  constructor(private service: ImovelService, private route: Router, private toast: ToastService) {}
 
   ngOnInit(): void {
     this.lerimoveis();
@@ -35,7 +36,7 @@ export class PostagensComponent implements OnInit {
         // console.log(this.imoveis);
         // this.route.navigateByUrl('meus-imoveis');
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao listar os imóveis: "+ error)
     );
   }
 
@@ -43,12 +44,12 @@ export class PostagensComponent implements OnInit {
     this.service.deletarImovel(imovel.id).subscribe(
       (resultado) => {
         console.log(imovel);
-        alert('Imovel Deletado');
+        this.toast.showSucessToast("Imóvel removido com sucesso")
         this.lerimoveis();
 
         // this.route.navigateByUrl('login-corretor');
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao remover imóvel: "+error)
     );
   }
 
@@ -58,7 +59,7 @@ export class PostagensComponent implements OnInit {
       (resultado) => {
         this.route.navigateByUrl('/imovel/' + imovel.id);
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao carregar as informações do imóvel: "+error)
     );
   }
 
@@ -68,7 +69,7 @@ export class PostagensComponent implements OnInit {
       (resultado) => {
         this.route.navigateByUrl('/update-imovel/' + imovel.id);
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao carregar as informações do imóvel: "+error)
     );
   }
 
