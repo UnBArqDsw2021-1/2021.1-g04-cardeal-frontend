@@ -50,7 +50,7 @@ export class UpdateCorretorComponent implements OnInit {
     this.service.atualizaCorretor(novoCorretor).subscribe(
       resposta =>{
       this.toast.showSucessToast("Informações do corretor atualizado com sucesso!!!")
-      this.router.navigateByUrl("/dashboard");
+      this.router.navigateByUrl("/meus-imoveis");
     },
     erro => this.toast.showErroToast("Erro ao atualizar as informações do corretor!!!"+erro))
    }

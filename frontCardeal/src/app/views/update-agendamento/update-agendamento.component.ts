@@ -46,7 +46,7 @@ export class UpdateAgendamentoComponent implements OnInit {
     this.service.atualizarAgendamento(this.agendamento, this.id).subscribe(
       (_resultado) => {
         this.toast.showSucessToast("Agendamento atualizado com sucesso!!!")
-        this.router.navigateByUrl('dashboard');
+        this.router.navigateByUrl('meus-imoveis');
       },
       (error) => this.toast.showErroToast("Erro ao atualizar o agendamento"+error)
     );
@@ -65,7 +65,7 @@ export class UpdateAgendamentoComponent implements OnInit {
       (resultado) => {
         console.log(this.agendamento);
         this.toast.showSucessToast("Agendamento removido com sucesso")
-        this.router.navigateByUrl('dashboard');
+        this.router.navigateByUrl('meus-imoveis');
       },
       (error) => this.toast.showErroToast("Erro ao remover o agendamento: "+error)
     );

@@ -66,7 +66,7 @@ export class CadastroImovelComponent implements OnInit {
     this.service.cadastraImovel(property).subscribe(
       (resultado) => {
         this.toast.showSucessToast("Imovel cadastrado com sucesso!!!");
-        this.route.navigateByUrl('dashboard');
+        this.route.navigateByUrl('meus-imoveis');
       },
       (error) => this.toast.showErroToast("Erro ao cadastrar Imóvel"+ error)
     );

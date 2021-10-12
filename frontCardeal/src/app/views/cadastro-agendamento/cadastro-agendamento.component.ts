@@ -43,7 +43,7 @@ export class CadastroAgendamentoComponent implements OnInit {
     this.service.cadastraAgendamento(this.agendamentoObj).subscribe(
       (resultado) => {
         this.toats.showSucessToast("Agendamento cadastrado com sucesso!!!")
-        this.route.navigateByUrl('dashboard');
+        this.route.navigateByUrl('meus-imoveis');
       },
       (error) => this.toats.showErroToast("Erro ao criar o agendamento:" + error)
     );

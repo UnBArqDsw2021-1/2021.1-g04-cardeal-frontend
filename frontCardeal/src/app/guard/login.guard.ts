@@ -13,7 +13,7 @@ export class LoginGuard implements CanActivate {
       return true;
     }
     else{
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/meus-imoveis']);
       return false
     }
   }

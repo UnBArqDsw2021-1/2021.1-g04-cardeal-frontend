@@ -34,7 +34,7 @@ export class LoginCorretorComponent implements OnInit {
         const resultado = await this.service.loginCorretor(realtor);
         this.nome = this.service.CorretorAtual().name;
         this.toast.showSucessToast(`Seja Bem Vindo ${this.nome}`)
-        this.route.navigateByUrl('dashboard')
+        this.route.navigateByUrl('meus-imoveis')
 
       }catch(erro){
         console.log(erro);

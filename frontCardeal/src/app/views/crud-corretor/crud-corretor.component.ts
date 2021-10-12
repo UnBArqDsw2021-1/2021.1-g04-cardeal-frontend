@@ -48,7 +48,7 @@ export class CrudCorretorComponent implements OnInit {
     this.service.cadastraCorretor(realtor).subscribe(
       resultado =>{
         this.toast.showSucessToast("Corretor cadastrado com sucesso!!!")
-        this.route.navigateByUrl('dashboard')
+        this.route.navigateByUrl('meus-imoveis')
       },
       error => this.toast.showErroToast("Erro ao cadastrar Corretor" + error)
     )

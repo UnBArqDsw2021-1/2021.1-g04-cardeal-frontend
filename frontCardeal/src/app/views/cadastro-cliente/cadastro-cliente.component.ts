@@ -42,7 +42,7 @@ export class CadastroClienteComponent implements OnInit {
     this.service.cadastraCliente(this.clienteObj).subscribe(
       (resultado) => {
         this.toast.showSucessToast("Cliente cadastrado com sucesso !!!")
-        this.route.navigateByUrl('dashboard');
+        this.route.navigateByUrl('meus-imoveis');
       },
       (error) => this.toast.showErroToast("Erro ao cadastrar cliente: " + error)
     );
