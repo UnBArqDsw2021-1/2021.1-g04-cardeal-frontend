@@ -3,7 +3,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Imovel } from 'src/app/models/imovel.model';
+import { Proprietario } from 'src/app/models/proprietario.model';
 import ImovelService from 'src/app/services/imovel.service';
+import { ProprietarioService } from 'src/app/services/proprietario.service';
 
 @Component({
   selector: 'app-imovel',
@@ -15,10 +17,12 @@ export class ImovelComponent implements OnInit {
   id!: number;
   private routeSub!: Subscription;
   imovel!: Imovel;
+  proprietario!: Proprietario;
 
   constructor(
     private route: ActivatedRoute,
     private service: ImovelService,
+    private serviceProp: ProprietarioService,
     private location: Location
   ) {}
 
@@ -28,6 +32,7 @@ export class ImovelComponent implements OnInit {
       // console.log(params['id']);
       this.id = params['id'];
       this.receberImovel();
+      this.recebeProprietario();
     });
   }
 
@@ -44,5 +49,12 @@ export class ImovelComponent implements OnInit {
 
   voltar() {
     this.location.back();
+  }
+  recebeProprietario(){
+    if(this.imovel.idOwner !== undefined){
+      this.serviceProp.MostraProprietario(this.imovel.idOwner).subscribe((proprietario) => {
+        this.proprietario = proprietario;
+      });
+    }
   }
 }
