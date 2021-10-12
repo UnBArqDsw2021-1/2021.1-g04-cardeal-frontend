@@ -5,16 +5,36 @@
       <span class="logo_titulo"> Cardeal </span>
     </div>
 
-    <div class="links">
-      <a 
-        id="link_pagina_home" 
+    <div *ngIf="!usuarioAutenticado()" class="links">
+      <a
+        id="link_pagina_home"
         class="links_texto"
         routerLink="/">
         Home
       </a>
-      <a 
+      <a
         id="link_busca_imoveis"
-        class="links_texto" 
+        class="links_texto"
+        routerLink="buscar-imovel">
+        Buscar Imóveis
+      </a>
+      <a
+        id="link_faq"
+        class="links_texto">
+        FAQ
+      </a>
+    </div>
+
+    <div class="links" *ngIf="usuarioAutenticado()">
+      <a
+        id="link_pagina_home"
+        class="links_texto"
+        routerLink="/">
+        Home
+      </a>
+      <a
+        id="link_busca_imoveis"
+        class="links_texto"
         routerLink="buscar-imovel">
         Buscar Imóveis
       </a>
@@ -24,20 +44,15 @@
         routerLink="cadastro-imovel">
         Cadastrar Imóvel
       </a>
-      <a 
-        id="link_meus_imoveis" 
-        class="links_texto" 
+      <a
+        id="link_meus_imoveis"
+        class="links_texto"
         routerLink="meus-imoveis">
         Meus Imóveis
       </a>
-      <a 
-        id="link_faq" 
-        class="links_texto">
-        FAQ
-      </a>
     </div>
 
-    <button type="button" class="botao_corretor" routerLink="login-corretor">
+    <button  *ngIf="!usuarioAutenticado()" type="button" class="botao_corretor" routerLink="login-corretor">
       Sou corretor(a) de imóveis
     </button>
   </div>

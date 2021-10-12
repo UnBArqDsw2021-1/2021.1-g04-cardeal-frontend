@@ -1,3 +1,4 @@
+import { CorretorService } from './services/corretor.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontCardeal';
+
+  constructor(private service: CorretorService){}
+
+  usuarioAutenticado(): boolean{
+    return this.service.usuarioLogado();
+  }
 }
