@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { Agendamento } from '../models/agendamento.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AgendamentoService {
   private listaAgendamento: Agendamento[];
-  private url = "api/schedules"
+  private url = `${environment.API}/schedules`
   private agendamento!: Agendamento;
 
   constructor(private httpClient: HttpClient) {

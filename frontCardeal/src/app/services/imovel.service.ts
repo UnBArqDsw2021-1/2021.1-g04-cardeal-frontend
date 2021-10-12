@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Imovel } from '../models/imovel.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export default class ImovelService {
   private listaImoveis: Imovel[];
-  private url = 'api/properties';
+  private url = `${environment.API}/properties`;
 
 
   constructor(private httpClient: HttpClient) {

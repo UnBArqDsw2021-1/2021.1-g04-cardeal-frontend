@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { Proprietario } from '../models/proprietario.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProprietarioService {
   private listaProprietario: Proprietario[];
-  private url = "api/owners"
+  private url = `${environment.API}/owners`
   private proprietario!: Proprietario;
 
   constructor(private httpClient: HttpClient) {
