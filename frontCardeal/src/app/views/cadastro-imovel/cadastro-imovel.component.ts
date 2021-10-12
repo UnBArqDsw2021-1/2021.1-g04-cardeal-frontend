@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import ImovelService from 'src/app/services/imovel.service';
 import { Imovel } from '../../models/imovel.model';
 
@@ -27,7 +28,9 @@ export class CadastroImovelComponent implements OnInit {
   idRealtor!: number;
   media!: string;
 
-  constructor(private service: ImovelService, private route: Router) {}
+  constructor(private service: ImovelService,
+              private route: Router,
+              private toast: ToastrService) {}
 
   ngOnInit(): void {
     document.querySelector("#link_busca_imoveis")!.classList.remove("ativo");
@@ -62,9 +65,17 @@ export class CadastroImovelComponent implements OnInit {
 
     this.service.cadastraImovel(property).subscribe(
       (resultado) => {
+        this.showSucessToast();
         this.route.navigateByUrl('dashboard');
       },
-      (error) => console.log("DEU ERRO", error)
+      (error) => this.showErroToast(error)
     );
+  }
+
+  showSucessToast(){
+    this.toast.success("Imovel cadastrado com sucesso");
+  }
+  showErroToast(message: string){
+    this.toast.error("Erro ao cadastrar o imovel:" + message);
   }
 }

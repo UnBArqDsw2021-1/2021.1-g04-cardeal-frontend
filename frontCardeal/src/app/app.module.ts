@@ -28,6 +28,7 @@ import { CadastroClienteComponent } from './views/cadastro-cliente/cadastro-clie
 import { UpdateClienteComponent } from './views/update-cliente/update-cliente.component';
 import { CadastroAgendamentoComponent } from './views/cadastro-agendamento/cadastro-agendamento.component';
 import { UpdateAgendamentoComponent } from './views/update-agendamento/update-agendamento.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,12 @@ import { UpdateAgendamentoComponent } from './views/update-agendamento/update-ag
     MatMenuModule,
     FormsModule,
     HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      preventDuplicates: true,
+    })
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
