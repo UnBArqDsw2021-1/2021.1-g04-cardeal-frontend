@@ -5,4 +5,4 @@ export interface Proprietario {
   phone?: string;
   email?: string;
   isActive?: boolean;
-}export interface Imoveis extends Array<Proprietario> {}
+}export interface Proprietarios extends Array<Proprietario> {}
