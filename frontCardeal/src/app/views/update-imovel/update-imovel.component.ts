@@ -1,3 +1,4 @@
+import { ToastService } from 'src/app/services/toast.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -20,13 +21,12 @@ export class UpdateImovelComponent implements OnInit {
     private route: ActivatedRoute,
     private service: ImovelService,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private toast: ToastService
   ) {}
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
-      // console.log(params);
-      // console.log(params['id']);
       this.id = params['id'];
       this.receberImovel();
     });
@@ -35,18 +35,17 @@ export class UpdateImovelComponent implements OnInit {
   receberImovel() {
     this.service.MostraImovel(this.id).subscribe((imovel) => {
       this.imovel = imovel;
-      // console.log(this.imovel);
     });
   }
 
   atualizar() {
-    // console.log(imovel);
     console.log(this.imovel);
     this.service.atualizarImovel(this.imovel, this.id).subscribe(
       (resultado) => {
+        this.toast.showSucessToast("Informações do Imóvel Atualizadas com sucesso!!!")
         this.router.navigateByUrl('meus-imoveis');
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao atualizar as informações do corretor!!!"+error)
     );
   }
   voltar() {
@@ -56,6 +55,6 @@ export class UpdateImovelComponent implements OnInit {
   ngOnDestroy() {
     this.routeSub.unsubscribe();
   }
-  
+
 
 }

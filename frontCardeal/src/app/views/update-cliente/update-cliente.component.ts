@@ -1,3 +1,4 @@
+import { ToastService } from 'src/app/services/toast.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { Cliente } from 'src/app/models/cliente.model';
@@ -22,7 +23,8 @@ export class UpdateClienteComponent implements OnInit {
       private route: ActivatedRoute,
       private service: ClienteService,
       private router: Router,
-      private location: Location
+      private location: Location,
+      private toast: ToastService
     ) {}
 
    ngOnInit(): void {
@@ -43,9 +45,10 @@ export class UpdateClienteComponent implements OnInit {
     console.log(this.cliente);
     this.service.atualizarCliente(this.cliente, this.id).subscribe(
       (_resultado) => {
+        this.toast.showSucessToast("Informações do cliente atualizado com sucesso!!!")
         this.router.navigateByUrl('dashboard');
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao atualizar as informações do cliente: "+error)
     );
   }
   voltar() {
@@ -61,10 +64,10 @@ export class UpdateClienteComponent implements OnInit {
     this.service.deletarCliente(this.id).subscribe(
       (resultado) => {
         console.log(this.cliente);
-        alert('Cliente excluído');
+        this.toast.showSucessToast("Cliente removido com sucesso!!!")
         this.router.navigateByUrl('dashboard');
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao remover o cliente : "+error)
     );
     }
   }

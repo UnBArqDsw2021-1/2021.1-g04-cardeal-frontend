@@ -1,3 +1,4 @@
+import { ToastService } from 'src/app/services/toast.service';
 import { Component, OnInit, Input} from '@angular/core';
 import { CorretorService } from 'src/app/services/corretor.service';
 import { Corretor } from 'src/app/models/corretor.model';
@@ -20,7 +21,8 @@ export class UpdateCorretorComponent implements OnInit {
     private route: ActivatedRoute,
     private service: CorretorService,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private toast: ToastService
   ) {}
 
    ngOnInit(): void {
@@ -45,17 +47,19 @@ export class UpdateCorretorComponent implements OnInit {
       id: this.corretor.id
     }
 
-    this.service.atualizaCorretor(novoCorretor).subscribe(resposta =>{
-      console.log(resposta);
+    this.service.atualizaCorretor(novoCorretor).subscribe(
+      resposta =>{
+      this.toast.showSucessToast("Informações do corretor atualizado com sucesso!!!")
       this.router.navigateByUrl("/dashboard");
-    })
+    },
+    erro => this.toast.showErroToast("Erro ao atualizar as informações do corretor!!!"+erro))
    }
 
    excluirConta(){
      this.service.deleteCorretor(this.corretor).subscribe(resposta =>{
-       console.log(resposta);
+      this.toast.showSucessToast("Conta removida com sucesso!!!")
        this.router.navigateByUrl("/login-corretor")
-     })
+     }, error => this.toast.showErroToast("Erro ao remover conta do corretor: "+error))
    }
 
    voltar() {
