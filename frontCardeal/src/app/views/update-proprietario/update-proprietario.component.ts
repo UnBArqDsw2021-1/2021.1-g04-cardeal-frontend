@@ -8,26 +8,25 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-update-proprietario',
   templateUrl: './update-proprietario.component.html',
-  styleUrls: ['./update-proprietario.component.css']
+  styleUrls: ['./update-proprietario.component.css'],
 })
 export class UpdateProprietarioComponent implements OnInit {
-
   @Input()
   id!: number;
   private routeSub!: Subscription;
   proprietario!: Proprietario;
 
-    constructor(
-      private route: ActivatedRoute,
-      private service: ProprietarioService,
-      private router: Router,
-      private location: Location
-    ) {}
+  constructor(
+    private route: ActivatedRoute,
+    private service: ProprietarioService,
+    private router: Router,
+    private location: Location
+  ) {}
 
-   ngOnInit(): void {
+  ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
       this.id = params['id'];
-      console.log("Esse é o id", this.id);
+      console.log('Esse é o id', this.id);
       this.receberProprietario();
     });
   }
@@ -56,15 +55,17 @@ export class UpdateProprietarioComponent implements OnInit {
   }
 
   deleteProprietario() {
-    if(confirm("Você tem certeza que deseja excluir "+ this.proprietario.name )) {
-    this.service.deletarProprietario(this.id).subscribe(
-      (resultado) => {
-        console.log(this.proprietario);
-        alert('Proprietário excluído');
-        this.router.navigateByUrl('dashboard');
-      },
-      (error) => console.log(error)
-    );
+    if (
+      confirm('Você tem certeza que deseja excluir ' + this.proprietario.name)
+    ) {
+      this.service.deletarProprietario(this.id).subscribe(
+        (resultado) => {
+          console.log(this.proprietario);
+          alert('Proprietário excluído');
+          this.router.navigateByUrl('dashboard');
+        },
+        (error) => console.log(error)
+      );
     }
   }
 }

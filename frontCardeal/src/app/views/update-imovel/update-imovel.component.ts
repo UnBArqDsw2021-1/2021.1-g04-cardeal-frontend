@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs';
 import { Imovel } from 'src/app/models/imovel.model';
 import { Location } from '@angular/common';
 import ImovelService from 'src/app/services/imovel.service';
+import { ProprietarioService } from 'src/app/services/proprietario.service';
+import { Proprietario } from 'src/app/models/proprietario.model';
 
 @Component({
   selector: 'app-update-imovel',
@@ -15,11 +17,15 @@ export class UpdateImovelComponent implements OnInit {
   id!: number;
   private routeSub!: Subscription;
   imovel!: Imovel;
+  proprietarios!: Array<Proprietario>;
+  dono!: any;
+  novoDono!: any;
 
   constructor(
     private route: ActivatedRoute,
     private service: ImovelService,
     private router: Router,
+    private serviceProprietario: ProprietarioService,
     private location: Location
   ) {}
 
@@ -34,12 +40,33 @@ export class UpdateImovelComponent implements OnInit {
     this.service.MostraImovel(this.id).subscribe((imovel) => {
       this.imovel = imovel;
       // console.log(this.imovel);
+      this.receberProprietarios();
     });
+  }
+  receberProprietarios() {
+    // console.log('entrei ');
+    this.serviceProprietario.listarProprietario().subscribe(
+      (resultado) => {
+        // console.log(resultado);
+        this.proprietarios = resultado;
+        this.dono = this.proprietarios.filter((e) => {
+          return e.id == this.imovel.idOwner;
+        });
+        // console.log(this.dono);
+      },
+      (error) => console.log(error)
+    );
   }
 
   atualizar() {
-    // console.log(imovel);
-    console.log(this.imovel);
+    // console.log('antes de atualizar');
+    // console.log(this.imovel);
+    let idProprietario = this.proprietarios.filter((e) => {
+      return e.name == this.novoDono;
+    });
+    this.imovel.idOwner = idProprietario[0].id;
+    // console.log('depois de atualizar');
+    // console.log(this.imovel);
     this.service.atualizarImovel(this.imovel, this.id).subscribe(
       (resultado) => {
         this.router.navigateByUrl('meus-imoveis');
