@@ -10,7 +10,8 @@
         id="link_pagina_home"
         class="links_texto"
         routerLink="/"
-        routerLinkActive="ativo">
+        routerLinkActive="ativo"
+        [routerLinkActiveOptions]="{exact: true}">
         Home
       </a>
       <a
@@ -34,7 +35,8 @@
         id="link_pagina_home"
         class="links_texto"
         routerLink="/"
-        routerLinkActive="ativo">
+        routerLinkActive="ativo"
+        [routerLinkActiveOptions]="{exact: true}">
         Home
       </a>
       <a
@@ -64,24 +66,17 @@
       Sou corretor(a) de imóveis
     </button>
 
-    <ul *ngIf="usuarioAutenticado()">
-      <li class="links">
-        <a
-            id="link_meus_imoveis"
-            class="links_texto"
-            routerLink="meus-imoveis"
-            routerLinkActive="ativo"
-            >
+    <div class="areaCorretor" *ngIf="usuarioAutenticado()">
+      <li>
           {{this.corretor.name}}
-        </a>
-        <!-- <div class="sub-meu">
+        <div class="sub-menu">
           <ul>
             <li><a (click)="paginaConfiguracoes()">Editar Perfil</a></li>
             <li><a (click)="sair()">Sair</a></li>
           </ul>
-        </div> -->
+        </div>
       </li>
-    </ul>
+    </div>
   </div>
 
 
