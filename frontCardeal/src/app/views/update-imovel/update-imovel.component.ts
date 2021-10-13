@@ -26,13 +26,9 @@ export class UpdateImovelComponent implements OnInit {
     private route: ActivatedRoute,
     private service: ImovelService,
     private router: Router,
-<<<<<<< HEAD
-    private location: Location,
-    private toast: ToastService
-=======
+    private toast: ToastService,
     private serviceProprietario: ProprietarioService,
     private location: Location
->>>>>>> 05cf3e2798e0b216a42528e2a44b145ae54c0cc3
   ) {}
 
   ngOnInit(): void {
@@ -45,11 +41,7 @@ export class UpdateImovelComponent implements OnInit {
   receberImovel() {
     this.service.MostraImovel(this.id).subscribe((imovel) => {
       this.imovel = imovel;
-<<<<<<< HEAD
-=======
-      // console.log(this.imovel);
       this.receberProprietarios();
->>>>>>> 05cf3e2798e0b216a42528e2a44b145ae54c0cc3
     });
   }
   receberProprietarios() {
@@ -68,18 +60,12 @@ export class UpdateImovelComponent implements OnInit {
   }
 
   atualizar() {
-<<<<<<< HEAD
     console.log(this.imovel);
-=======
-    // console.log('antes de atualizar');
-    // console.log(this.imovel);
     let idProprietario = this.proprietarios.filter((e) => {
       return e.name == this.novoDono;
     });
     this.imovel.idOwner = idProprietario[0].id;
-    // console.log('depois de atualizar');
-    // console.log(this.imovel);
->>>>>>> 05cf3e2798e0b216a42528e2a44b145ae54c0cc3
+
     this.service.atualizarImovel(this.imovel, this.id).subscribe(
       (resultado) => {
         this.toast.showSucessToast("Informações do Imóvel Atualizadas com sucesso!!!")
@@ -95,9 +81,4 @@ export class UpdateImovelComponent implements OnInit {
   ngOnDestroy() {
     this.routeSub.unsubscribe();
   }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 05cf3e2798e0b216a42528e2a44b145ae54c0cc3
 }
