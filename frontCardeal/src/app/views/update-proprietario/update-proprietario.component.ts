@@ -10,10 +10,9 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-update-proprietario',
   templateUrl: './update-proprietario.component.html',
-  styleUrls: ['./update-proprietario.component.css']
+  styleUrls: ['./update-proprietario.component.css'],
 })
 export class UpdateProprietarioComponent implements OnInit {
-
   @Input()
   id!: number;
   private routeSub!: Subscription;
@@ -27,10 +26,10 @@ export class UpdateProprietarioComponent implements OnInit {
       private toast: ToastService
     ) {}
 
-   ngOnInit(): void {
+  ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
       this.id = params['id'];
-      console.log("Esse é o id", this.id);
+      console.log('Esse é o id', this.id);
       this.receberProprietario();
     });
   }

@@ -11,7 +11,22 @@
     <div class="container_form">
       <form id="form">
         <div class="coluna1">
-          <label class="label" for="idRealtor">Proprietário</label
+          <label class="label" for="idOwner">Proprietário</label>
+          <input
+            [(ngModel)]="novoDono"
+            type="text"
+            list="proprietarios"
+            id="idOwner"
+            name="idOwner"
+            placeholder="{{ dono[0].name }}"
+          />
+          <datalist id="proprietarios">
+            <option *ngFor="let row of proprietarios" value="{{ row.name }}">
+              {{ row.name }}
+            </option>
+          </datalist>
+          <br />
+          <!-- <label class="label" for="idRealtor">Proprietário</label
           ><input
             type="text"
             id="idOwner"
@@ -19,7 +34,7 @@
             name="idRealtor"
             placeholder="Proprietário"
           />
-          <br />
+          <br /> -->
           <label class="label" for="name">Nome do imóvel</label>
           <input
             type="text"

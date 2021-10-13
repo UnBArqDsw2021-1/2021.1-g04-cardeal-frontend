@@ -5,6 +5,8 @@ import { Subscription } from 'rxjs';
 import { Imovel } from 'src/app/models/imovel.model';
 import { Location } from '@angular/common';
 import ImovelService from 'src/app/services/imovel.service';
+import { ProprietarioService } from 'src/app/services/proprietario.service';
+import { Proprietario } from 'src/app/models/proprietario.model';
 
 @Component({
   selector: 'app-update-imovel',
@@ -16,13 +18,21 @@ export class UpdateImovelComponent implements OnInit {
   id!: number;
   private routeSub!: Subscription;
   imovel!: Imovel;
+  proprietarios!: Array<Proprietario>;
+  dono!: any;
+  novoDono!: any;
 
   constructor(
     private route: ActivatedRoute,
     private service: ImovelService,
     private router: Router,
+<<<<<<< HEAD
     private location: Location,
     private toast: ToastService
+=======
+    private serviceProprietario: ProprietarioService,
+    private location: Location
+>>>>>>> 05cf3e2798e0b216a42528e2a44b145ae54c0cc3
   ) {}
 
   ngOnInit(): void {
@@ -35,11 +45,41 @@ export class UpdateImovelComponent implements OnInit {
   receberImovel() {
     this.service.MostraImovel(this.id).subscribe((imovel) => {
       this.imovel = imovel;
+<<<<<<< HEAD
+=======
+      // console.log(this.imovel);
+      this.receberProprietarios();
+>>>>>>> 05cf3e2798e0b216a42528e2a44b145ae54c0cc3
     });
+  }
+  receberProprietarios() {
+    // console.log('entrei ');
+    this.serviceProprietario.listarProprietario().subscribe(
+      (resultado) => {
+        // console.log(resultado);
+        this.proprietarios = resultado;
+        this.dono = this.proprietarios.filter((e) => {
+          return e.id == this.imovel.idOwner;
+        });
+        // console.log(this.dono);
+      },
+      (error) => console.log(error)
+    );
   }
 
   atualizar() {
+<<<<<<< HEAD
     console.log(this.imovel);
+=======
+    // console.log('antes de atualizar');
+    // console.log(this.imovel);
+    let idProprietario = this.proprietarios.filter((e) => {
+      return e.name == this.novoDono;
+    });
+    this.imovel.idOwner = idProprietario[0].id;
+    // console.log('depois de atualizar');
+    // console.log(this.imovel);
+>>>>>>> 05cf3e2798e0b216a42528e2a44b145ae54c0cc3
     this.service.atualizarImovel(this.imovel, this.id).subscribe(
       (resultado) => {
         this.toast.showSucessToast("Informações do Imóvel Atualizadas com sucesso!!!")
@@ -55,6 +95,9 @@ export class UpdateImovelComponent implements OnInit {
   ngOnDestroy() {
     this.routeSub.unsubscribe();
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 05cf3e2798e0b216a42528e2a44b145ae54c0cc3
 }
