@@ -139,8 +139,16 @@ body {
 }
 
 .areaCorretor {
-  color: #F14843;
+  color: #3F3D56;
   text-decoration: none;
+  display: inline;
+  font-family: Sora;
+    line-height: 15px;
+    padding: 0.5%;
+    float: right;
+    display: inline;
+    vertical-align: middle;
+    width: 112px;
 }
 
 .sub-meu ul {

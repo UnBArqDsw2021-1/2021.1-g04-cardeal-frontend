@@ -45,15 +45,15 @@ export class UpdateImovelComponent implements OnInit {
     });
   }
   receberProprietarios() {
-    // console.log('entrei ');
+
     this.serviceProprietario.listarProprietario().subscribe(
       (resultado) => {
-        // console.log(resultado);
+
         this.proprietarios = resultado;
         this.dono = this.proprietarios.filter((e) => {
           return e.id == this.imovel.idOwner;
         });
-        // console.log(this.dono);
+
       },
       (error) => console.log(error)
     );

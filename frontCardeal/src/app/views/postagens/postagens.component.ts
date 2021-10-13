@@ -20,7 +20,11 @@ export class PostagensComponent implements OnInit {
   imovel!: Imovel;
   icones = false;
 
-  constructor(private service: ImovelService, private route: Router, private toast: ToastService) {}
+  constructor(
+    private service: ImovelService,
+    private route: Router,
+    private toast: ToastService
+  ) {}
 
   ngOnInit(): void {
     this.lerimoveis();
@@ -30,24 +34,19 @@ export class PostagensComponent implements OnInit {
     this.service.listarImovelFiltro(this.urlFiltro).subscribe(
       (resultado) => {
         this.imoveis = resultado;
-        // console.log(resultado);
-        // console.log(this.urlFiltro);
       },
-      (error) => this.toast.showErroToast("Erro ao listar os imóveis: "+ error)
+      (error) => this.toast.showErroToast('Erro ao listar os imóveis: ' + error)
     );
-    // } else console.log('fazer a buscar com parametros');
   }
 
   deleteImovel(imovel: any) {
     this.service.deletarImovel(imovel.id).subscribe(
       (resultado) => {
         console.log(imovel);
-        this.toast.showSucessToast("Imóvel removido com sucesso")
+        this.toast.showSucessToast('Imóvel removido com sucesso');
         this.lerimoveis();
-
-        // this.route.navigateByUrl('login-corretor');
       },
-      (error) => this.toast.showErroToast("Erro ao remover imóvel: "+error)
+      (error) => this.toast.showErroToast('Erro ao remover imóvel: ' + error)
     );
   }
 
@@ -57,7 +56,10 @@ export class PostagensComponent implements OnInit {
       (resultado) => {
         this.route.navigateByUrl('/imovel/' + imovel.id);
       },
-      (error) => this.toast.showErroToast("Erro ao carregar as informações do imóvel: "+error)
+      (error) =>
+        this.toast.showErroToast(
+          'Erro ao carregar as informações do imóvel: ' + error
+        )
     );
   }
 
@@ -67,7 +69,10 @@ export class PostagensComponent implements OnInit {
       (resultado) => {
         this.route.navigateByUrl('/update-imovel/' + imovel.id);
       },
-      (error) => this.toast.showErroToast("Erro ao carregar as informações do imóvel: "+error)
+      (error) =>
+        this.toast.showErroToast(
+          'Erro ao carregar as informações do imóvel: ' + error
+        )
     );
   }
 

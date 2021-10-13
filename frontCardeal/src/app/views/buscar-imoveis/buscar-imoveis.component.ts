@@ -33,13 +33,6 @@ export class BuscarImoveisComponent implements OnInit {
 
   ngOnInit(): void {
     this.show = true;
-    document.querySelector('#link_busca_imoveis')!.classList.add('ativo');
-    document
-      .querySelector('#link_cadastrar_imoveis')!
-      .classList.remove('ativo');
-    document.querySelector('#link_faq')!.classList.remove('ativo');
-    document.querySelector('#link_pagina_home')!.classList.remove('ativo');
-    document.querySelector('#link_meus_imoveis')!.classList.remove('ativo');
   }
 
   gerarAlerta() {
@@ -67,7 +60,7 @@ export class BuscarImoveisComponent implements OnInit {
 
   tipoStatus() {
     if (this.dados.tipo_aluguel == true && this.dados.tipo_compra == false) {
-      this.status = 'Aluguel';
+      this.status = 'Alugar';
     } else if (
       this.dados.tipo_aluguel == false &&
       this.dados.tipo_compra == true
@@ -82,6 +75,11 @@ export class BuscarImoveisComponent implements OnInit {
   }
 
   lerImoveisFiltro() {
+    console.log('url');
+    console.log(this.url);
+    console.log('status');
+    console.log(this.url);
+
     this.service.listarImovelFiltro(this.url).subscribe(
       (resultado) => {
         console.log(resultado);

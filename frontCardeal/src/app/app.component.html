@@ -9,18 +9,22 @@
       <a
         id="link_pagina_home"
         class="links_texto"
-        routerLink="/">
+        routerLink="/"
+        routerLinkActive="ativo">
         Home
       </a>
       <a
         id="link_busca_imoveis"
         class="links_texto"
-        routerLink="buscar-imovel">
+        routerLink="buscar-imovel"
+        routerLinkActive="ativo">
         Buscar Imóveis
       </a>
       <a
         id="link_faq"
-        class="links_texto">
+        class="links_texto"
+        routerLink="faq"
+        routerLinkActive="ativo">
         FAQ
       </a>
     </div>
@@ -29,25 +33,29 @@
       <a
         id="link_pagina_home"
         class="links_texto"
-        routerLink="/">
+        routerLink="/"
+        routerLinkActive="ativo">
         Home
       </a>
       <a
         id="link_busca_imoveis"
         class="links_texto"
-        routerLink="buscar-imovel">
+        routerLink="buscar-imovel"
+        routerLinkActive="ativo">
         Buscar Imóveis
       </a>
       <a
         id="link_cadastrar_imoveis"
         class="links_texto"
-        routerLink="cadastro-imovel">
+        routerLink="cadastro-imovel"
+        routerLinkActive="ativo">
         Cadastrar Imóvel
       </a>
       <a
         id="link_meus_imoveis"
         class="links_texto"
-        routerLink="meus-imoveis">
+        routerLink="meus-imoveis"
+        routerLinkActive="ativo">
         Meus Imóveis
       </a>
     </div>
@@ -55,22 +63,25 @@
     <button  *ngIf="!usuarioAutenticado()" type="button" class="botao_corretor" routerLink="login-corretor">
       Sou corretor(a) de imóveis
     </button>
-    <li sub-meu>
-      <a   *ngIf="usuarioAutenticado()"
-          id="link_meus_imoveis"
-          class="links_texto areaCorretor"
-          routerLink="meus-imoveis"
-          >
-        {{this.corretor.name}}
-      </a>
-      <div class="sub-meu">
-        <ul>
-          <li><a (click)="paginaConfiguracoes()">Editar Perfil</a></li>
-          <li><a (click)="sair()">Sair</a></li>
-        </ul>
-      </div>
 
-    </li>
+    <ul *ngIf="usuarioAutenticado()">
+      <li class="links">
+        <a
+            id="link_meus_imoveis"
+            class="links_texto"
+            routerLink="meus-imoveis"
+            routerLinkActive="ativo"
+            >
+          {{this.corretor.name}}
+        </a>
+        <!-- <div class="sub-meu">
+          <ul>
+            <li><a (click)="paginaConfiguracoes()">Editar Perfil</a></li>
+            <li><a (click)="sair()">Sair</a></li>
+          </ul>
+        </div> -->
+      </li>
+    </ul>
   </div>
 
 
@@ -86,7 +97,7 @@
           <div class="texto_links">
             <a routerLink="buscar-imovel">Buscar Imóvel</a>
             <br />
-            <a routerLink="/">Cadastrar Imóvel</a>
+            <a routerLink="cadastro-imovel">Cadastrar Imóvel</a>
             <br />
             <a routerLink="cadastro-corretor">Cadastrar Corretor</a>
             <br />

@@ -30,8 +30,6 @@ export class ImovelComponent implements OnInit {
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
-      // console.log(params);
-      // console.log(params['id']);
       this.id = params['id'];
       this.receberImovel();
 
