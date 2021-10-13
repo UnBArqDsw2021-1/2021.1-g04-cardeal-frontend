@@ -139,18 +139,46 @@ body {
 }
 
 .areaCorretor {
-  color: #3F3D56;
-  text-decoration: none;
-  display: inline;
   font-family: Sora;
-    line-height: 15px;
+    font-size: 16px;
+    /* line-height: 15px; */
     padding: 0.5%;
+    color: #3F3D56;
+
     float: right;
     display: inline;
     vertical-align: middle;
     width: 112px;
+    cursor:pointer;
+    /* padding-top: 1%; */
+    list-style-type: none;
+}
+.sub-menu ul {
+  display: none;
+  color: black;
+  list-style-type: none;
+  border-color: #3F3D56 ;
+  border-radius: 20%;
+
 }
 
-.sub-meu ul {
-
+.areaCorretor li:hover .sub-menu  {
+  display: block;
+  position: absolute;
+  margin-left: -40px;
 }
+
+.areaCorretor li:hover .sub-menu ul {
+  display: block;
+  margin: 10px;
+}
+
+.areaCorretor li:hover .sub-menu ul li {
+  border-bottom: 1px dotted #3F3D56;
+  text-align: left;
+}
+
+.areaCorretor li:hover .sub-menu ul li {
+  color:#3F3D56;
+}
+
