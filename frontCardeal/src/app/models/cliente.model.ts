@@ -4,5 +4,4 @@ export interface Cliente {
   cpf?: number;
   email?: string;
   phone?: string;
-}
-export interface Cliente extends Array<Cliente> {}
+} export interface Clientes extends Array<Cliente> {}

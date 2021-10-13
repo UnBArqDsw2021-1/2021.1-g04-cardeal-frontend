@@ -18,6 +18,7 @@ import { UpdateClienteComponent } from './views/update-cliente/update-cliente.co
 import { CadastroAgendamentoComponent } from './views/cadastro-agendamento/cadastro-agendamento.component';
 import { UpdateAgendamentoComponent } from './views/update-agendamento/update-agendamento.component';
 import { ProprietariosComponent } from './views/proprietarios/proprietarios.component'
+import { ClientesComponent } from './views/clientes/clientes.component'
 
 const routes: Routes = [
   {
@@ -99,6 +100,11 @@ const routes: Routes = [
   {
     path: 'proprietarios',
     component: ProprietariosComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'clientes',
+    component: ClientesComponent,
     canActivate: [AuthGuard]
   },
 ];

@@ -29,6 +29,7 @@ import { UpdateClienteComponent } from './views/update-cliente/update-cliente.co
 import { CadastroAgendamentoComponent } from './views/cadastro-agendamento/cadastro-agendamento.component';
 import { UpdateAgendamentoComponent } from './views/update-agendamento/update-agendamento.component';
 import { ProprietariosComponent } from './views/proprietarios/proprietarios.component';
+import { ClientesComponent } from './views/clientes/clientes.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ProprietariosComponent } from './views/proprietarios/proprietarios.comp
     CadastroAgendamentoComponent,
     UpdateAgendamentoComponent,
     ProprietariosComponent,
+    ClientesComponent,
   ],
   imports: [
     BrowserModule,
