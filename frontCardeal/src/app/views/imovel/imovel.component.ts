@@ -34,22 +34,22 @@ export class ImovelComponent implements OnInit {
       // console.log(params['id']);
       this.id = params['id'];
       this.receberImovel();
-      this.recebeProprietario();
+
     });
   }
 
   receberImovel() {
     this.service.MostraImovel(this.id).subscribe((imovel) => {
       this.imovel = imovel;
-      console.log(this.imovel);
+      console.log("IMO", this.imovel);
+      this.recebeProprietario();
       this.atualizarViews();
     });
   }
 
   atualizarViews() {
-    // console.log('entrei');
     var logado = this.serviceCorretor.usuarioLogado();
-    // console.log('antes');
+
     console.log(logado);
     if (!logado) {
       let views: any = this.imovel.viewed;
@@ -77,6 +77,7 @@ export class ImovelComponent implements OnInit {
     if(this.imovel.idOwner !== undefined){
       this.serviceProp.MostraProprietario(this.imovel.idOwner).subscribe((proprietario) => {
         this.proprietario = proprietario;
+        console.log("PRP", this.proprietario);
       });
     }
   }
