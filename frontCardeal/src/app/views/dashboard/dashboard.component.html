@@ -1,39 +1,30 @@
 <div class="container_titulo">
-    <h1 class="titulo_cadastro">Buscar Imóveis</h1>
-    <button (click)="editarCorretor()" >Editar Corretor</button>
-    <button (click)="editarProprietario()" >Editar Proprietário</button>
-    <button (click)="cadastrarCliente()" >Cadastro Cliente</button>
-    <button (click)="editarCliente()" >Editar Cliente</button>
-    <button (click)="cadastrarAgendamento()" >Cadastro Agendamento</button>
-    <button (click)="editarAgendamento()" >Editar Agendamento</button>
+    <h1 class="titulo_cadastro">Gerenciamento</h1>
 </div>
 
-<div class="container_titulo">
-  <p class="info_search">
-    As seguintes propriedades foram encontradas com as características desejadas
-  </p>
+<div class="subpaginas">
+  <a 
+    id="meus_imoveis" 
+    class="link_subpagina"
+    routerLink="/meus-imoveis">
+    Meus imóveis
+  </a>
+  <a 
+    id="proprietarios"
+    class="link_subpagina" 
+    routerLink="/">
+    Proprietários
+  </a>
+  <a
+    id="clientes"
+    class="link_subpagina"
+    routerLink="/">
+    Clientes
+  </a>
+  <a 
+    id="agendamento" 
+    class="link_subpagina" 
+    routerLink="/">
+    Agendamento
+  </a>
 </div>
-
-<div class="house">
-  <h4 class="info_search">
-    As seguintes propriedades foram encontradas com as características desejadas
-  </h4>
-</div>
-
-<section>
-  <!-- <div class="container_img">
-  <img class = "img_corretor" src="assets/img/login.svg">
-</div> -->
-
-  <div class="container_login">
-    <div class="container_form">
-      <form class="form">
-        <!-- <input type="text" id="email"  name="email" placeholder="Email"><br>
-          <input type="password" id="password"  name="password" placeholder="Senha"><br>
-          <button type="submit" class="botao_login">Login</button><br>
-          <button type="submit" class="botao_login">Esqueci Minha Senha</button>
-          <button type="button" class="botao_login" routerLink="../cadastro-corretor">Meu Primeiro Acesso</button> -->
-      </form>
-    </div>
-  </div>
-</section>
