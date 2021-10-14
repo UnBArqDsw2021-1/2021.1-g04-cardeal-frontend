@@ -1,6 +1,6 @@
 /* Cadastro de Corretor */
 .container_titulo {
-  margin-top: 40px;
+  margin-top: 2%;
   text-align: center;
 }
 
@@ -13,7 +13,7 @@ section {
   font-family: Sora;
   font-style: normal;
   font-weight: normal;
-  font-size: 55px;
+  font-size: 35px;
 
   color: #3f3d56;
 }
