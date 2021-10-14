@@ -44,23 +44,21 @@ export class UpdateImovelComponent implements OnInit {
       this.receberProprietarios();
     });
   }
-  receberProprietarios() {
 
+  receberProprietarios() {
     this.serviceProprietario.listarProprietario().subscribe(
       (resultado) => {
-
         this.proprietarios = resultado;
         this.dono = this.proprietarios.filter((e) => {
           return e.id == this.imovel.idOwner;
         });
-
       },
       (error) => console.log(error)
     );
   }
 
   atualizar() {
-    console.log(this.imovel);
+    this.novoDono = this.dono[0].name;
     let idProprietario = this.proprietarios.filter((e) => {
       return e.name == this.novoDono;
     });
@@ -68,12 +66,19 @@ export class UpdateImovelComponent implements OnInit {
 
     this.service.atualizarImovel(this.imovel, this.id).subscribe(
       (resultado) => {
-        this.toast.showSucessToast("Informações do Imóvel Atualizadas com sucesso!!!")
+        this.toast.showSucessToast(
+          'Informações do Imóvel Atualizadas com sucesso!!!'
+        );
         this.router.navigateByUrl('meus-imoveis');
+        // this.router.navigateByUrl('imovel/' + this.imovel.id);
       },
-      (error) => this.toast.showErroToast("Erro ao atualizar as informações do corretor!!!"+error)
+      (error) =>
+        this.toast.showErroToast(
+          'Erro ao atualizar as informações do corretor!!!' + error
+        )
     );
   }
+
   voltar() {
     this.location.back();
   }
