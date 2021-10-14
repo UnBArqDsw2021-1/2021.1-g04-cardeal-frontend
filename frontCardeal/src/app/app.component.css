@@ -139,7 +139,7 @@ body {
 }
 
 .areaCorretor {
-  font-family: Sora;
+    font-family: Sora;
     font-size: 16px;
     /* line-height: 15px; */
     padding: 0.5%;
@@ -149,6 +149,7 @@ body {
     display: inline;
     vertical-align: middle;
     width: 112px;
+    height: 60px;
     cursor:pointer;
     /* padding-top: 1%; */
     list-style-type: none;
