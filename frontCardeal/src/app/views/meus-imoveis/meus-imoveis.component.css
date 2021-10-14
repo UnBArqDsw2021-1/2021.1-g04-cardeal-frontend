@@ -1,19 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
 
-.titulo {
-  margin-top: 30px;
-  position: relative;
-  text-align: center;
-  font-size: 50px;
-}
+.titulo_cadastro {
+  padding-top: 1%;
 
-h1 {
+  text-align: center;
   font-family: Sora;
   font-style: normal;
   font-weight: normal;
-  font-size: 35px;
+  font-size: 36px;
+  /* identical to box height */
   color: #3f3d56;
 }
+
+.subpaginas {
+  padding-top: 0%;
+  width: 100%;
+  display:inline-block;
+  text-align: center;
+}
+
+.link_subpagina, .link_subpagina:hover {
+  font-family: Sora;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 10px;
+
+  color: #79797B;
+}
+
+.subpaginas a + a {
+  margin-left: 2%;
+}
+
 
 .sub-titulo {
   font-family: Sora;
@@ -23,4 +41,8 @@ h1 {
   color: #3f3d56;
   text-align: center;
   position: relative;
+}
+
+#meus_imoveis {
+  color: #F14843;
 }

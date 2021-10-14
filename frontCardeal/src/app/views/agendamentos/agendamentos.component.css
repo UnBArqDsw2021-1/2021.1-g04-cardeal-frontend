@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
+
+.titulo_cadastro {
+  padding-top: 1%;
+
+  text-align: center;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  /* identical to box height */
+  color: #3f3d56;
+}
+
+.subpaginas {
+  padding-top: 0%;
+  width: 100%;
+  display:inline-block;
+  text-align: center;
+}
+
+.link_subpagina, .link_subpagina:hover {
+  font-family: Sora;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 10px;
+
+  color: #79797B;
+}
+
+.subpaginas a + a {
+  margin-left: 2%;
+}
+
+#agendamentos {
+  color: #f14843;
+}
+
+h4 {
+  margin-left: 10px;
+  margin-right: 25px;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  color: #3f3d56;
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.card {
+  margin: 4%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  height: 180px;
+  width: 40%;
+  border-radius: 15px;
+  padding: 1%;
+  text-align: center;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.icons {
+  display: inline;
+  text-align: center;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.btn {
+  background-color: #f14843;
+  border: none;
+  color: white;
+  padding: 3%;
+  font-size: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 2%;
+}
+
+.btn:hover {
+  background-color: #3f3d56;
+}
+
+.nome {
+  width: 100%;
+  height: max-content;
+}
+
+.titulo-card {
+  font-style: normal;
+  font-weight: normal;
+  font-family: Sora;
+  color: #3f3d56;
+  font-size: 30px;
+}
+
+.dados {
+  text-align: center;
+  padding-left: 2%;
+  padding-bottom: 2%;
+}
+
+.dados span{
+  font-style: normal;
+  font-weight: normal;
+  font-family: Sora;
+  color: #3f3d56;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+#link_propriedade{
+    cursor: pointer;
+    font-size: 17px;
+    color: #f14843;
+    text-decoration: underline;
+}

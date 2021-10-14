@@ -29,6 +29,9 @@ import { UpdateClienteComponent } from './views/update-cliente/update-cliente.co
 import { CadastroAgendamentoComponent } from './views/cadastro-agendamento/cadastro-agendamento.component';
 import { UpdateAgendamentoComponent } from './views/update-agendamento/update-agendamento.component';
 import { ToastrModule } from 'ngx-toastr';
+import { ProprietariosComponent } from './views/proprietarios/proprietarios.component';
+import { ClientesComponent } from './views/clientes/clientes.component';
+import { AgendamentosComponent } from './views/agendamentos/agendamentos.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,9 @@ import { ToastrModule } from 'ngx-toastr';
     UpdateClienteComponent,
     CadastroAgendamentoComponent,
     UpdateAgendamentoComponent,
+    ProprietariosComponent,
+    ClientesComponent,
+    AgendamentosComponent,
   ],
   imports: [
     BrowserModule,
