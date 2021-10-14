@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Imoveis, Imovel } from 'src/app/models/imovel.model';
 import ImovelService from 'src/app/services/imovel.service';
+import { CorretorService } from 'src/app/services/corretor.service';
 
 @Component({
   selector: 'app-postagens',
@@ -11,7 +12,6 @@ import ImovelService from 'src/app/services/imovel.service';
 })
 export class PostagensComponent implements OnInit {
   @Input() icon = false;
-
   @Input('tipo') urlFiltro: string = '';
 
   imoveis!: any;
@@ -23,7 +23,8 @@ export class PostagensComponent implements OnInit {
   constructor(
     private service: ImovelService,
     private route: Router,
-    private toast: ToastService
+    private toast: ToastService,
+    private corretorService: CorretorService
   ) {}
 
   ngOnInit(): void {
@@ -31,6 +32,24 @@ export class PostagensComponent implements OnInit {
   }
 
   lerimoveis() {
+    if (!this.icon) {
+      this.service.listarImovelFiltro(this.urlFiltro).subscribe(
+        (resultado) => {
+          this.imoveis = resultado;
+        },
+        (error) =>
+          this.toast.showErroToast('Erro ao listar os imóveis: ' + error)
+      );
+    } else {
+      this.lerImoveisCorretor();
+    }
+  }
+
+  lerImoveisCorretor() {
+    let corretor = this.corretorService.CorretorAtual();
+    console.log(corretor);
+    this.urlFiltro = `/idRealtor?limit=50&page=0&tipoAtributo=${corretor.id}`;
+    console.log(this.urlFiltro);
     this.service.listarImovelFiltro(this.urlFiltro).subscribe(
       (resultado) => {
         this.imoveis = resultado;

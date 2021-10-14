@@ -31,7 +31,7 @@ export class CadastroImovelComponent implements OnInit {
   value!: number;
   idOwner!: number;
   idRealtor!: number;
-  media!: string;
+  image!: string;
   proprietarios!: Array<Proprietario>;
 
   constructor(
@@ -75,6 +75,7 @@ export class CadastroImovelComponent implements OnInit {
       viewed: 0,
       idOwner: idProprietario[0].id,
       idRealtor: autenticado.id,
+      image: this.image,
     };
     // console.log(property);
 
