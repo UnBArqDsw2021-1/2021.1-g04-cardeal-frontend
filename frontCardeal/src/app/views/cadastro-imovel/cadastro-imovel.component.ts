@@ -62,8 +62,8 @@ export class CadastroImovelComponent implements OnInit {
     }
 
     const fd: FormData = new FormData();
-    console.log("Quando criado", fd);
-    console.log("COm imagem", fd);
+    //console.log("Quando criado", fd);
+    //console.log("COm imagem", fd);
     //console.log(fd);
 
     const property = {
@@ -85,14 +85,37 @@ export class CadastroImovelComponent implements OnInit {
       idOwner: idProprietario[0].id,
       idRealtor: autenticado.id
     };
+
+    fd.append('name', this.name);
+    fd.append('city', this.city)
+    fd.append('state', this.state)
+    fd.append('district', this.district)
+    fd.append('street', this.street)
+    fd.append('number', (this.number).toString())
+    fd.append('zipNumber', this.zipNumber)
+    fd.append('type', this.type)
+    fd.append('size', this.size)
+    fd.append('numberBedroom', (this.numberBedroom).toString())
+    fd.append('numberBath', (this.numberBath).toString())
+    fd.append('numberPark', (this.numberPark).toString())
+    fd.append('status', this.status)
+    fd.append('viewed', '0')
+    fd.append('value', (this.value).toString())
+    if( idProprietario[0].id != undefined) {
+      fd.append('idOwner', (idProprietario[0].id).toString())
+    }
+    if( autenticado.id != undefined) {
+      fd.append('idRealtor', (autenticado.id).toString())
+    }
     fd.append('image', this.selecteFile, this.selecteFile.name);
     // console.log(property);
-    fd.append('data', JSON.stringify(property));
-    console.log("COm o body", fd);
-    console.log(fd.getAll('image'))
-    console.log(fd.getAll('data'))
 
-    this.service.cadastraImovel(property, this.selecteFile).subscribe(
+
+    //console.log("COm o body", fd);
+    //console.log(fd.getAll('image'))
+    //console.log(fd.getAll('data'))
+
+    this.service.cadastraImovel(fd).subscribe(
       (resultado) => {
         this.toast.showSucessToast('Imovel cadastrado com sucesso!!!');
         this.route.navigateByUrl('meus-imoveis');

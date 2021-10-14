@@ -15,17 +15,11 @@ export default class ImovelService {
     this.listaImoveis = [];
   }
 
-  cadastraImovel(imovel: any, uploadForm:any): Observable<{}> {
-    console.log('Entrou no servico de cadastro imovel');
-    console.log(uploadForm);
+  cadastraImovel(fd: FormData): Observable<{}> {
+    //console.log('Entrou no servico de cadastro imovel');
     //return this.httpClient.post<{}>(this.url, imovel,{headers:{'Content-Type': 'multipart/form-data'}});
-    const formData = new FormData();
-    formData.append('file', uploadForm, uploadForm.name);
-    formData.append('data', JSON.stringify(imovel));
-    console.log("FORMD", formData.getAll('file'));
 
-
-    return this.httpClient.post<{}>(this.url, formData,{headers:{'Content-Type': 'multipart/form-data'}});
+    return this.httpClient.post<{}>(this.url, fd);
 
   }
 
@@ -42,8 +36,8 @@ export default class ImovelService {
   }
 
   atualizarImovel(imovel: Imovel, id: number): Observable<Imovel> {
-    console.log(id);
-    console.log('entrei');
+    // console.log(id);
+    // console.log('entrei');
     return this.httpClient.patch<Imovel>(`${this.url}/${id}`, imovel);
   }
 
