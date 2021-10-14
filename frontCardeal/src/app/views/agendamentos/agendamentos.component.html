@@ -50,6 +50,7 @@
         <span >Cliente: {{ row.idClient }}</span><br>
         <span>Data: {{ row.dateMeeting | date: 'dd/MM/yyyy'}}</span>
       </div>
+      <div class="status">
       <div *ngIf = "compararDatas(row.dateMeeting) === -1">
         <span>Status: Passada</span>
       </div>
@@ -59,5 +60,6 @@
       <div *ngIf = "compararDatas(row.dateMeeting) === 1">
         <span>Status: Futura</span>
       </div>
+    </div>
     </div>
 </div>

@@ -82,7 +82,7 @@ h4 {
   font-size: 100%;
   border-radius: 8px;
   cursor: pointer;
-  margin: 2%;
+  margin: 4%;
 }
 
 .btn:hover {
@@ -98,8 +98,8 @@ h4 {
   font-style: normal;
   font-weight: normal;
   font-family: Sora;
-  color: #3f3d56;
-  font-size: 30px;
+  color: #f14843;
+  font-size: 32px;
 }
 
 .dados {
@@ -113,13 +113,27 @@ h4 {
   font-weight: normal;
   font-family: Sora;
   color: #3f3d56;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 20px;
+  padding-left: 2%;
+  padding-bottom: 2%;
 }
 
 #link_propriedade{
     cursor: pointer;
     font-size: 17px;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    margin: 4%;
     color: #f14843;
     text-decoration: underline;
+}
+
+.status{
+  font-style: normal;
+  font-weight: normal;
+  font-family: Sora;
+  color: #f14843;
+  font-size: 16px;
+  line-height: 20px;
 }
