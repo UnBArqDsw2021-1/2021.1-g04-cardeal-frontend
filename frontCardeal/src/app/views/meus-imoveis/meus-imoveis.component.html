@@ -1,5 +1,32 @@
-<h1 class="titulo">Meus Imóveis</h1>
-<h2 class="sub-titulo">
-  Estes são os imóveis sob sua gerência como corretor(a).
-</h2>
+<div class="container_titulo">
+  <h1 class="titulo_cadastro">Gerenciamento</h1>
+</div>
+
+<div class="subpaginas">
+<a 
+  id="meus_imoveis" 
+  class="link_subpagina"
+  routerLink="/meus-imoveis">
+  Meus Imóveis
+</a>
+<a 
+  id="proprietarios"
+  class="link_subpagina" 
+  routerLink="/proprietarios">
+  Proprietários
+</a>
+<a
+  id="clientes"
+  class="link_subpagina"
+  routerLink="/clientes">
+  Clientes
+</a>
+<a 
+  id="agendamentos" 
+  class="link_subpagina" 
+  routerLink="/agendamentos">
+  Agendamentos
+</a>
+</div>
+
 <app-postagens [icon]="true"></app-postagens>
