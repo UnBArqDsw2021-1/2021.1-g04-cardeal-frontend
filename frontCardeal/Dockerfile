@@ -1,8 +1,10 @@
-FROM node:12-alpine
+FROM node
 
 WORKDIR /app
 
 COPY . .
+
+RUN npm install
 
 EXPOSE 4200
 
