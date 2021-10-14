@@ -33,7 +33,7 @@ export class CadastroProprietarioComponent implements OnInit {
     this.service.cadastraProprietario(owner).subscribe(
       resultado =>{
         this.toast.showSucessToast("Proprietario Cadastrado com sucesso !!!")
-        this.route.navigateByUrl('meus-imoveis')
+        this.route.navigateByUrl('proprietarios')
       },
       error => this.toast.showErroToast("Erro ao cadastrar Proprietario: "+ error)
     )

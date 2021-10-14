@@ -45,7 +45,7 @@ export class UpdateProprietarioComponent implements OnInit {
     this.service.atualizarProprietario(this.proprietario, this.id).subscribe(
       (resultado) => {
         this.toast.showSucessToast("Proprietario Atualizado com sucesso!")
-        this.router.navigateByUrl('meus-imoveis');
+        this.router.navigateByUrl('proprietarios');
       },
       (error) => this.toast.showErroToast("Erro ao atualizar o proprietario: "+error)
     );
@@ -64,7 +64,7 @@ export class UpdateProprietarioComponent implements OnInit {
       (resultado) => {
         console.log(this.proprietario);
         this.toast.showSucessToast("Proprietario Removido com sucesso!")
-        this.router.navigateByUrl('meus-imoveis');
+        this.router.navigateByUrl('proprietarios');
       },
       (error) => this.toast.showErroToast("Erro ao remover o proprietario: "+error)
     );
