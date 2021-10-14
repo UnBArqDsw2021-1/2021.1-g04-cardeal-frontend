@@ -15,10 +15,18 @@ export default class ImovelService {
     this.listaImoveis = [];
   }
 
-  cadastraImovel(imovel: Imovel): Observable<Imovel> {
+  cadastraImovel(imovel: any, uploadForm:any): Observable<{}> {
     console.log('Entrou no servico de cadastro imovel');
-    console.log(imovel);
-    return this.httpClient.post<Imovel>(this.url, imovel);
+    console.log(uploadForm);
+    //return this.httpClient.post<{}>(this.url, imovel,{headers:{'Content-Type': 'multipart/form-data'}});
+    const formData = new FormData();
+    formData.append('file', uploadForm, uploadForm.name);
+    formData.append('data', JSON.stringify(imovel));
+    console.log("FORMD", formData.getAll('file'));
+
+
+    return this.httpClient.post<{}>(this.url, formData,{headers:{'Content-Type': 'multipart/form-data'}});
+
   }
 
   listarImovel(): Observable<Imovel[]> {

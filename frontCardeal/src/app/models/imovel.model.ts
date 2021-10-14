@@ -17,6 +17,6 @@ export interface Imovel {
   viewed?: number;
   idOwner?: number;
   idRealtor?: number;
-  image?: string;
+  image?: File;
 }
 export interface Imoveis extends Array<Imovel> {}

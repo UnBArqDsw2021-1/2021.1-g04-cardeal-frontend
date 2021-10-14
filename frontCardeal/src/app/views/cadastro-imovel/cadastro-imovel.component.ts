@@ -33,6 +33,7 @@ export class CadastroImovelComponent implements OnInit {
   idRealtor!: number;
   image!: string;
   proprietarios!: Array<Proprietario>;
+  selecteFile!: File;
 
   constructor(
     private service: ImovelService,
@@ -46,6 +47,10 @@ export class CadastroImovelComponent implements OnInit {
     this.receberProprietarios();
   }
 
+  onFileSelected(event:any){
+    this.selecteFile = <File>event.target.files[0];
+  }
+
   handlerSubmit() {
     let idProprietario = this.proprietarios.filter((e) => {
       return e.name == this.dono;
@@ -56,7 +61,11 @@ export class CadastroImovelComponent implements OnInit {
       autenticado = jwt_decode(token);
     }
 
-    // console.log('Entrou');
+    const fd: FormData = new FormData();
+    console.log("Quando criado", fd);
+    console.log("COm imagem", fd);
+    //console.log(fd);
+
     const property = {
       name: this.name,
       city: this.city,
@@ -74,12 +83,16 @@ export class CadastroImovelComponent implements OnInit {
       value: this.value,
       viewed: 0,
       idOwner: idProprietario[0].id,
-      idRealtor: autenticado.id,
-      image: this.image,
+      idRealtor: autenticado.id
     };
+    fd.append('image', this.selecteFile, this.selecteFile.name);
     // console.log(property);
+    fd.append('data', JSON.stringify(property));
+    console.log("COm o body", fd);
+    console.log(fd.getAll('image'))
+    console.log(fd.getAll('data'))
 
-    this.service.cadastraImovel(property).subscribe(
+    this.service.cadastraImovel(property, this.selecteFile).subscribe(
       (resultado) => {
         this.toast.showSucessToast('Imovel cadastrado com sucesso!!!');
         this.route.navigateByUrl('meus-imoveis');

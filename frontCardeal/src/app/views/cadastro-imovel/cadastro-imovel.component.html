@@ -185,7 +185,7 @@
             <input
               type="file"
               id="media"
-              [(ngModel)]="image"
+              (change)="onFileSelected($event)"
               name="media"
               placeholder="Url Fotos"
             />
