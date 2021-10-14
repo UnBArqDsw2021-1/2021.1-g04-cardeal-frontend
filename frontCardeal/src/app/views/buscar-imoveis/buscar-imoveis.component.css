@@ -60,7 +60,7 @@ section {
 
 .container_cadastro {
   flex: 2;
-  height: 420px;
+  height: fit-content;
   float: right;
   margin-right: 7%;
   margin-left: 7%;
