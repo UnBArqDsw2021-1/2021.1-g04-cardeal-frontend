@@ -35,7 +35,7 @@ export class CrudCorretorComponent implements OnInit {
       name:this.name,
       cpf:this.cpf,
       email:this.email,
-      passwordHash:this.password,
+      password:this.password,
       phone: this.telephone
       }
     console.log(realtor)
