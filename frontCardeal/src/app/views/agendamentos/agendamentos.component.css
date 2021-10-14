@@ -133,7 +133,28 @@ h4 {
   font-style: normal;
   font-weight: normal;
   font-family: Sora;
-  color: #f14843;
   font-size: 16px;
   line-height: 20px;
+}
+
+#passada{
+  color: #DE3163;
+}
+
+#presente{
+  color: #FFBF00 ;
+}
+
+#futura{
+  color: #229954 ;
+}
+
+.botao_cadastro{
+  position: fixed;
+  width: 7%;
+  bottom: 2%;
+  right: 4%;
+  filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+  z-index: 10000000;
+  cursor: pointer;
 }
