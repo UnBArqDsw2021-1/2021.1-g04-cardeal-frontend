@@ -5,4 +5,4 @@ export interface Corretor{
   phone?: string;
   email: string;
   password?: string;
-}
+} export interface Corretores extends Array<Corretor> {}
