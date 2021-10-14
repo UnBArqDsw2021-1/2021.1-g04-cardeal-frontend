@@ -46,7 +46,7 @@ export class UpdateClienteComponent implements OnInit {
     this.service.atualizarCliente(this.cliente, this.id).subscribe(
       (_resultado) => {
         this.toast.showSucessToast("Informações do cliente atualizado com sucesso!!!")
-        this.router.navigateByUrl('meus-imoveis');
+        this.router.navigateByUrl('clientes');
       },
       (error) => this.toast.showErroToast("Erro ao atualizar as informações do cliente: "+error)
     );
@@ -65,7 +65,7 @@ export class UpdateClienteComponent implements OnInit {
       (resultado) => {
         console.log(this.cliente);
         this.toast.showSucessToast("Cliente removido com sucesso!!!")
-        this.router.navigateByUrl('meus-imoveis');
+        this.router.navigateByUrl('clientes');
       },
       (error) => this.toast.showErroToast("Erro ao remover o cliente : "+error)
     );
