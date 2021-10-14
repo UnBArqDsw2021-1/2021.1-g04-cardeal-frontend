@@ -1,0 +1,47 @@
+h1 {
+    font-family: Sora;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    color: #3F3D56;
+}
+
+span {
+    font-family: Sora;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    color: #3F3D56;
+}
+
+p {
+    font-family: Sora;
+    font-size: 20px;
+    color: #3F3D56;
+}
+
+li{
+    font-family: Sora;
+    font-size: 20px;
+    color: rgb(65, 56, 56);
+}
+
+.faq{
+    font-family: Sora;
+    margin: 50px auto;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 1px;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.subtitle{
+    font-family: Sora;
+    margin: 50px auto;
+    margin-left: 100px;
+    margin-right: 100px;
+    color: rgb(65, 56, 56);
+}
