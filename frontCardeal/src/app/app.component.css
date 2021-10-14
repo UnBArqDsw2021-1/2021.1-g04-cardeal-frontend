@@ -182,4 +182,6 @@ body {
 .areaCorretor li:hover .sub-menu ul li {
   color:#3F3D56;
 }
-
+.areaCorretor a:hover{
+    color: #F14843;
+}
