@@ -28,6 +28,7 @@ import { CadastroClienteComponent } from './views/cadastro-cliente/cadastro-clie
 import { UpdateClienteComponent } from './views/update-cliente/update-cliente.component';
 import { CadastroAgendamentoComponent } from './views/cadastro-agendamento/cadastro-agendamento.component';
 import { UpdateAgendamentoComponent } from './views/update-agendamento/update-agendamento.component';
+import { FaqComponent } from './views/faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { UpdateAgendamentoComponent } from './views/update-agendamento/update-ag
     UpdateClienteComponent,
     CadastroAgendamentoComponent,
     UpdateAgendamentoComponent,
+    FaqComponent,
   ],
   imports: [
     BrowserModule,
