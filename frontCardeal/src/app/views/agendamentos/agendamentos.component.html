@@ -1,7 +1,7 @@
 <div class="container_titulo">
     <h1 class="titulo_cadastro">Gerenciamento</h1>
 </div>
-  
+
 <div class="subpaginas">
     <a 
         id="meus_imoveis" 
@@ -28,32 +28,36 @@
         Agendamentos
     </a>
 </div>
-
-
+  
 <div class="cards">
     <div 
     class="card" 
-    *ngFor="let row of clientes"
-    (click)="view(row)">
+    *ngFor="for let row of agendamentos">
       <div class="icons">
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
-        <button class="btn" (click)="deleteCliente(row)">
+        <button class="btn" (click)="deleteAgendamento(row)">
           <i class="fa fa-close"></i>
         </button>
-        <button class="btn" (click)="atualizarCliente(row)">
+        <button class="btn" (click)="atualizarAgendamento(row)">
           <i class="fa fa-pencil"></i>
         </button>
       </div>
-      <div class="nome">
-        <h4 class="titulo-card">{{ row.name }}</h4>
-      </div>
       <div class="dados">
-        <span>CPF: {{ row.cpf }}</span><br>
-        <span>Email: {{ row.email }}</span><br>
-        <span>Celular: {{ row.phone }}</span>
+        <span id="link_propriedade" (click)="abrirPropriedade(row.idProperty)">Ver propriedade</span><br>
+        <span >Cliente: {{ row.idClient }}</span><br>
+        <span>Data: {{ row.dateMeeting | date: 'dd/MM/yyyy'}}</span>
+      </div>
+      <div *ngIf = "compararDatas(row.dateMeeting) === -1">
+        <span>Status: Passada</span>
+      </div>
+      <div *ngIf = "compararDatas(row.dateMeeting) === 0">
+          <span>Status: Marcada para Hoje</span>
+      </div>
+      <div *ngIf = "compararDatas(row.dateMeeting) === 1">
+        <span>Status: Futura</span>
       </div>
     </div>
 </div>

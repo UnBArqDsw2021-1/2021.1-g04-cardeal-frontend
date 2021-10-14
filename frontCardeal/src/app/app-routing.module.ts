@@ -19,6 +19,7 @@ import { CadastroAgendamentoComponent } from './views/cadastro-agendamento/cadas
 import { UpdateAgendamentoComponent } from './views/update-agendamento/update-agendamento.component';
 import { ProprietariosComponent } from './views/proprietarios/proprietarios.component'
 import { ClientesComponent } from './views/clientes/clientes.component'
+import { AgendamentosComponent } from './views/agendamentos/agendamentos.component';
 
 const routes: Routes = [
   {
@@ -105,6 +106,11 @@ const routes: Routes = [
   {
     path: 'clientes',
     component: ClientesComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'agendamentos',
+    component: AgendamentosComponent,
     canActivate: [AuthGuard]
   },
 ];
