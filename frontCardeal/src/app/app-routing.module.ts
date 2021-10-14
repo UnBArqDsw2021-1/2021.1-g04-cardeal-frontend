@@ -18,6 +18,9 @@ import { UpdateClienteComponent } from './views/update-cliente/update-cliente.co
 import { CadastroAgendamentoComponent } from './views/cadastro-agendamento/cadastro-agendamento.component';
 import { UpdateAgendamentoComponent } from './views/update-agendamento/update-agendamento.component';
 import { FaqComponent } from './views/faq/faq.component';
+import { ProprietariosComponent } from './views/proprietarios/proprietarios.component'
+import { ClientesComponent } from './views/clientes/clientes.component'
+import { AgendamentosComponent } from './views/agendamentos/agendamentos.component';
 
 const routes: Routes = [
   {
@@ -99,6 +102,21 @@ const routes: Routes = [
   {
     path: 'faq',
     component: FaqComponent
+  },
+  {
+    path: 'proprietarios',
+    component: ProprietariosComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'clientes',
+    component: ClientesComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'agendamentos',
+    component: AgendamentosComponent,
+    canActivate: [AuthGuard]
   },
 ];
 
