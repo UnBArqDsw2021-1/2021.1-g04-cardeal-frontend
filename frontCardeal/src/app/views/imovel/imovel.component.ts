@@ -71,6 +71,7 @@ export class ImovelComponent implements OnInit {
   voltar() {
     this.location.back();
   }
+  
   recebeProprietario(){
     if(this.imovel.idOwner !== undefined){
       this.serviceProp.MostraProprietario(this.imovel.idOwner).subscribe((proprietario) => {

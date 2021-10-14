@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Corretor } from 'src/app/models/corretor.model';
 import { Imoveis, Imovel } from 'src/app/models/imovel.model';
+import { CorretorService } from 'src/app/services/corretor.service';
 import ImovelService from 'src/app/services/imovel.service';
 
 @Component({
@@ -15,25 +17,50 @@ export class PostagensComponent implements OnInit {
   filter!: any;
   imovel!: Imovel;
   icones = false;
+  corretor!: any;
+  url!: string;
 
-  constructor(private service: ImovelService, private route: Router) {}
+  constructor(
+    private service: ImovelService,
+    private route: Router,
+    private serviceCorretor: CorretorService
+  ) {}
 
   ngOnInit(): void {
     this.lerimoveis();
   }
 
   lerimoveis() {
-    this.service.listarImovel().subscribe(
+    if (!this.icon) {
+      this.service.listarImovel().subscribe(
+        (resultado) => {
+          console.log(resultado);
+          // this.filter = resultado.filter((e) => {
+          //   console.log(e.type);
+          //   return e.type == 'Casa';
+          // });
+          console.log(this.filter);
+          this.imoveis = resultado;
+          // console.log(this.imoveis);
+          // this.route.navigateByUrl('meus-imoveis');
+        },
+        (error) => console.log(error)
+      );
+    } else {
+      this.lerimoveisFilter();
+    }
+  }
+
+  lerimoveisFilter() {
+    this.corretor = this.serviceCorretor.CorretorAtual();
+    // console.log(this.corretor);
+    this.url = `/idRealtor?limit=50&page=0&tipoAtributo=${this.corretor.id}`;
+    // console.log(this.url);
+    this.service.listarImovelFiltro(this.url).subscribe(
       (resultado) => {
-        console.log(resultado);
-        // this.filter = resultado.filter((e) => {
-        //   console.log(e.type);
-        //   return e.type == 'Casa';
-        // });
-        console.log(this.filter);
+        // console.log(resultado);
         this.imoveis = resultado;
-        // console.log(this.imoveis);
-        // this.route.navigateByUrl('meus-imoveis');
+        // console.log(this.url);
       },
       (error) => console.log(error)
     );
@@ -42,7 +69,7 @@ export class PostagensComponent implements OnInit {
   deleteImovel(imovel: any) {
     this.service.deletarImovel(imovel.id).subscribe(
       (resultado) => {
-        console.log(imovel);
+        // console.log(imovel);
         alert('Imovel Deletado');
         this.lerimoveis();
 

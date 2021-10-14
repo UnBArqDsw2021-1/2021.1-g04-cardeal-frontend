@@ -2,7 +2,7 @@
   <h1 class="titulo_cadastro">Buscar Imóvel</h1>
 </div>
 
-<section style="width: fit-content;" >
+<section style="width: fit-content">
   <div class="container_img">
     <img class="img_corretor" src="assets/img/buscar.svg" />
   </div>
@@ -16,27 +16,27 @@
             name="city"
             placeholder="Cidade"
             [(ngModel)]="dados.cidade"
-            style="width: 80%; "
+            style="width: 80%"
           />
           <br />
-            <input
-              type="number"
-              min="0"
-              id="idOwner"
-              name="idRealtor"
-              placeholder="Preço minímo"
-              [(ngModel)]="dados.prec_min"
-              style="width: 80%; "
-            />
-            <input
-              type="number"
-              min="0"
-              id="idOwner"
-              name="idRealtor"
-              placeholder="Preço máximo"
-              [(ngModel)]="dados.prec_max"
-              style="width: 80%;"
-            />
+          <input
+            type="number"
+            min="0"
+            id="idOwner"
+            name="idRealtor"
+            placeholder="Preço minímo"
+            [(ngModel)]="dados.prec_min"
+            style="width: 80%"
+          />
+          <input
+            type="number"
+            min="0"
+            id="idOwner"
+            name="idRealtor"
+            placeholder="Preço máximo"
+            [(ngModel)]="dados.prec_max"
+            style="width: 80%"
+          />
           <div class="flex">
             <h4>Banheiros</h4>
             <input
@@ -46,7 +46,7 @@
               name="Bathroom"
               [(ngModel)]="dados.qtd_banheiros"
               placeholder="1"
-              style="width: 30%; float: right;"
+              style="width: 30%; float: right"
             />
           </div>
           <div class="flex">
@@ -58,20 +58,20 @@
               name="rooms"
               [(ngModel)]="dados.qtd_quartos"
               placeholder="1"
-              style="width: 30%; float: right;"
+              style="width: 30%; float: right"
             />
           </div>
           <div class="flex">
             <h4>Metros²</h4>
             <input
-                min="0"
-                type="number"
-                id="Area"
-                name="area"
-                [(ngModel)]="dados.area"
-                placeholder="1"
-                style="width: 30%; float: right;"
-              />
+              min="0"
+              type="number"
+              id="Area"
+              name="area"
+              [(ngModel)]="dados.area"
+              placeholder="1"
+              style="width: 30%; float: right"
+            />
           </div>
           <span *ngIf="alerta"> {{ msg }} </span>
         </div>
@@ -82,7 +82,7 @@
             name="Bairro"
             placeholder="Bairro"
             [(ngModel)]="dados.bairro"
-            style="width: 80%; "
+            style="width: 80%"
           />
           <br />
 
@@ -93,11 +93,11 @@
                 id="alugar"
                 name="Alugar"
                 value="Alugar"
-                style="width: fit-content;"
+                style="width: fit-content"
                 [(ngModel)]="dados.tipo_aluguel"
               />
               <h3 *ngIf="!alerta">Para Alugar</h3>
-              <h3 class="alerta" *ngIf="alerta"> Para Alugar</h3>
+              <h3 class="alerta" *ngIf="alerta">Para Alugar</h3>
             </label>
             <label for="comprar">
               <input
@@ -106,10 +106,10 @@
                 name="Venda"
                 value="Venda"
                 [(ngModel)]="dados.tipo_compra"
-                style="width: fit-content;"
+                style="width: fit-content"
               />
               <h3 *ngIf="!alerta">Para Comprar</h3>
-              <h3 class="alerta" *ngIf="alerta"> Para Comprar</h3>
+              <h3 class="alerta" *ngIf="alerta">Para Comprar</h3>
             </label>
           </div>
           <br />
@@ -159,9 +159,9 @@
       />
     </div>
     <img
-      src="assets/img/casa.svg"
+      src="{{ row.image }}"
       alt="Avatar"
-      style="width: 100%"
+      style="width: 100%; height: 300px"
       (click)="view(row)"
     />
     <div
