@@ -1,4 +1,4 @@
-<section>
+<section style="width: fit-content;" >
   <div class="container_img">
     <img class="img_corretor" src="assets/img/buscar.svg" />
   </div>
@@ -16,9 +16,9 @@
             name="city"
             placeholder="Cidade"
             [(ngModel)]="dados.cidade"
+            style="width: 80%; "
           />
           <br />
-          <div class="flex">
             <input
               type="number"
               min="0"
@@ -26,8 +26,8 @@
               name="idRealtor"
               placeholder="Preço minímo"
               [(ngModel)]="dados.prec_min"
+              style="width: 80%; "
             />
-            <h4>e</h4>
             <input
               type="number"
               min="0"
@@ -35,10 +35,10 @@
               name="idRealtor"
               placeholder="Preço máximo"
               [(ngModel)]="dados.prec_max"
+              style="width: 80%;"
             />
-            <br />
-          </div>
           <div class="flex">
+            <h4>Banheiros</h4>
             <input
               min="0"
               type="number"
@@ -46,8 +46,11 @@
               name="Bathroom"
               [(ngModel)]="dados.qtd_banheiros"
               placeholder="1"
+              style="width: 30%; float: right;"
             />
-            <h4>Banheiros</h4>
+          </div>
+          <div class="flex">
+            <h4>Quartos</h4>
             <input
               min="0"
               type="number"
@@ -55,17 +58,20 @@
               name="rooms"
               [(ngModel)]="dados.qtd_quartos"
               placeholder="1"
+              style="width: 30%; float: right;"
             />
-            <h4>Quartos</h4>
+          </div>
+          <div class="flex">
+            <h4>Metros²</h4>
             <input
-              min="0"
-              type="number"
-              id="Area"
-              name="area"
-              [(ngModel)]="dados.area"
-              placeholder="1"
-            />
-            <h4>m²</h4>
+                min="0"
+                type="number"
+                id="Area"
+                name="area"
+                [(ngModel)]="dados.area"
+                placeholder="1"
+                style="width: 30%; float: right;"
+              />
           </div>
           <span *ngIf="alerta"> {{ msg }} </span>
         </div>
@@ -76,6 +82,7 @@
             name="Bairro"
             placeholder="Bairro"
             [(ngModel)]="dados.bairro"
+            style="width: 80%; "
           />
           <br />
 
@@ -86,10 +93,11 @@
                 id="alugar"
                 name="Alugar"
                 value="Alugar"
+                style="width: fit-content;"
                 [(ngModel)]="dados.tipo_aluguel"
               />
-              <h4 *ngIf="!alerta">Para Alugar</h4>
-              <h4 class="alerta" *ngIf="alerta">Para Alugar</h4>
+              <h3 *ngIf="!alerta">Para Alugar</h3>
+              <h3 class="alerta" *ngIf="alerta"> Para Alugar</h3>
             </label>
             <label for="comprar">
               <input
@@ -98,9 +106,10 @@
                 name="Venda"
                 value="Venda"
                 [(ngModel)]="dados.tipo_compra"
+                style="width: fit-content;"
               />
-              <h4 *ngIf="!alerta">Para comprar</h4>
-              <h4 class="alerta" *ngIf="alerta">Para comprar</h4>
+              <h3 *ngIf="!alerta">Para Comprar</h3>
+              <h3 class="alerta" *ngIf="alerta"> Para Comprar</h3>
             </label>
           </div>
           <br />

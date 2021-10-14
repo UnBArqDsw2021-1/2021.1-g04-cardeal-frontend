@@ -22,6 +22,7 @@ import { FaqComponent } from './views/faq/faq.component';
 import { ProprietariosComponent } from './views/proprietarios/proprietarios.component'
 import { ClientesComponent } from './views/clientes/clientes.component'
 import { AgendamentosComponent } from './views/agendamentos/agendamentos.component';
+import { CorretoresComponent } from './views/corretores/corretores.component';
 
 const routes: Routes = [
   {
@@ -119,6 +120,10 @@ const routes: Routes = [
     path: 'agendamentos',
     component: AgendamentosComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'corretores',
+    component: CorretoresComponent
   },
 ];
 

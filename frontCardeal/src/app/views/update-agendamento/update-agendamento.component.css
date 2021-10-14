@@ -116,3 +116,72 @@ input{
 .botao_cadastro:hover{
     box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+
+.botao_voltar{
+    font-family: Sora;
+    font-size: 14px;
+    color: #FFFFFF;
+    
+    width: 20%;
+    height: 32px;
+    margin-top: 3%;
+    margin-bottom: 7%;
+    margin: 0 3px;
+    
+    background: #F14843;
+    border: none;
+    border-radius: 10px;
+    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+    cursor:pointer;
+}
+
+.botao_voltar:hover{
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+.botao_editar{
+    font-family: Sora;
+    font-size: 12px;
+    color: #FFFFFF;
+    
+    width: 30%;
+    height: 48px;
+    margin-top: 3%;
+    margin-bottom: 7%;
+    margin: 0 10px;
+    
+    background: #F14843;
+    border: none;
+    border-radius: 10px;
+    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+    cursor:pointer;
+}
+
+.botao_editar:hover{
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+.botao_excluir{
+    font-family: Sora;
+    font-size: 16px;
+    color: #FFFFFF;
+    
+    width: 10%;
+    height: 34px;
+    margin-top: 3%;
+    margin-bottom: 7%;
+    
+    background: #F14843;
+    border: none;
+    border-radius: 10px;
+    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+    cursor:pointer;
+}
+
+.botao_excluir:hover{
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+

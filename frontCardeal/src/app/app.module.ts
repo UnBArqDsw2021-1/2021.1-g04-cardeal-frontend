@@ -33,6 +33,7 @@ import { FaqComponent } from './views/faq/faq.component';
 import { ProprietariosComponent } from './views/proprietarios/proprietarios.component';
 import { ClientesComponent } from './views/clientes/clientes.component';
 import { AgendamentosComponent } from './views/agendamentos/agendamentos.component';
+import { CorretoresComponent } from './views/corretores/corretores.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { AgendamentosComponent } from './views/agendamentos/agendamentos.compone
     ProprietariosComponent,
     ClientesComponent,
     AgendamentosComponent,
+    CorretoresComponent,
   ],
   imports: [
     BrowserModule,

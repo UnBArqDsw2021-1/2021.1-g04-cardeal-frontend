@@ -1,0 +1,22 @@
+<div class="container_titulo">
+    <h1 class="titulo_cadastro">Corretores</h1>
+  </div>
+  
+  <div class="subtitulo">
+  <span>Entre em contato com um de nossos corretores</span><br>
+  <span>Ficaremos felizes em atendê-lo!</span>
+  </div>
+
+<div class="cards">
+  <div 
+  class="card" 
+  *ngFor="let row of corretores">
+    <div class="nome">
+      <h4 class="titulo-card">{{ row.name }}</h4>
+    </div>
+    <div class="dados">
+      <span>Email: <a href="mailto:{{row.email}}">{{ row.email }}</a></span><br>
+      <span>Celular: <a (click)="abrirWpp(row.phone)">{{ row.phone }}</a></span>
+    </div>
+  </div>
+</div>

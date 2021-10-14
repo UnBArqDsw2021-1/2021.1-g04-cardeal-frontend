@@ -1,35 +1,29 @@
-<!-- <div class="container_titulo">
-  <h1 class="titulo_cadastro">Login do Corretor</h1>
-</div> -->
-
-<section>
+<div class="pagina">
   <div class="container_img">
     <img class="img_corretor" src="assets/img/casa.svg" />
   </div>
 
-  <div class="container_login">
-    <span class="titulo_cadastro">
+  <div class="container_visualização">
+    <div class="titulo">
       {{ imovel.type }} para {{ imovel.status }} com
       {{ imovel.numberBath }} quarto(s) em {{ imovel.city }},
       {{ imovel.size }}m²
-    </span>
-    <div class="container_form">
+    </div>
+    <div class="container_dados">
       <div class="texto">
         {{ imovel.district }}, {{ imovel.city }}, {{ imovel.state }}<br />
-        Cep: {{ imovel.zipNumber }}<br />
-        Proprietário: {{ proprietario.name }}<br />
+        <b>Cep:</b> {{ imovel.zipNumber }}<br />
+        <b>Proprietário:</b> {{ proprietario.name }}<br />
+        <span><b> Tipo de anúncio:</b> {{ imovel.status }} </span><br />
+        <span><b>Valor:</b>  {{ imovel.value | currency: "R$":"symbol":".2" }} </span>
       </div>
-    </div>
-    <div class="container_tipo">
-      <span> Tipo de anúncio: {{ imovel.status }} </span><br />
-      <span> Valor: {{ imovel.value | currency: "R$":"symbol":".2" }} </span>
     </div>
     <div class="botoes">
       <button type="submit" class="botao_voltar" (click)="voltar()">
         Voltar
       </button>
       {{ " " }}
-      <button type="submit" class="botao_login">Agendar Visita</button>
+      <button type="submit" class="botao_agendar">Agendar Visita</button>
     </div>
   </div>
-</section>
+</div>
