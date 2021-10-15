@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Imovel } from 'src/app/models/imovel.model';
 import { Proprietario } from 'src/app/models/proprietario.model';
@@ -25,7 +25,8 @@ export class ImovelComponent implements OnInit {
     private service: ImovelService,
     private serviceProp: ProprietarioService,
     private location: Location,
-    private serviceCorretor: CorretorService
+    private serviceCorretor: CorretorService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -78,6 +79,14 @@ export class ImovelComponent implements OnInit {
         this.proprietario = proprietario;
         console.log("PRP", this.proprietario);
       });
+    }
+  }
+
+  agendar(){
+    if(this.serviceCorretor.usuarioLogado()){
+      this.router.navigateByUrl("cadastro-agendamento/"+this.id)
+    }else{
+      this.router.navigateByUrl("corretores")
     }
   }
 }

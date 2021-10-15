@@ -20,14 +20,13 @@
           list="clientes"
           id="idClient"
           name="idClient"
-          placeholder="Proprietário"
+          placeholder="Clientes"
         />
         <datalist id="clientes">
           <option *ngFor="let row of clientes" value="{{ row.name }}">
             {{ row.name }}
           </option>
         </datalist>
-        <br />
         <!-- <input
             type="text"
             [(ngModel)]="agendamentoObj.idClient"
@@ -35,13 +34,30 @@
             name="name"
             placeholder="Cliente"
           /><br /> -->
+
         <input
+          *ngIf="show"
           type="text"
-          id="property"
-          [(ngModel)]="idProperty"
-          name="property"
-          placeholder="Propriedade"
+          id="imovel"
+          name="imovel"
+          placeholder="{{ imovel.name }}"
         /><br />
+
+        <input
+          *ngIf="!show"
+          type="text"
+          list="imoveis"
+          id="imovel"
+          name="imovel"
+          [(ngModel)]="propriedade"
+          placeholder="Proprietario"
+        />
+        <datalist id="imoveis">
+          <option *ngFor="let row of imoveis" value="{{ row.name }}">
+            {{ row.name }}
+          </option>
+        </datalist>
+
         <input
           type="date"
           id="date"

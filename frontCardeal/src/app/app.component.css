@@ -167,6 +167,7 @@ body {
   display: block;
   position: absolute;
   margin-left: -40px;
+  z-index: 10000000;
 }
 
 .areaCorretor li:hover .sub-menu ul {
