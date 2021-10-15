@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API: "https://google.com"
+  API: "http://api-cardeal.devopstests.com"
 };

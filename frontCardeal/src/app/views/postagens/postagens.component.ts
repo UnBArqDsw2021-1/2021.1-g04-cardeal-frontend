@@ -1,3 +1,4 @@
+import { ToastService } from 'src/app/services/toast.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Corretor } from 'src/app/models/corretor.model';
@@ -23,7 +24,8 @@ export class PostagensComponent implements OnInit {
   constructor(
     private service: ImovelService,
     private route: Router,
-    private serviceCorretor: CorretorService
+    private serviceCorretor: CorretorService,
+    private toast: ToastService
   ) {}
 
   ngOnInit(): void {
@@ -34,17 +36,9 @@ export class PostagensComponent implements OnInit {
     if (!this.icon) {
       this.service.listarImovel().subscribe(
         (resultado) => {
-          console.log(resultado);
-          // this.filter = resultado.filter((e) => {
-          //   console.log(e.type);
-          //   return e.type == 'Casa';
-          // });
-          console.log(this.filter);
           this.imoveis = resultado;
-          // console.log(this.imoveis);
-          // this.route.navigateByUrl('meus-imoveis');
         },
-        (error) => console.log(error)
+        (error) => this.toast.showErroToast("Erro ao listar os imóveis")
       );
     } else {
       this.lerimoveisFilter();
@@ -53,29 +47,22 @@ export class PostagensComponent implements OnInit {
 
   lerimoveisFilter() {
     this.corretor = this.serviceCorretor.CorretorAtual();
-    // console.log(this.corretor);
     this.url = `/idRealtor?limit=50&page=0&tipoAtributo=${this.corretor.id}`;
-    // console.log(this.url);
     this.service.listarImovelFiltro(this.url).subscribe(
       (resultado) => {
-        // console.log(resultado);
         this.imoveis = resultado;
-        // console.log(this.url);
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao filtrar imóveis")
     );
   }
 
   deleteImovel(imovel: any) {
     this.service.deletarImovel(imovel.id).subscribe(
       (resultado) => {
-        // console.log(imovel);
-        alert('Imovel Deletado');
+        this.toast.showSucessToast("Imóvel Removido com sucesso")
         this.lerimoveis();
-
-        // this.route.navigateByUrl('login-corretor');
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao remover imóvel")
     );
   }
 
@@ -85,7 +72,7 @@ export class PostagensComponent implements OnInit {
       (resultado) => {
         this.route.navigateByUrl('/imovel/' + imovel.id);
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao carregar informações de imóvel")
     );
   }
 
@@ -95,7 +82,7 @@ export class PostagensComponent implements OnInit {
       (resultado) => {
         this.route.navigateByUrl('/update-imovel/' + imovel.id);
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao carregar informações de imóvel")
     );
   }
 

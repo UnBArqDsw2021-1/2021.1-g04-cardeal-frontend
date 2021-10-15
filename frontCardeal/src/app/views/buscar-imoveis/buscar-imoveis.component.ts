@@ -1,3 +1,4 @@
+import { ToastService } from './../../services/toast.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Imovel } from 'src/app/models/imovel.model';
@@ -29,7 +30,7 @@ export class BuscarImoveisComponent implements OnInit {
     tipo_aluguel: false,
   };
 
-  constructor(private service: ImovelService, private route: Router) {}
+  constructor(private service: ImovelService, private route: Router, private toast: ToastService) {}
 
   ngOnInit(): void {
     this.show = true;
@@ -86,7 +87,7 @@ export class BuscarImoveisComponent implements OnInit {
         this.imoveis = resultado;
         console.log(this.url);
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao listar os Imóveis.")
     );
   }
 
