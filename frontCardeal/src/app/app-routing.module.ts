@@ -98,6 +98,11 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'cadastro-agendamento/:idImovel',
+    component: CadastroAgendamentoComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'update-agendamento/:id',
     component: UpdateAgendamentoComponent,
     canActivate: [AuthGuard]

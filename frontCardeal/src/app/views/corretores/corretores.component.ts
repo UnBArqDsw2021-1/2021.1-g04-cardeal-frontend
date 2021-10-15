@@ -1,3 +1,4 @@
+import { ToastService } from 'src/app/services/toast.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { CorretorService } from 'src/app/services/corretor.service';
@@ -12,7 +13,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 export class CorretoresComponent implements OnInit {
   corretores!: any;
   corretor!: Corretor;
-  constructor(private service: CorretorService, private route: Router) {}
+  constructor(private service: CorretorService, private route: Router, private toast: ToastService) {}
 
   ngOnInit(): void {
     this.lerCorretores();
@@ -23,7 +24,7 @@ export class CorretoresComponent implements OnInit {
       (resultado) => {
         this.corretores = resultado;
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao carregar lista de corretores")
     );
   }
 
@@ -31,12 +32,12 @@ export class CorretoresComponent implements OnInit {
     this.service.deleteCorretor(corretor.id).subscribe(
       (resultado) => {
         console.log(corretor);
-        alert('Corretor Deletado');
+        this.toast.showSucessToast("Corretor Removido com sucesso")
         this.lerCorretores();
 
         // this.route.navigateByUrl('login-corretor');
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao remover corretor")
     );
   }
 
@@ -46,7 +47,7 @@ export class CorretoresComponent implements OnInit {
       (resultado) => {
         this.route.navigateByUrl('/corretor/' + corretor.id);
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao carregar informações do corretor")
     );
   }
 
@@ -56,7 +57,7 @@ export class CorretoresComponent implements OnInit {
       (resultado) => {
         this.route.navigateByUrl('/update-corretor/' + corretor.id);
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao carregar informações do corretor")
     );
   }
 

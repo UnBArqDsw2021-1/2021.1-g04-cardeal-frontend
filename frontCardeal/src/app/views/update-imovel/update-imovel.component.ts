@@ -41,6 +41,7 @@ export class UpdateImovelComponent implements OnInit {
   receberImovel() {
     this.service.MostraImovel(this.id).subscribe((imovel) => {
       this.imovel = imovel;
+      console.log(this.imovel);
       this.receberProprietarios();
     });
   }
