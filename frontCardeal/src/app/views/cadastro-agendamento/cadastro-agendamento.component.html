@@ -1,44 +1,74 @@
 <div class="container_titulo">
-    <h1 class="titulo_cadastro">Cadastro Agendamento</h1>
+  <h1 class="titulo_cadastro">Cadastro Agendamento</h1>
+</div>
+
+<section>
+  <div class="container_img">
+    <img class="img_corretor" src="assets/img/cidade.svg" />
   </div>
-  
-  <section>
-    <div class="container_img">
-      <img class="img_corretor" src="assets/img/cidade.svg" />
+
+  <div class="container_cadastro">
+    <div class="links_forms">
+      <span class="link_cadastro">Cadastro Agendamento</span>
     </div>
-  
-    <div class="container_cadastro">
-      <div class="links_forms">
-        <span class="link_cadastro">Cadastro Agendamento</span>
-      </div>
-  
-      <div class="container_form">
-        <form class="form">
-          <input
+
+    <div class="container_form">
+      <form class="form">
+        <input
+          [(ngModel)]="proprietario"
+          type="text"
+          list="clientes"
+          id="idClient"
+          name="idClient"
+          placeholder="Clientes"
+        />
+        <datalist id="clientes">
+          <option *ngFor="let row of clientes" value="{{ row.name }}">
+            {{ row.name }}
+          </option>
+        </datalist>
+        <!-- <input
             type="text"
             [(ngModel)]="agendamentoObj.idClient"
             id="name"
             name="name"
             placeholder="Cliente"
-          /><br />
-          <input
-            type="text"
-            id="property"
-            [(ngModel)]="agendamentoObj.idProperty"
-            name="property"
-            placeholder="Propriedade"
-          /><br />
-          <input
-            type="date"
-            id="date"
-            [(ngModel)]="agendamentoObj.dateMeeting"
-            name="date"
-            placeholder="Data"
-          /><br />
-          <button type="submit" class="botao_cadastro" (click)="handlerSubmit()">
-            Realizar Agendamento
-          </button>
-        </form>
-      </div>
+          /><br /> -->
+
+        <input
+          *ngIf="show"
+          type="text"
+          id="imovel"
+          name="imovel"
+          placeholder="{{ imovel.name }}"
+        /><br />
+
+        <input
+          *ngIf="!show"
+          type="text"
+          list="imoveis"
+          id="imovel"
+          name="imovel"
+          [(ngModel)]="propriedade"
+          placeholder="Proprietario"
+        />
+        <datalist id="imoveis">
+          <option *ngFor="let row of imoveis" value="{{ row.name }}">
+            {{ row.name }}
+          </option>
+        </datalist>
+
+        <input
+          type="date"
+          id="date"
+          [(ngModel)]="dateMeeting"
+          name="date"
+          placeholder="Data"
+        /><br />
+        <button type="submit" class="botao_cadastro" (click)="handlerSubmit()">
+          Realizar Agendamento
+        </button>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
