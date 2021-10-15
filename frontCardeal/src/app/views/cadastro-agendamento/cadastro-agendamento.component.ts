@@ -1,3 +1,4 @@
+import { ToastService } from 'src/app/services/toast.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import {AgendamentoService} from 'src/app/services/agendamento.service';
@@ -17,14 +18,10 @@ export class CadastroAgendamentoComponent implements OnInit {
   idProperty!: number;
   dateMeeting!: Date;
 
-  constructor(private service: AgendamentoService, private route: Router) {}
+  constructor(private service: AgendamentoService, private route: Router, private toats: ToastService) {}
 
   ngOnInit(): void {
-    document.querySelector('#link_home')!.classList.remove('ativo');
-    document.querySelector('#link_cadastrar_imoveis')!.classList.add('ativo');
-    document.querySelector('#link_faq')!.classList.remove('ativo');
-    document.querySelector('#link_busca_imoveis')!.classList.remove('ativo');
-    document.querySelector('#link_meus_imoveis')!.classList.remove('ativo');
+
   }
 
   handlerSubmit() {
@@ -41,9 +38,10 @@ export class CadastroAgendamentoComponent implements OnInit {
 
     this.service.cadastraAgendamento(this.agendamentoObj).subscribe(
       (resultado) => {
-        this.route.navigateByUrl('dashboard');
+        this.toats.showSucessToast("Agendamento cadastrado com sucesso!!!")
+        this.route.navigateByUrl('agendamentos');
       },
-      (error) => console.log(error)
+      (error) => this.toats.showErroToast("Erro ao criar o agendamento:" + error)
     );
   }
 }

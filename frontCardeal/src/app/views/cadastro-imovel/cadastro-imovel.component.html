@@ -11,7 +11,22 @@
     <div class="container_form">
       <form id="form">
         <div class="coluna1">
-          <label class="label" for="idRealtor">Proprietário</label>
+          <label class="label" for="idOwner">Proprietário</label>
+          <input
+            [(ngModel)]="dono"
+            type="text"
+            list="proprietarios"
+            id="idOwner"
+            name="idOwner"
+            placeholder="Proprietário"
+          />
+          <datalist id="proprietarios">
+            <option *ngFor="let row of proprietarios" value="{{ row.name }}">
+              {{ row.name }}
+            </option>
+          </datalist>
+          <br />
+          <!-- <label class="label" for="idRealtor">Proprietário</label>
           <input
             type="text"
             id="idOwner"
@@ -19,7 +34,7 @@
             name="idRealtor"
             placeholder="Proprietário"
           />
-          <br />
+          <br /> -->
           <label class="label" for="name">Nome do imóvel</label>
           <input
             type="text"
@@ -85,7 +100,7 @@
           <br />
         </div>
         <div class="coluna2">
-          <label class="label" for="status">Tipo de negócio</label>
+          <label class="label" for="dono">Tipo de negócio</label>
           <input
             type="text"
             list="contrato"
@@ -155,7 +170,7 @@
             placeholder="Vagas de Estacionamento"
           />
           <br />
-          <label class="label" for="idRealtor">Estado</label>
+          <label class="label" for="value">Valor</label>
           <input
             min="0"
             type="number"
@@ -170,7 +185,7 @@
             <input
               type="file"
               id="media"
-              [(ngModel)]="media"
+              (change)="onFileSelected($event)"
               name="media"
               placeholder="Url Fotos"
             />

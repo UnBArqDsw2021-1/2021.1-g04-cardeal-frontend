@@ -1,3 +1,4 @@
+import { ToastService } from 'src/app/services/toast.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { AgendamentoService } from 'src/app/services/agendamento.service';
 import { Agendamento } from 'src/app/models/agendamento.model';
@@ -22,7 +23,8 @@ export class UpdateAgendamentoComponent implements OnInit {
       private route: ActivatedRoute,
       private service: AgendamentoService,
       private router: Router,
-      private location: Location
+      private location: Location,
+      private toast: ToastService
     ) {}
 
    ngOnInit(): void {
@@ -43,9 +45,10 @@ export class UpdateAgendamentoComponent implements OnInit {
     console.log(this.agendamento);
     this.service.atualizarAgendamento(this.agendamento, this.id).subscribe(
       (_resultado) => {
-        this.router.navigateByUrl('dashboard');
+        this.toast.showSucessToast("Agendamento atualizado com sucesso!!!")
+        this.router.navigateByUrl('agendamentos');
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao atualizar o agendamento"+error)
     );
   }
   voltar() {
@@ -61,10 +64,10 @@ export class UpdateAgendamentoComponent implements OnInit {
     this.service.deletarAgendamento(this.id).subscribe(
       (resultado) => {
         console.log(this.agendamento);
-        alert('Agendamento excluído');
-        this.router.navigateByUrl('dashboard');
+        this.toast.showSucessToast("Agendamento removido com sucesso")
+        this.router.navigateByUrl('agendamentos');
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao remover o agendamento: "+error)
     );
     }
   }

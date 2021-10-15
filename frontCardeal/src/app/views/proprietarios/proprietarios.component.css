@@ -116,3 +116,14 @@ h4 {
   color: #3f3d56;
   font-size: 15px;
 }
+
+.botao_cadastro{
+  position: fixed;
+  width: 7%;
+  bottom: 2%;
+  right: 4%;
+  filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+  z-index: 10000000;
+  cursor: pointer;
+}
+

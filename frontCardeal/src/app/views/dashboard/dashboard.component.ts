@@ -14,13 +14,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private serviceCorretor: CorretorService, private route: Router) { }
 
-  ngOnInit(): void {
-    // console.log("Iniciando dashboard")
-    /* document.querySelector("#link_home")!.classList.remove("ativo");
-    document.querySelector("#link_cadastro_imoveis")!.classList.remove("ativo");
-    document.querySelector("#link_faq")!.classList.remove("ativo");
-    document.querySelector("#link_busca_imoveis")!.classList.add("ativo"); */   
-  }
+  ngOnInit(): void {}
 
   editarCorretor(){
     this.route.navigateByUrl(`/update-corretor/${this.corretorAtual.id}`)

@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Corretor } from '../models/corretor.model';
 import jwt_decode from 'jwt-decode';
-import {environment} from "../../environments/environment"
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CorretorService {
   private listaCorretores: Corretor[];
-  private url = `${environment.API}/realtors`
+  private url = `${environment.API}/realtors`;
   private corretor!: Corretor;
 
   constructor(private httpClient: HttpClient) {
@@ -18,8 +18,10 @@ export class CorretorService {
   }
 
   async loginCorretor(corretor: Corretor): Promise<boolean> {
-    const resposta = await this.httpClient.post<any>(`${this.url}/login`, corretor).toPromise();
-    if(resposta && resposta.accessToken){
+    const resposta = await this.httpClient
+      .post<any>(`${this.url}/login`, corretor)
+      .toPromise();
+    if (resposta && resposta.accessToken) {
       window.localStorage.setItem('accessToken', resposta.accessToken);
       return true;
     }
@@ -30,39 +32,42 @@ export class CorretorService {
     const resposta = this.httpClient.get<Corretor[]>(this.url);
     return resposta;
   }
-  enviaCorretor(): Corretor{
-    console.log("Enviando corretor");
+  enviaCorretor(): Corretor {
+    console.log('Enviando corretor');
     return this.corretor;
   }
 
-  recebeCorretor(corretor: Corretor): void{
-    console.log("Reecebdo o corretor");
+  recebeCorretor(corretor: Corretor): void {
+    console.log('Reecebdo o corretor');
     this.corretor = corretor;
-    console.log("Corretor Recebido", corretor);
-    console.log("Corretor do Service", this.corretor);
+    console.log('Corretor Recebido', corretor);
+    console.log('Corretor do Service', this.corretor);
   }
 
-  cadastraCorretor(corretor: Corretor) : Observable<Corretor>{
+  cadastraCorretor(corretor: Corretor): Observable<Corretor> {
     return this.httpClient.post<Corretor>(this.url, corretor);
   }
 
-  atualizaCorretor(corretor:Corretor):Observable<Corretor>{
-    return this.httpClient.patch<Corretor>(this.url+'/'+corretor.id, corretor);
+  atualizaCorretor(corretor: Corretor): Observable<Corretor> {
+    return this.httpClient.patch<Corretor>(
+      this.url + '/' + corretor.id,
+      corretor
+    );
   }
 
-  deleteCorretor(corretor:Corretor): Observable<Corretor>{
-    return this.httpClient.delete<Corretor>(`${this.url}/${corretor.id}`)
+  deleteCorretor(corretor: Corretor): Observable<Corretor> {
+    return this.httpClient.delete<Corretor>(`${this.url}/${corretor.id}`);
   }
 
-  getAuthorizationToken(){
+  getAuthorizationToken() {
     const accessToken = window.localStorage.getItem('accessToken');
     return accessToken;
   }
 
-  getTokenExpirationDate(accessToken: string): Date | any{
+  getTokenExpirationDate(accessToken: string): Date | any {
     const decoded: any = jwt_decode(accessToken);
 
-    if(decoded.exp === undefined){
+    if (decoded.exp === undefined) {
       return null; // dar atenção para isso mais tarde
     }
 
@@ -71,23 +76,23 @@ export class CorretorService {
     return date;
   }
 
-  tokenExpirado(accessToken?: string):boolean{
-    if(!accessToken){
+  tokenExpirado(accessToken?: string): boolean {
+    if (!accessToken) {
       return true;
     }
     const date = this.getTokenExpirationDate(accessToken);
-    if(date === undefined){
-      return false
+    if (date === undefined) {
+      return false;
     }
 
     return !(date.valueOf() > new Date().valueOf());
   }
 
-  usuarioLogado(){
+  usuarioLogado() {
     const accessToken = this.getAuthorizationToken();
-    if(!accessToken){
+    if (!accessToken) {
       return false;
-    } else if(this.tokenExpirado(accessToken)){
+    } else if (this.tokenExpirado(accessToken)) {
       return false;
     }
 
@@ -98,8 +103,15 @@ export class CorretorService {
     return this.httpClient.get<Corretor>(`${this.url}/${id}`);
   }
 
-  logout(){
-    window.localStorage.setItem('accessToken', '');
+  CorretorAtual(){
+    const accessToken = this.getAuthorizationToken();
+    if(accessToken !== null){
+      const decoded: any = jwt_decode(accessToken);
+      return decoded;
+    }
   }
 
+  logout() {
+    window.localStorage.setItem('accessToken', '');
+  }
 }
