@@ -1,6 +1,6 @@
 <div class="pagina">
   <div class="container_img">
-    <img class="img_corretor" src="assets/img/casa.svg" />
+    <img class="img_corretor" src="{{ imovel.image }}" />
   </div>
 
   <div class="container_visualização">
@@ -15,7 +15,9 @@
         <b>Cep:</b> {{ imovel.zipNumber }}<br />
         <b>Proprietário:</b> {{ proprietario.name }}<br />
         <span><b> Tipo de anúncio:</b> {{ imovel.status }} </span><br />
-        <span><b>Valor:</b>  {{ imovel.value | currency: "R$":"symbol":".2" }} </span>
+        <span
+          ><b>Valor:</b> {{ imovel.value | currency: "R$":"symbol":".2" }}
+        </span>
       </div>
     </div>
     <div class="botoes">
