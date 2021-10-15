@@ -60,7 +60,7 @@ export class BuscarImoveisComponent implements OnInit {
 
   tipoStatus() {
     if (this.dados.tipo_aluguel == true && this.dados.tipo_compra == false) {
-      this.status = 'Alugar';
+      this.status = 'Aluguel';
     } else if (
       this.dados.tipo_aluguel == false &&
       this.dados.tipo_compra == true
