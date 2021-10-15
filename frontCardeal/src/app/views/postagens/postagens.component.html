@@ -1,0 +1,34 @@
+<div class="card" *ngFor="let row of imoveis">
+  <div class="icons" *ngIf="icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <button class="btn" (click)="deleteImovel(row)">
+      <i class="fa fa-close"></i>
+    </button>
+    {{ " " }}
+    <button class="btn" (click)="atualizarImovel(row)">
+      <i class="fa fa-pencil"></i>
+    </button>
+  </div>
+  <img
+    src="{{ row.image }}"
+    alt="Avatar"
+    style="width: 100%; height: 275px"
+    (click)="view(row)"
+  />
+  <div
+    class="container"
+    (click)="view(row)"
+    style="margin-top: 20px"
+    (click)="view(row)"
+  >
+    <h4 class="titulo-card">{{ row.type }} para {{ row.status }}</h4>
+    <p>{{ row.type }} localizada em {{ row.district }}, {{ row.city }}.</p>
+    <h4 class="tipo">{{ row.type }}</h4>
+    <h4 class="tipo2" style="margin-top: 20px">
+      {{ row.value | currency: "R$":"symbol":".2" }}
+    </h4>
+  </div>
+</div>

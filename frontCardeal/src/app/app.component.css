@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    position: relative;
+    text-align: center;
+    padding-top: 1%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    display: inline-block;
+    width: 97%;
+}
+
+.logo{
+    float: left;
+}
+
+.logo_logo{
+    vertical-align: middle;
+}
+
+.logo_titulo {
+    vertical-align: middle;
+    font-family: Sora;
+    font-size: 40px;
+
+    color: #F14843;
+}
+
+.links {
+    padding-top: 1%;
+    width: 60%;
+    display:inline-block;
+}
+
+.links_texto, .links_texto:hover {
+    font-family: Sora;
+    font-size: 16px;
+    text-decoration: none;
+
+    color: #79797B;
+}
+
+.botao_corretor{
+    font-family: Sora;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 0.5%;
+    color: #FFFFFF;
+
+    float: right;
+    display: inline;
+    vertical-align: middle;
+    width: 112px;
+    background-color: #F14843;
+    border: none;
+    border-radius: 10px;
+    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+    cursor:pointer;
+}
+
+.botao_corretor:hover{
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.ativo{
+    color: #F14843;
+}
+
+#nav a + a {
+    margin-left: 2%;
+}
+
+.footer{
+    background-color: #3F3D56;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.links_footer{
+    display: inline-block;
+    padding-left: 35%;
+    width: 30%;
+    align-self: center;
+}
+
+.titulo_links{
+    text-align: center;
+    vertical-align: middle;
+    font-family: Sora;
+    font-size: 13px;
+
+    color: #F14843;
+}
+
+.atalhos{
+    display: block;
+    float: left;
+    width: max-content;
+    text-align: center;
+    font-family: Sora;
+    font-size: 13px;
+}
+
+.projeto{
+    display: block;
+    float: right;
+    width: max-content;
+    text-align: center;
+    font-family: Sora;
+    font-size: 13px;
+}
+
+#footer p {
+    margin: 0 0 0 0;
+}
+
+#footer a, a:hover {
+    color:#FFFFFF;
+    text-decoration: none;
+}
+
+.container {
+    padding-top: 5%;
+    position: relative;
+    height: 15.5%;
+    bottom: 0;
+}
+
+.conteudo{
+    position: relative;
+    min-height: 69%;
+}
+
+.areaCorretor {
+    font-family: Sora;
+    font-size: 16px;
+    /* line-height: 15px; */
+    padding: 0.5%;
+    color: #3F3D56;
+
+    float: right;
+    display: inline;
+    vertical-align: middle;
+    width: 112px;
+    height: 60px;
+    cursor:pointer;
+    /* padding-top: 1%; */
+    list-style-type: none;
+}
+.sub-menu ul {
+  display: none;
+  color: black;
+  list-style-type: none;
+  border-color: #3F3D56 ;
+  border-radius: 20%;
+
+}
+
+.areaCorretor li:hover .sub-menu  {
+  display: block;
+  position: absolute;
+  margin-left: -40px;
+}
+
+.areaCorretor li:hover .sub-menu ul {
+  display: block;
+  margin: 10px;
+}
+
+.areaCorretor li:hover .sub-menu ul li {
+  border-bottom: 1px dotted #3F3D56;
+  text-align: left;
+}
+
+.areaCorretor li:hover .sub-menu ul li {
+  color:#3F3D56;
+}
+.areaCorretor a:hover{
+    color: #F14843;
+}

@@ -1,0 +1,69 @@
+<div class="container_titulo">
+    <h1 class="titulo_cadastro">Dashboard</h1>
+</div>
+
+<div class="subpaginas">
+    <a 
+        id="meus_imoveis" 
+        class="link_subpagina"
+        routerLink="/meus-imoveis">
+        Meus Imóveis
+    </a>
+    <a 
+        id="proprietarios"
+        class="link_subpagina" 
+        routerLink="/proprietarios">
+        Proprietários
+    </a>
+    <a
+        id="clientes"
+        class="link_subpagina"
+        routerLink="/clientes">
+        Clientes
+    </a>
+    <a 
+        id="agendamentos" 
+        class="link_subpagina" 
+        routerLink="/agendamentos">
+        Agendamentos
+    </a>
+</div>
+  
+<div class="cards">
+    <div 
+    class="card" 
+    *ngFor="for let row of agendamentos">
+      <div class="icons">
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <button class="btn" (click)="deleteAgendamento(row)">
+          <i class="fa fa-close"></i>
+        </button>
+        <button class="btn" (click)="atualizarAgendamento(row)">
+          <i class="fa fa-pencil"></i>
+        </button>
+      </div>
+      <div class="dados">
+        <span id="link_propriedade" (click)="abrirPropriedade(row.idProperty)">Ver propriedade</span><br>
+        <span >Cliente: {{ row.idClient }}</span><br>
+        <span>Data: {{ corrigeData(row.dateMeeting) | date : 'dd/MM/YYYY'}}</span>
+      </div>
+      <div class="status">
+      <div id = "passada" *ngIf = "compararDatas(row.dateMeeting) === -1">
+        <span>Status: Passada</span>
+      </div>
+      <div id = "presente" *ngIf = "compararDatas(row.dateMeeting) === 0">
+          <span>Status: Marcada para Hoje</span>
+      </div>
+      <div id = "futura" *ngIf = "compararDatas(row.dateMeeting) === 1">
+        <span>Status: Futura</span>
+      </div>
+    </div>
+    </div>
+</div>
+
+<div class = "botao_cadastro">
+  <img src="../../../assets/img/plus.svg" alt="plus" title="Cadastrar agendamento" routerLink = '/cadastro-agendamento/'>
+</div>

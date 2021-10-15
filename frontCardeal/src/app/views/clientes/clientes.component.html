@@ -1,0 +1,62 @@
+<div class="container_titulo">
+    <h1 class="titulo_cadastro">Dashboard</h1>
+</div>
+  
+<div class="subpaginas">
+    <a 
+        id="meus_imoveis" 
+        class="link_subpagina"
+        routerLink="/meus-imoveis">
+        Meus Imóveis
+    </a>
+    <a 
+        id="proprietarios"
+        class="link_subpagina" 
+        routerLink="/proprietarios">
+        Proprietários
+    </a>
+    <a
+        id="clientes"
+        class="link_subpagina"
+        routerLink="/clientes">
+        Clientes
+    </a>
+    <a 
+        id="agendamentos" 
+        class="link_subpagina" 
+        routerLink="/agendamentos">
+        Agendamentos
+    </a>
+</div>
+
+
+<div class="cards">
+    <div 
+    class="card" 
+    *ngFor="let row of clientes">
+      <div class="icons">
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <button class="btn" (click)="deleteCliente(row)">
+          <i class="fa fa-close"></i>
+        </button>
+        <button class="btn" (click)="atualizarCliente(row)">
+          <i class="fa fa-pencil"></i>
+        </button>
+      </div>
+      <div class="nome">
+        <h4 class="titulo-card">{{ row.name }}</h4>
+      </div>
+      <div class="dados">
+        <span>CPF: {{ row.cpf }}</span><br>
+        <span>Email: {{ row.email }}</span><br>
+        <span>Celular: {{ row.phone }}</span>
+      </div>
+    </div>
+</div>
+
+<div class = "botao_cadastro">
+  <img src="../../../assets/img/plus.svg" alt="plus" title="Cadastrar cliente" routerLink = '/cadastro-cliente/'>
+</div>
