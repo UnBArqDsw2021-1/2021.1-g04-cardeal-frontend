@@ -60,7 +60,7 @@ export class BuscarImoveisComponent implements OnInit {
 
   tipoStatus() {
     if (this.dados.tipo_aluguel == true && this.dados.tipo_compra == false) {
-      this.status = 'Alugar';
+      this.status = 'Aluguel';
     } else if (
       this.dados.tipo_aluguel == false &&
       this.dados.tipo_compra == true
@@ -75,10 +75,10 @@ export class BuscarImoveisComponent implements OnInit {
   }
 
   lerImoveisFiltro() {
-    console.log('url');
-    console.log(this.url);
-    console.log('status');
-    console.log(this.url);
+    // console.log('url');
+    // console.log(this.url);
+    // console.log('status');
+    // console.log(this.url);
 
     this.service.listarImovelFiltro(this.url).subscribe(
       (resultado) => {
