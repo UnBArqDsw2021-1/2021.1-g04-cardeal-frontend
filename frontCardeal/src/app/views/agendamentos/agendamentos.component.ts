@@ -1,3 +1,4 @@
+import { ToastService } from 'src/app/services/toast.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AgendamentoService } from 'src/app/services/agendamento.service';
@@ -15,7 +16,7 @@ export class AgendamentosComponent implements OnInit {
   agendamentos!: Agendamentos;
   dados!: Array<{agen: Agendamento, cli: string}>;
 
-  constructor(private service: AgendamentoService, private cservice: ClienteService, private route: Router) {}
+  constructor(private service: AgendamentoService, private cservice: ClienteService, private route: Router, private toast:ToastService) {}
 
   ngOnInit(): void {
     this.lerAgendamentos();
@@ -35,12 +36,12 @@ export class AgendamentosComponent implements OnInit {
     this.service.deletarAgendamento(agendamento.id).subscribe(
       (resultado) => {
         console.log(agendamento);
-        alert('Agendamento Deletado');
+        this.toast.showSucessToast("Agendamento Removido com sucesso!");
         this.lerAgendamentos();
 
         // this.route.navigateByUrl('login-corretor');
       },
-      (error) => console.log(error)
+      (error) => this.toast.showErroToast("Erro ao remover agendamento.")
     );
   }
 
@@ -70,7 +71,7 @@ export class AgendamentosComponent implements OnInit {
 
   corrigeData(data:any){
     var data_corrigida = new Date(data);
-    
+
     return data_corrigida.setHours(data_corrigida.getHours() + 12);
   }
 
@@ -79,11 +80,11 @@ export class AgendamentosComponent implements OnInit {
     var hoje = new Date().toISOString().slice(0, 10);
     if(dataAgendamento < hoje) {
       return -1;
-    } 
+    }
 
     if(dataAgendamento === hoje) {
       return 0;
-    } 
+    }
 
     return 1;
   }
