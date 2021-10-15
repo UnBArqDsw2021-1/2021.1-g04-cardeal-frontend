@@ -83,6 +83,10 @@ export class ImovelComponent implements OnInit {
   }
 
   agendar(){
-    this.router.navigateByUrl("cadastro-agendamento/"+this.id)
+    if(this.serviceCorretor.usuarioLogado()){
+      this.router.navigateByUrl("cadastro-agendamento/"+this.id)
+    }else{
+      this.router.navigateByUrl("corretores")
+    }
   }
 }
