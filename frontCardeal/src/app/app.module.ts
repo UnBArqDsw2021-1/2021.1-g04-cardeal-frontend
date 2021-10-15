@@ -28,10 +28,12 @@ import { CadastroClienteComponent } from './views/cadastro-cliente/cadastro-clie
 import { UpdateClienteComponent } from './views/update-cliente/update-cliente.component';
 import { CadastroAgendamentoComponent } from './views/cadastro-agendamento/cadastro-agendamento.component';
 import { UpdateAgendamentoComponent } from './views/update-agendamento/update-agendamento.component';
+import { ToastrModule } from 'ngx-toastr';
 import { FaqComponent } from './views/faq/faq.component';
 import { ProprietariosComponent } from './views/proprietarios/proprietarios.component';
 import { ClientesComponent } from './views/clientes/clientes.component';
 import { AgendamentosComponent } from './views/agendamentos/agendamentos.component';
+import { CorretoresComponent } from './views/corretores/corretores.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,7 @@ import { AgendamentosComponent } from './views/agendamentos/agendamentos.compone
     ProprietariosComponent,
     ClientesComponent,
     AgendamentosComponent,
+    CorretoresComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +71,12 @@ import { AgendamentosComponent } from './views/agendamentos/agendamentos.compone
     MatMenuModule,
     FormsModule,
     HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      preventDuplicates: true,
+    })
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],

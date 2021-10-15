@@ -5,43 +5,87 @@
       <span class="logo_titulo"> Cardeal </span>
     </div>
 
-    <div class="links">
-      <a 
-        id="link_pagina_home" 
+    <div *ngIf="!usuarioAutenticado()" class="links">
+      <a
+        id="link_pagina_home"
         class="links_texto"
-        routerLink="/">
+        routerLink="/"
+        routerLinkActive="ativo"
+        [routerLinkActiveOptions]="{exact: true}">
         Home
       </a>
-      <a 
+      <a
         id="link_busca_imoveis"
-        class="links_texto" 
-        routerLink="buscar-imovel">
+        class="links_texto"
+        routerLink="buscar-imovel"
+        routerLinkActive="ativo">
+        Buscar Imóveis
+      </a>
+      <a
+        id="link_faq"
+        class="links_texto"
+        routerLink="faq"
+        routerLinkActive="ativo">
+        FAQ
+      </a>
+    </div>
+
+    <div class="links" *ngIf="usuarioAutenticado()">
+      <a
+        id="link_pagina_home"
+        class="links_texto"
+        routerLink="/"
+        routerLinkActive="ativo"
+        [routerLinkActiveOptions]="{exact: true}">
+        Home
+      </a>
+      <a
+        id="link_busca_imoveis"
+        class="links_texto"
+        routerLink="buscar-imovel"
+        routerLinkActive="ativo">
         Buscar Imóveis
       </a>
       <a
         id="link_cadastrar_imoveis"
         class="links_texto"
-        routerLink="cadastro-imovel">
+        routerLink="cadastro-imovel"
+        routerLinkActive="ativo">
         Cadastrar Imóvel
       </a>
-      <a 
-        id="link_meus_imoveis" 
-        class="links_texto" 
-        routerLink="meus-imoveis">
-        Meus imóveis
-      </a>
-      <a 
-        id="link_faq" 
+      <a
+        id="link_meus_imoveis"
         class="links_texto"
-        routerLink="faq">
+        routerLink="meus-imoveis"
+        routerLinkActive="ativo">
+        Dashboard
+      </a>
+      <a
+        id="link_faq"
+        class="links_texto"
+        routerLink="faq"
+        routerLinkActive="ativo">
         FAQ
       </a>
     </div>
 
-    <button type="button" class="botao_corretor" routerLink="login-corretor">
+    <button  *ngIf="!usuarioAutenticado()" type="button" class="botao_corretor" routerLink="login-corretor">
       Sou corretor(a) de imóveis
     </button>
+
+    <div class="areaCorretor" *ngIf="usuarioAutenticado()">
+      <li>
+          {{this.corretor.name}}
+        <div class="sub-menu">
+          <ul>
+            <li><a (click)="paginaConfiguracoes()">Editar Perfil</a></li>
+            <li><a (click)="sair()">Sair</a></li>
+          </ul>
+        </div>
+      </li>
+    </div>
   </div>
+
 
   <div class="conteudo">
     <router-outlet></router-outlet>
@@ -55,7 +99,7 @@
           <div class="texto_links">
             <a routerLink="buscar-imovel">Buscar Imóvel</a>
             <br />
-            <a routerLink="/">Cadastrar Imóvel</a>
+            <a routerLink="cadastro-imovel">Cadastrar Imóvel</a>
             <br />
             <a routerLink="cadastro-corretor">Cadastrar Corretor</a>
             <br />

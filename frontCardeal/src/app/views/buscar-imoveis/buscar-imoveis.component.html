@@ -1,12 +1,12 @@
-<section>
+<div class="container_titulo">
+  <h1 class="titulo_cadastro">Buscar Imóvel</h1>
+</div>
+
+<section style="width: fit-content">
   <div class="container_img">
     <img class="img_corretor" src="assets/img/buscar.svg" />
   </div>
-
   <div class="container_cadastro">
-    <div class="container_titulo">
-      <h1 class="titulo_cadastro">Buscar Imóvel</h1>
-    </div>
     <div class="container_form">
       <form id="form">
         <div class="coluna1">
@@ -16,39 +16,41 @@
             name="city"
             placeholder="Cidade"
             [(ngModel)]="dados.cidade"
+            style="width: 80%"
           />
           <br />
+          <input
+            type="number"
+            min="0"
+            id="idOwner"
+            name="idRealtor"
+            placeholder="Preço minímo"
+            [(ngModel)]="dados.prec_min"
+            style="width: 80%"
+          />
+          <input
+            type="number"
+            min="0"
+            id="idOwner"
+            name="idRealtor"
+            placeholder="Preço máximo"
+            [(ngModel)]="dados.prec_max"
+            style="width: 80%"
+          />
           <div class="flex">
-            <h4>entre</h4>
-            <input
-              type="number"
-              min="0"
-              id="idOwner"
-              name="idRealtor"
-              placeholder="Preço minímo"
-              [(ngModel)]="dados.prec_min"
-            />
-            <h4>e</h4>
-            <input
-              type="number"
-              min="0"
-              id="idOwner"
-              name="idRealtor"
-              placeholder="Preço máximo"
-              [(ngModel)]="dados.prec_max"
-            />
-            <br />
-          </div>
-          <div class="flex">
+            <h4>Banheiros</h4>
             <input
               min="0"
               type="number"
               id="Bathroom"
-              name="idRealtor"
+              name="Bathroom"
               [(ngModel)]="dados.qtd_banheiros"
               placeholder="1"
+              style="width: 30%; float: right"
             />
-            <h4>Banheiros</h4>
+          </div>
+          <div class="flex">
+            <h4>Quartos</h4>
             <input
               min="0"
               type="number"
@@ -56,18 +58,22 @@
               name="rooms"
               [(ngModel)]="dados.qtd_quartos"
               placeholder="1"
+              style="width: 30%; float: right"
             />
-            <h4>Quartos</h4>
+          </div>
+          <div class="flex">
+            <h4>Metros²</h4>
             <input
               min="0"
               type="number"
-              id="idOwner"
+              id="Area"
               name="area"
               [(ngModel)]="dados.area"
               placeholder="1"
+              style="width: 30%; float: right"
             />
-            <h4>m²</h4>
           </div>
+          <span *ngIf="alerta"> {{ msg }} </span>
         </div>
         <div class="coluna2">
           <input
@@ -76,33 +82,54 @@
             name="Bairro"
             placeholder="Bairro"
             [(ngModel)]="dados.bairro"
+            style="width: 80%"
           />
           <br />
 
-          <div class="teste">
-            <label for="">
+          <div class="checkbox">
+            <label for="alugar">
               <input
                 type="checkbox"
                 id="alugar"
-                name="alugar"
-                value="alugar"
+                name="Alugar"
+                value="Alugar"
+                style="width: fit-content"
                 [(ngModel)]="dados.tipo_aluguel"
               />
-              <h4>Para Alugar</h4>
+              <h3 *ngIf="!alerta">Para Alugar</h3>
+              <h3 class="alerta" *ngIf="alerta">Para Alugar</h3>
             </label>
-            <label for="">
+            <label for="comprar">
               <input
                 type="checkbox"
                 id="comprar"
-                name="comprar"
-                value="comprar"
+                name="Venda"
+                value="Venda"
                 [(ngModel)]="dados.tipo_compra"
+                style="width: fit-content"
               />
-              <h4>Para comprar</h4>
+              <h3 *ngIf="!alerta">Para Comprar</h3>
+              <h3 class="alerta" *ngIf="alerta">Para Comprar</h3>
             </label>
           </div>
           <br />
-          <button type="submit" (click)="buscar()" class="botao_cadastro">
+          <!-- <button
+            type="submit"
+            *ngIf="show"
+            (click)="buscar()"
+            class="botao_cadastro"
+          >
+            Buscar
+          </button>
+          <button
+            type="submit"
+            *ngIf="!show"
+            (click)="buscar()"
+            class="botao_novaBusca"
+          >
+            Nova Busca
+          </button> -->
+          <button type="submit" (click)="gerarAlerta()" class="botao_cadastro">
             Buscar
           </button>
         </div>
@@ -111,10 +138,44 @@
   </div>
 </section>
 
-<div *ngIf="!show">
+<!-- metodo de mostrar os cards usando apenas outro componente (pagina "postagens") -->
+
+<!-- <div *ngIf="!show">
   <h2 class="sub-titulo">
     As seguintes propriedades foram encontradas com as características
     desejadas.
   </h2>
-  <app-postagens></app-postagens>
+  <app-postagens tipo="{{ url }}"></app-postagens>
+</div> -->
+
+<!-- caso queira usar para atualizar os cards apenas clickando "buscar" (esse método usa o serviço na pagina de buscar imoveis)-->
+
+<div>
+  <div class="card" *ngFor="let row of imoveis">
+    <div class="icons">
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+    </div>
+    <img
+      src="{{ row.image }}"
+      alt="Avatar"
+      style="width: 100%; height: 300px"
+      (click)="view(row)"
+    />
+    <div
+      class="container"
+      (click)="view(row)"
+      style="margin-top: 20px"
+      (click)="view(row)"
+    >
+      <h4 class="titulo-card">{{ row.type }} para {{ row.status }}</h4>
+      <p>{{ row.type }} localizada em {{ row.district }}, {{ row.city }}.</p>
+      <h4 class="tipo">{{ row.type }}</h4>
+      <h4 class="tipo2" style="margin-top: 20px">
+        {{ row.value | currency: "R$":"symbol":".2" }}
+      </h4>
+    </div>
+  </div>
 </div>

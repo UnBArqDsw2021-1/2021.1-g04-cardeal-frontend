@@ -14,7 +14,7 @@
           <form class = "form" (ngSubmit)="atualizar()">
             <input type="text" [(ngModel)]="agendamento.idClient" id="name" name="name" placeholder="Cliente"/><br/>
             <input type="text" id="property" [(ngModel)]="agendamento.idProperty" name="property" placeholder="Propriedade" /><br />
-            <input type="text" id="date" [(ngModel)]="agendamento.dateMeeting" name="date" placeholder="Data" /><br />
+            <input type="date" id="date" [(ngModel)]="agendamento.dateMeeting" name="date" placeholder="Data" /><br />
               <div class="botoes">
                 <button type="submit" class="botao_voltar" (click)="voltar()">Voltar</button>
                 <button type="submit" class="botao_editar" (click)='atualizar()'>Atualizar Agendamento</button>

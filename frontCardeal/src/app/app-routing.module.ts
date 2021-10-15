@@ -12,6 +12,7 @@ import { UpdateProprietarioComponent } from './views/update-proprietario/update-
 import { MeusImoveisComponent } from './views/meus-imoveis/meus-imoveis.component';
 import { ImovelComponent } from './views/imovel/imovel.component';
 import { AuthGuard } from './guard/auth.guard';
+import { LoginGuard } from './guard/login.guard';
 import { BuscarImoveisComponent } from './views/buscar-imoveis/buscar-imoveis.component';
 import { CadastroClienteComponent } from './views/cadastro-cliente/cadastro-cliente.component';
 import { UpdateClienteComponent } from './views/update-cliente/update-cliente.component';
@@ -21,6 +22,7 @@ import { FaqComponent } from './views/faq/faq.component';
 import { ProprietariosComponent } from './views/proprietarios/proprietarios.component'
 import { ClientesComponent } from './views/clientes/clientes.component'
 import { AgendamentosComponent } from './views/agendamentos/agendamentos.component';
+import { CorretoresComponent } from './views/corretores/corretores.component';
 
 const routes: Routes = [
   {
@@ -35,6 +37,7 @@ const routes: Routes = [
   {
     path: 'login-corretor',
     component: LoginCorretorComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'dashboard',
@@ -117,6 +120,10 @@ const routes: Routes = [
     path: 'agendamentos',
     component: AgendamentosComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'corretores',
+    component: CorretoresComponent
   },
 ];
 

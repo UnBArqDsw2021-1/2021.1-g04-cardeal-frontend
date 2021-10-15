@@ -82,7 +82,7 @@ h4 {
   font-size: 100%;
   border-radius: 8px;
   cursor: pointer;
-  margin: 2%;
+  margin: 4%;
 }
 
 .btn:hover {
@@ -98,8 +98,8 @@ h4 {
   font-style: normal;
   font-weight: normal;
   font-family: Sora;
-  color: #3f3d56;
-  font-size: 30px;
+  color: #f14843;
+  font-size: 32px;
 }
 
 .dados {
@@ -113,13 +113,48 @@ h4 {
   font-weight: normal;
   font-family: Sora;
   color: #3f3d56;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 20px;
+  padding-left: 2%;
+  padding-bottom: 2%;
 }
 
 #link_propriedade{
     cursor: pointer;
     font-size: 17px;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    margin: 4%;
     color: #f14843;
     text-decoration: underline;
+}
+
+.status{
+  font-style: normal;
+  font-weight: normal;
+  font-family: Sora;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+#passada{
+  color: #DE3163;
+}
+
+#presente{
+  color: #FFBF00 ;
+}
+
+#futura{
+  color: #229954 ;
+}
+
+.botao_cadastro{
+  position: fixed;
+  width: 7%;
+  bottom: 2%;
+  right: 4%;
+  filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+  z-index: 10000000;
+  cursor: pointer;
 }

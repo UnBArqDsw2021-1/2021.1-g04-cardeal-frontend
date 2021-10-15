@@ -22,21 +22,9 @@ export class AgendamentosComponent implements OnInit {
   }
 
   lerAgendamentos(){
-    var aux: string;
     this.service.listarAgendamento().subscribe(
       (resultado) => {
         this.agendamentos = resultado;
-        this.dados = [];
-        for(var i = 0; i < this.agendamentos.length; i++){
-          this.cservice.MostraCliente(this.agendamentos[i].idClient).subscribe(
-            (resultado2) => {
-              this.dados[i] = {agen: this.agendamentos[i], cli: resultado2.name};
-              console.log(i, resultado2);
-            },
-            (error) => console.log(error)
-          );
-        }
-        console.log(this.dados);
       },
       (error) => console.log(error)
 
@@ -80,9 +68,15 @@ export class AgendamentosComponent implements OnInit {
     this.route.navigateByUrl('/imovel/' + idPropriedade)
   }
 
+  corrigeData(data:any){
+    var data_corrigida = new Date(data);
+    
+    return data_corrigida.setHours(data_corrigida.getHours() + 12);
+  }
+
   compararDatas(data: any){
-    var dataAgendamento = new Date(data).getDate();
-    var hoje = new Date().getDate();
+    var dataAgendamento = new Date(data).toISOString().slice(0, 10);
+    var hoje = new Date().toISOString().slice(0, 10);
     if(dataAgendamento < hoje) {
       return -1;
     } 
