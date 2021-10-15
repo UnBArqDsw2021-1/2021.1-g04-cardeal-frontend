@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/UnBArqDsw2021-1/2021.1-g04-cardeal-frontend/issues"
   },
-  "homepage": "https://github.com/UnBArqDsw2021-1/2021.1-g04-cardeal-frontend#readme"
+  "homepage": "https://github.com/UnBArqDsw2021-1/2021.1-g04-cardeal-frontend#readme",
+  "dependencies": {
+    "http-server-spa": "^1.3.0"
+  }
 }
