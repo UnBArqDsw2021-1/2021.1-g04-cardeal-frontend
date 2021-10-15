@@ -5,8 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration=production",
     "watch": "ng build --watch --configuration production",
-    "test": "ng test"
+    "test": "ng test",
+    "server": "http-server-spa dist/frontCardeal index.html 4200"
   },
   "private": true,
   "dependencies": {
