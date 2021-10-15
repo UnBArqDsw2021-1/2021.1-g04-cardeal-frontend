@@ -1,0 +1,47 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Docker push
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+        IMAGE: zero101010/cardeal-front
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        cd frontCardeal 
+        docker build -t $IMAGE:${{ github.sha }} .
+        docker push $IMAGE:${{ github.sha }}
+        
+  deploy:
+      needs: release
+      runs-on: ubuntu-latest
+      env:
+        JOB_TYPES: ${{ github.event.inputs.name }}
+      steps:
+        - uses: actions/checkout@v2
+        - id: get-credentials
+          uses: google-github-actions/get-gke-credentials@main
+          with:
+            cluster_name: cardeal
+            location: us-central1-c
+            credentials: ${{ secrets.GCLOUD_SERVICE_KEY_PROD }}
+        - name: Get the Tag
+          id: get_tag_name
+          run: echo ::set-output name=GIT_TAG_NAME::${GITHUB_SHA}
+        - id: get-nodes
+          run:  helm upgrade --install  --set release.image=$IMAGE --set release.name=$PROJECT_NAME --set release.port=$PORT  --namespace $NAMESPACE --force --wait $PROJECT_NAME $HELM_PATH
+          env:
+            PROJECT_NAME: cardeal-front-prod
+            NAMESPACE: web-system
+            IMAGE: zero101010/cardeal-front:${{ steps.get_tag_name.outputs.GIT_TAG_NAME}}
+            PORT: 4200
+            HELM_PATH: config/helm

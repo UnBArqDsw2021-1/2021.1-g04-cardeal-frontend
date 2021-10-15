@@ -1,0 +1,8 @@
+release:
+  name: cardeal-front
+  namespace: web-system
+  replicaCount: 1
+  image: zero101010/cardeal-front
+  port: 4200
+  host: front-cardeal.devopstests.com
+  secretTLS: front
