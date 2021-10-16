@@ -47,7 +47,7 @@
       </div>
       <div class="dados">
         <span id="link_propriedade" (click)="abrirPropriedade(row.idProperty)">Ver propriedade</span><br>
-        <span >Cliente: {{ row.idClient }}</span><br>
+        <span >Cliente: {{ dados[row.id] }}</span><br>
         <span>Data: {{ corrigeData(row.dateMeeting) | date : 'dd/MM/YYYY'}}</span>
       </div>
       <div class="status">

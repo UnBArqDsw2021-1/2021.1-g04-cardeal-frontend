@@ -16,18 +16,30 @@
         <form class="form">
           <input
             type="text"
+            list="clientes"
             [(ngModel)]="agendamentoObj.idClient"
             id="name"
             name="name"
             placeholder="Cliente"
           /><br />
+          <datalist id="clientes">
+            <option *ngFor="let row of clientes" value="{{ row.id }}">
+              {{ row.name }}
+            </option>
+          </datalist>
           <input
             type="text"
             id="property"
+            list = "imoveis"
             [(ngModel)]="agendamentoObj.idProperty"
             name="property"
             placeholder="Propriedade"
           /><br />
+          <datalist id="imoveis">
+            <option *ngFor="let row of imoveis" value="{{ row.id }}">
+              {{ row.name }}
+            </option>
+          </datalist>
           <input
             type="date"
             id="date"

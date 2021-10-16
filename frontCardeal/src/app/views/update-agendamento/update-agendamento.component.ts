@@ -5,6 +5,10 @@ import { Agendamento } from 'src/app/models/agendamento.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Location } from '@angular/common';
+import { Clientes } from 'src/app/models/cliente.model';
+import { ClienteService } from 'src/app/services/cliente.service';
+import { Imoveis } from 'src/app/models/imovel.model';
+import ImovelService from 'src/app/services/imovel.service';
 
 @Component({
   selector: 'app-update-agendamento',
@@ -18,16 +22,22 @@ export class UpdateAgendamentoComponent implements OnInit {
   id!: number;
   private routeSub!: Subscription;
   agendamento!: Agendamento;
+  clientes!: Clientes;
+  imoveis!: Imoveis;
 
     constructor(
       private route: ActivatedRoute,
       private service: AgendamentoService,
       private router: Router,
       private location: Location,
-      private toast: ToastService
+      private toast: ToastService,
+      private cservice: ClienteService, 
+      private iservice: ImovelService, 
     ) {}
 
    ngOnInit(): void {
+    this.lerClientes();
+    this.lerImoveis();
     this.routeSub = this.route.params.subscribe((params) => {
       this.id = params['id'];
       console.log("Esse é o id", this.id);
@@ -70,6 +80,24 @@ export class UpdateAgendamentoComponent implements OnInit {
       (error) => this.toast.showErroToast("Erro ao remover o agendamento: "+error)
     );
     }
+  }
+
+  lerClientes(){
+    this.cservice.listarCliente().subscribe(
+      (resultado) => {
+        this.clientes = resultado;
+      },
+      (error) => this.toast.showErroToast("Erro ao carregar a lista de clientes")
+    );
+  }
+
+  lerImoveis(){
+    this.iservice.listarImovel().subscribe(
+      (resultado) => {
+        this.imoveis = resultado;
+      },
+      (error) => this.toast.showErroToast("Erro ao carregar a lista de imoveis")
+    );
   }
 }
 

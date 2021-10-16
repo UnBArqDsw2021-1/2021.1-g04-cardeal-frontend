@@ -1,5 +1,5 @@
 export interface Agendamento {
-    id?: number;
+    id: number;
     idClient: number;
     idProperty?: number;
     dateMeeting?: Date;
