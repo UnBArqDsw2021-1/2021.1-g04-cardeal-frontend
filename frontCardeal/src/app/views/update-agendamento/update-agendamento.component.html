@@ -12,8 +12,18 @@
 
       <div class="container_form">
           <form class = "form" (ngSubmit)="atualizar()">
-            <input type="text" [(ngModel)]="agendamento.idClient" id="name" name="name" placeholder="Cliente"/><br/>
-            <input type="text" id="property" [(ngModel)]="agendamento.idProperty" name="property" placeholder="Propriedade" /><br />
+            <input type="text" list="clientes" [(ngModel)]="agendamento.idClient"  id="name" name="name" placeholder="Cliente"/><br/>
+            <datalist id="clientes">
+              <option *ngFor="let row of clientes" value="{{ row.id }}">
+                {{ row.name }}
+              </option>
+            </datalist>
+            <input type="text" id="property" list = "imoveis" [(ngModel)]="agendamento.idProperty" name="property" placeholder="Propriedade" /><br />
+            <datalist id="imoveis">
+              <option *ngFor="let row of imoveis" value="{{ row.id }}">
+                {{ row.name }}
+              </option>
+            </datalist>
             <input type="date" id="date" [(ngModel)]="agendamento.dateMeeting" name="date" placeholder="Data" /><br />
               <div class="botoes">
                 <button type="submit" class="botao_voltar" (click)="voltar()">Voltar</button>

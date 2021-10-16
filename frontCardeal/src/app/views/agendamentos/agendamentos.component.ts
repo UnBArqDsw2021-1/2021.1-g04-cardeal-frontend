@@ -14,22 +14,33 @@ import { Cliente, Clientes } from 'src/app/models/cliente.model';
 
 export class AgendamentosComponent implements OnInit {
   agendamentos!: Agendamentos;
-  dados!: Array<{agen: Agendamento, cli: string}>;
+  dados!: {[agen: number]: string};
 
   constructor(private service: AgendamentoService, private cservice: ClienteService, private route: Router, private toast:ToastService) {}
 
   ngOnInit(): void {
-    this.lerAgendamentos();
+    this.agendamentos = [];
+    this.dados = {};
+    this.lerAgendamentos();    
   }
 
   lerAgendamentos(){
     this.service.listarAgendamento().subscribe(
       (resultado) => {
         this.agendamentos = resultado;
+        var nome:string;
+        for(let n in this.agendamentos){
+          this.viewCliente(this.agendamentos[n].id, this.agendamentos[n].idClient)
+          //console.log(nome);
+          //this.dados[aux[n].id] = nome;
+          //
+        }
       },
       (error) => console.log(error)
-
     );
+    
+    
+
   }
 
   deleteAgendamento(agendamento: any) {
@@ -87,6 +98,21 @@ export class AgendamentosComponent implements OnInit {
     }
 
     return 1;
+  }
+  
+  pegaNome(id: any){
+    return this.dados[id];
+  }
+
+  viewCliente(id: number, cliente: number): string{
+    var nome: string = "";
+    this.cservice.MostraCliente(cliente).subscribe(
+      (resultado) => {
+        this.dados[id] = resultado.name;
+      },
+      (error) => this.toast.showErroToast("Erro ao carregar informações do cliente")
+    );
+    return nome;
   }
 }
 
